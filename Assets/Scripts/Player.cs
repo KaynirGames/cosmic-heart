@@ -1,26 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Transform[] _firePoints = null;
+    [SerializeField] private int _selectedWeapon = 0;
+
     private IMoveHandler _moveHandler;
     private IMoveInputHandler _moveInputHandler;
-    private IAttackHandler _attackHandler;
 
     private ActionInputBase _attackInput;
+    private CharacterStats _playerStats;
 
-    private Timer _nextAttackTimer;
+    private IShooter[] _weapons;
 
     private void Awake()
     {
         _moveHandler = GetComponent<IMoveHandler>();
         _moveInputHandler = GetComponent<IMoveInputHandler>();
-        _attackHandler = GetComponent<IAttackHandler>();
+        _weapons = GetComponentsInChildren<IShooter>();
         _attackInput = GetComponent<ActionInputBase>();
+        _playerStats = GetComponent<CharacterStats>();
     }
 
     private void Start()
     {
-        _nextAttackTimer = new Timer(1.5f);
+        _moveHandler.SetMoveSpeed(_playerStats.MoveSpeed);
     }
 
     private void Update()
@@ -31,19 +36,9 @@ public class Player : MonoBehaviour
 
     private void HandleAttack()
     {
-        //if (_attackInput.GetInputHold())
-        //{
-        //    _attackHandler.Attack();
-        //    _nextAttackTimer.Reset();
-        //}
-        //else
-        //{
-        //    _nextAttackTimer.Tick(Time.deltaTime);
-        //}
-
         if (_attackInput.GetInputHold())
         {
-            _attackHandler.Attack();
+            _weapons[_selectedWeapon].Attack();
         }
     }
 
