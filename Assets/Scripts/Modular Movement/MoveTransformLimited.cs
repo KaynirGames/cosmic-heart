@@ -17,15 +17,7 @@ public class MoveTransformLimited : MonoBehaviour, IMoveHandler
 
         if (_currentDirection != Vector3.zero)
         {
-            float limitedX = Mathf.Clamp(transform.position.x,
-                                         _minMoveLimit.x,
-                                         _maxMoveLimit.x);
-
-            float limitedY = Mathf.Clamp(transform.position.y,
-                                         _minMoveLimit.y,
-                                         _maxMoveLimit.y);
-
-            transform.position = new Vector3(limitedX, limitedY);
+            transform.position = transform.position.ClampPosition2D(_minMoveLimit, _maxMoveLimit);
         }
     }
 

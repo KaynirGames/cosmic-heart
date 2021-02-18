@@ -8,11 +8,12 @@
     public Timer(float duration)
     {
         _duration = duration;
-
         Elapsed = true;
     }
 
-    public void SetDuration(float duration)
+    public Timer() : this(0f) { }
+
+    public void ChangeDuration(float duration)
     {
         _duration = duration;
     }
