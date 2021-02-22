@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +10,7 @@ public class Player : MonoBehaviour
 
     private ActionInputBase _attackInput;
     private CharacterStats _playerStats;
+    private Animator _animator;
 
     private IShooter[] _weapons;
 
@@ -21,17 +21,25 @@ public class Player : MonoBehaviour
         _weapons = GetComponentsInChildren<IShooter>();
         _attackInput = GetComponent<ActionInputBase>();
         _playerStats = GetComponent<CharacterStats>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
         _moveHandler.SetMoveSpeed(_playerStats.MoveSpeed);
+        SetWeapon(0);
     }
 
     private void Update()
     {
         HandleAttack();
         HandleMove();
+    }
+
+    public void SetWeapon(int weaponID)
+    {
+        _selectedWeapon = weaponID;
+        _weapons[weaponID].SetFirePoints(_firePoints);
     }
 
     private void HandleAttack()
@@ -44,6 +52,8 @@ public class Player : MonoBehaviour
 
     private void HandleMove()
     {
-        _moveHandler.SetMoveDirection(_moveInputHandler.GetDirection());
+        Vector3 direction = _moveInputHandler.GetDirection();
+        _moveHandler.SetMoveDirection(direction);
+        _animator.SetFloat("Horizontal", direction.x);
     }
 }
