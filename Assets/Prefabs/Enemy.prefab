@@ -73,6 +73,8 @@ GameObject:
   - component: {fileID: 3795014320238176885}
   - component: {fileID: 3795014320238176890}
   - component: {fileID: 4930026288897430603}
+  - component: {fileID: 1219220624}
+  - component: {fileID: 1219220625}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -114,7 +116,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,6 +162,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 10
   _health: 3
+--- !u!114 &1219220624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795014320238176891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e5677da81cda545b09634979468b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minMoveLimit: {x: -9, y: 0, z: 0}
+  _maxMoveLimit: {x: 9, y: 5, z: 0}
+  _minMovementTime: 2
+  _maxMovementTime: 3
+--- !u!114 &1219220625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795014320238176891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727da7d468890eb4eb146b84389e93a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveDirection: {x: 0, y: 0, z: 0}
+  _moveSpeed: 5
 --- !u!1001 &1809794104469932494
 PrefabInstance:
   m_ObjectHideFlags: 0

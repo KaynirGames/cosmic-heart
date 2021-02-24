@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarryMovingBackground
+  m_Shader: {fileID: -6465566751694194690, guid: 9c77a84ad261a5a4db34f57955740c2a,
+    type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _mainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Brightness: 1.64
+    - _BrightnessPower: 1.88
+    - _BrightnessVariationScale: 0.2
+    - _OverallScale: 2
+    - _Randomness: 5
+    - _Rotation: 30
+    - _StarsScale: 20
+    - _Threshold: 0.935
+    - _brightness: 1
+    - _brightnessPower: 1
+    - _brightnessVariationScale: 0.2
+    - _offsetOverTime: 1
+    - _offsetSpeed: 15
+    - _overallScale: 2
+    - _randomness: 5
+    - _rotation: 0
+    - _starBlur: 0.95
+    - _starScale: 20
+    m_Colors:
+    - _Color: {r: 0.8679245, g: 0.7620425, b: 0.43805626, a: 1}
+    - _Offset: {r: 0, g: 1, b: 0, a: 0}
+    - _offset: {r: 0, g: 1, b: 0, a: 0}
+    - _starColor: {r: 1, g: 1, b: 1, a: 1}
