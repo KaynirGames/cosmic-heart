@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class ActionInputTouch : ActionInputBase
+public class ActionInputTouch : MonoBehaviour, IActionInputHandler
 {
     [SerializeField] private int _touchID = 0;
 
-    public override bool GetInputDown()
+    public bool GetInputDown()
     {
         if (Input.touchCount > 0)
         {
@@ -19,7 +19,7 @@ public class ActionInputTouch : ActionInputBase
         return false;
     }
 
-    public override bool GetInputHold()
+    public bool GetInputHold()
     {
         if (Input.touchCount > 0)
         {
@@ -36,7 +36,7 @@ public class ActionInputTouch : ActionInputBase
         return false;
     }
 
-    public override bool GetInputUp()
+    public bool GetInputUp()
     {
         if (Input.touchCount > 0)
         {

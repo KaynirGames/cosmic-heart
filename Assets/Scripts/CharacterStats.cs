@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterStats : MonoBehaviour, IDamageable
 {
     public event System.Action OnCharacterDeath = delegate { };
- 
+
     [SerializeField] private float _moveSpeed = 1f;
     [SerializeField] private int _health = 1;
 

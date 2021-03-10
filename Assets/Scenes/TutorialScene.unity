@@ -565,7 +565,7 @@ PrefabInstance:
     - target: {fileID: 3795014320238176891, guid: 9261d6e3136f48d4691f97e7bb7edf43,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Boombot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9261d6e3136f48d4691f97e7bb7edf43, type: 3}
@@ -634,7 +634,7 @@ PrefabInstance:
     - target: {fileID: 4168460833131983396, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
         type: 3}
       propertyPath: m_Name
-      value: PlayerShip
+      value: PlayerWanderer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d87dd54a4f07cc4b83cfa295edd47ff, type: 3}

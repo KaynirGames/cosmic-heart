@@ -2,16 +2,16 @@
 
 public class FollowRandomDirections : MonoBehaviour
 {
-    [Header("Зона перемещения:")]
-    [SerializeField] private Vector3 _minMoveLimit = Vector3.zero;
-    [SerializeField] private Vector3 _maxMoveLimit = Vector3.zero;
+    [Header("Границы перемещения:")]
+    [SerializeField] private Vector3 _minMoveBound = Vector3.zero;
+    [SerializeField] private Vector3 _maxMoveBound = Vector3.zero;
     [Header("Время перемещения:")]
-    [SerializeField] private float _minMovementTime = 1f;
-    [SerializeField] private float _maxMovementTime = 2f;
+    [SerializeField] private float _minMoveTime = 1f;
+    [SerializeField] private float _maxMoveTime = 2f;
 
     private IMoveHandler _moveHandler;
 
-    private Timer _movementTimer;
+    private Timer _moveTimer;
     private Vector3 _randomDirection;
 
     private void Awake()
@@ -21,20 +21,20 @@ public class FollowRandomDirections : MonoBehaviour
 
     private void Start()
     {
-        _movementTimer = new Timer();
+        _moveTimer = new Timer(GetRandomDuration());
     }
 
     private void Update()
     {
-        if (_movementTimer.Elapsed)
+        if (_moveTimer.Elapsed)
         {
-            _moveHandler.SetMoveDirection(GetRandomDirection());
-            _movementTimer.ChangeDuration(GetRandomDuration());
-            _movementTimer.Reset();
+            _moveHandler.Move(GetRandomDirection());
+            _moveTimer.ChangeDuration(GetRandomDuration());
+            _moveTimer.Reset();
             return;
         }
 
-        _movementTimer.Tick(Time.deltaTime);
+        _moveTimer.Tick();
 
         CheckForBorders();
     }
@@ -51,23 +51,21 @@ public class FollowRandomDirections : MonoBehaviour
 
     private float GetRandomDuration()
     {
-        return Random.Range(_minMovementTime, _maxMovementTime);
+        return Random.Range(_minMoveTime, _maxMoveTime);
     }
 
     private void CheckForBorders()
     {
-        transform.position = transform.position.ClampPosition2D(_minMoveLimit, _maxMoveLimit);
-
-        if (transform.position.x <= _minMoveLimit.x || transform.position.x >= _maxMoveLimit.x)
+        if (transform.position.x <= _minMoveBound.x || transform.position.x >= _maxMoveBound.x)
         {
             _randomDirection.x *= -1;
         }
 
-        if (transform.position.y <= _minMoveLimit.y || transform.position.y >= _maxMoveLimit.y)
+        if (transform.position.y <= _minMoveBound.y || transform.position.y >= _maxMoveBound.y)
         {
             _randomDirection.y *= -1;
         }
 
-        _moveHandler.SetMoveDirection(_randomDirection);
+        _moveHandler.Move(_randomDirection);
     }
 }

@@ -33,7 +33,7 @@ Material:
     - _Rotation: 30
     - _StarsScale: 20
     - _Threshold: 0.935
-    - _brightness: 1
+    - _brightness: 1.15
     - _brightnessPower: 1
     - _brightnessVariationScale: 0.2
     - _offsetOverTime: 1
@@ -41,7 +41,7 @@ Material:
     - _overallScale: 2
     - _randomness: 5
     - _rotation: 0
-    - _starBlur: 0.95
+    - _starBlur: 0.96
     - _starScale: 20
     m_Colors:
     - _Color: {r: 0.8679245, g: 0.7620425, b: 0.43805626, a: 1}

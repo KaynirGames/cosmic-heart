@@ -2,24 +2,21 @@
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform[] _firePoints = null;
-    [SerializeField] private int _selectedWeapon = 0;
-
     private IMoveHandler _moveHandler;
     private IMoveInputHandler _moveInputHandler;
+    private IActionInputHandler _attackInputHandler;
 
-    private ActionInputBase _attackInput;
     private CharacterStats _playerStats;
     private Animator _animator;
 
-    private IShooter[] _weapons;
+    private WeaponSelector _weaponSelector;
 
     private void Awake()
     {
         _moveHandler = GetComponent<IMoveHandler>();
         _moveInputHandler = GetComponent<IMoveInputHandler>();
-        _weapons = GetComponentsInChildren<IShooter>();
-        _attackInput = GetComponent<ActionInputBase>();
+        _weaponSelector = GetComponent<WeaponSelector>();
+        _attackInputHandler = GetComponent<IActionInputHandler>();
         _playerStats = GetComponent<CharacterStats>();
         _animator = GetComponentInChildren<Animator>();
     }
@@ -27,7 +24,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _moveHandler.SetMoveSpeed(_playerStats.MoveSpeed);
-        SetWeapon(0);
     }
 
     private void Update()
@@ -36,24 +32,18 @@ public class Player : MonoBehaviour
         HandleMove();
     }
 
-    public void SetWeapon(int weaponID)
-    {
-        _selectedWeapon = weaponID;
-        _weapons[weaponID].SetFirePoints(_firePoints);
-    }
-
     private void HandleAttack()
     {
-        if (_attackInput.GetInputHold())
+        if (_attackInputHandler.GetInputHold())
         {
-            _weapons[_selectedWeapon].Attack();
+            _weaponSelector.CurrentWeapon.Attack();
         }
     }
 
     private void HandleMove()
     {
         Vector3 direction = _moveInputHandler.GetDirection();
-        _moveHandler.SetMoveDirection(direction);
+        _moveHandler.Move(direction.normalized);
         _animator.SetFloat("Horizontal", direction.x);
     }
 }

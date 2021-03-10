@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 
-public class ActionInputKeyboard : ActionInputBase
+public class ActionInputKeyboard : MonoBehaviour, IActionInputHandler
 {
     [SerializeField] private KeyCode _actionKey = KeyCode.None;
 
-    public override bool GetInputDown()
+    public bool GetInputDown()
     {
         return Input.GetKeyDown(_actionKey);
     }
 
-    public override bool GetInputHold()
+    public bool GetInputHold()
     {
         return Input.GetKey(_actionKey);
     }
 
-    public override bool GetInputUp()
+    public bool GetInputUp()
     {
         return Input.GetKeyUp(_actionKey);
     }

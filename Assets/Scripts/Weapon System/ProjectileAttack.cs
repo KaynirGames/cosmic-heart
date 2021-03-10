@@ -1,52 +1,20 @@
 ﻿using UnityEngine;
 
-public class ProjectileAttack : MonoBehaviour, IShooter
+public class ProjectileAttack : MonoBehaviour, IAttackHandler
 {
     [SerializeField] private GameObject _projectilePrefab = null;
     [SerializeField] private Transform[] _firePoints = null;
-    [Header("Настройки снаряда:")]
-    [SerializeField] private float _fireRate = 1f;
+    [Header("Настройка снарядов:")]
     [SerializeField, Range(0f, 360f)] private float _fireAngle = 0f;
     [SerializeField] private int _projectileAmount = 1;
     [SerializeField] private float _projectileSpeed = 1f;
 
-    public float FireRate { get => _fireRate; set => _fireRate = value; }
-    public float FireAngle { get => _fireAngle; set => _fireAngle = value; }
-
-    public int ProjectileAmount { get => _projectileAmount; set => _projectileAmount = value; }
-    public float ProjectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
-
-    private Timer _nextFireTimer;
-
-    private void Start()
-    {
-        _nextFireTimer = new Timer(_fireRate);
-    }
-
-    private void Update()
-    {
-        if (!_nextFireTimer.Elapsed)
-        {
-            _nextFireTimer.Tick(Time.deltaTime);
-        }
-    }
-
     public void Attack()
     {
-        if (_nextFireTimer.Elapsed)
+        foreach (Transform point in _firePoints)
         {
-            foreach (Transform point in _firePoints)
-            {
-                SpawnProjectiles(_projectileAmount, point);
-            }
-
-            _nextFireTimer.Reset();
+            SpawnProjectiles(_projectileAmount, point);
         }
-    }
-
-    public void SetFirePoints(Transform[] firePoints)
-    {
-        _firePoints = firePoints;
     }
 
     private void SpawnProjectiles(int amount, Transform point)
@@ -60,8 +28,12 @@ public class ProjectileAttack : MonoBehaviour, IShooter
                                                 point.position,
                                                 Quaternion.AngleAxis(angle, Vector3.forward));
 
-            Vector3 projectileVelocity = GetProjectileDirection(point.position, angle);
-            projectile.GetComponent<Rigidbody2D>().velocity = projectileVelocity;
+            Vector3 projectileDirection = GetProjectileDirection(point.position, angle);
+
+            IMoveHandler projectileMoveHandler = projectile.GetComponent<IMoveHandler>();
+
+            projectileMoveHandler.SetMoveSpeed(_projectileSpeed);
+            projectileMoveHandler.Move(projectileDirection);
 
             angle -= angleStep;
         }
@@ -74,6 +46,6 @@ public class ProjectileAttack : MonoBehaviour, IShooter
 
         Vector3 projectileVector = new Vector3(projectilePosX, projectilePosY);
 
-        return (projectileVector - startPosition).normalized * _projectileSpeed;
+        return (projectileVector - startPosition).normalized;
     }
 }

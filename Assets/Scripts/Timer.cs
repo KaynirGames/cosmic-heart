@@ -1,4 +1,6 @@
-﻿public class Timer
+﻿using UnityEngine;
+
+public class Timer
 {
     public bool Elapsed { get; private set; }
 
@@ -7,15 +9,14 @@
 
     public Timer(float duration)
     {
-        _duration = duration;
-        Elapsed = true;
+        ChangeDuration(duration);
     }
-
-    public Timer() : this(0f) { }
 
     public void ChangeDuration(float duration)
     {
         _duration = duration;
+        _elapsedTime = 0f;
+        Elapsed = true;
     }
 
     public void Reset()
@@ -34,5 +35,14 @@
         {
             Elapsed = true;
         }
+    }
+
+    public void Tick(bool unscaledTime = false)
+    {
+        float delta = unscaledTime
+            ? Time.unscaledDeltaTime
+            : Time.deltaTime;
+
+        Tick(delta);
     }
 }
