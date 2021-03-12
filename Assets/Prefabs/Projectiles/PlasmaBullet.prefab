@@ -10,12 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 6901159929478883339}
   - component: {fileID: 4214568783729070939}
+  - component: {fileID: 297389240478316303}
   - component: {fileID: 5472130370717805063}
   - component: {fileID: 3243350495334014992}
   - component: {fileID: -8200376427781712054}
+  - component: {fileID: -2926688228558227327}
+  - component: {fileID: -6553995366587189325}
+  - component: {fileID: 7726685314869290108}
   - component: {fileID: -2436067113785059017}
   - component: {fileID: 8600234179686345537}
-  - component: {fileID: -2926688228558227327}
   m_Layer: 8
   m_Name: PlasmaBullet
   m_TagString: Untagged
@@ -32,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 8805315235221760054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.2, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,8 +79,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9aa59dc77b17bfa468511c7a3c7fdb2b, type: 3}
-  m_Color: {r: 0.1544589, g: 0.79857004, b: 0.8396226, a: 1}
+  m_Sprite: {fileID: 6611263636023567295, guid: dbd2089d9039ec94da193e1272edc11d,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,6 +91,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &297389240478316303
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78c211f8dfe4d1742a7c2badcf8375c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &5472130370717805063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,6 +170,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 2
+--- !u!114 &-2926688228558227327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83b69f62c3328243bea0d517e08cb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 1
+--- !u!114 &-6553995366587189325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35325852c074eba4995c72ad94a5ca3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7726685314869290108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d4f6e6fa703e240a7012b42e65a42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-2436067113785059017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,17 +232,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc898db6a28a78488a115f7e0e1fab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _replacementPrefab: {fileID: 0}
---- !u!114 &-2926688228558227327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805315235221760054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83b69f62c3328243bea0d517e08cb02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 1
+  _replacementPrefab: {fileID: 1674967525001209150, guid: 8d5e679ebf4246e4aa9db5199d4f6e69,
+    type: 3}
