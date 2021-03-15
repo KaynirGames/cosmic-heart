@@ -1,29 +1,29 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Character
 {
     private IMoveHandler _moveHandler;
     private IMoveInputHandler _moveInputHandler;
     private IActionInputHandler _attackInputHandler;
 
-    private CharacterStats _playerStats;
     private Animator _animator;
 
     private WeaponSelector _weaponSelector;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         _moveHandler = GetComponent<IMoveHandler>();
         _moveInputHandler = GetComponent<IMoveInputHandler>();
         _weaponSelector = GetComponent<WeaponSelector>();
         _attackInputHandler = GetComponent<IActionInputHandler>();
-        _playerStats = GetComponent<CharacterStats>();
         _animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
-        _moveHandler.SetMoveSpeed(_playerStats.MoveSpeed);
+        _moveHandler.SetMoveSpeed(Stats.MoveSpeed);
     }
 
     private void Update()

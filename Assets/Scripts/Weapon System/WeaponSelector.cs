@@ -21,14 +21,39 @@ public class WeaponSelector : MonoBehaviour
 
     private void Start()
     {
-        SelectWeapon(_weapons[0]);
+        SelectWeapon(0);
     }
 
-    public void SelectWeapon(Weapon weapon)
+    public bool SelectWeapon(int weaponIndex)
     {
-        if (_weaponDict.ContainsKey(weapon.ID))
+        if (_weapons.Length > 0)
         {
-            CurrentWeapon = _weaponDict[weapon.ID];
+            CurrentWeapon = _weapons[weaponIndex];
+            return true;
         }
+
+        return false;
+    }
+
+    public bool SelectWeapon(string weaponID)
+    {
+        if (_weaponDict.ContainsKey(weaponID))
+        {
+            CurrentWeapon = _weaponDict[weaponID];
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool SelectWeapon(Weapon weapon)
+    {
+        return SelectWeapon(weapon.ID);
+    }
+
+    public bool SelectRandomWeapon()
+    {
+        return SelectWeapon(Random.Range(0,
+                                         _weapons.Length));
     }
 }
