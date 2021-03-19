@@ -6,9 +6,7 @@ public class Player : Character
     private IMoveInputHandler _moveInputHandler;
     private IActionInputHandler _attackInputHandler;
 
-    private Animator _animator;
-
-    private WeaponSelector _weaponSelector;
+    private WeaponSystem _weaponSelector;
 
     protected override void Awake()
     {
@@ -16,14 +14,13 @@ public class Player : Character
 
         _moveHandler = GetComponent<IMoveHandler>();
         _moveInputHandler = GetComponent<IMoveInputHandler>();
-        _weaponSelector = GetComponent<WeaponSelector>();
+        _weaponSelector = GetComponent<WeaponSystem>();
         _attackInputHandler = GetComponent<IActionInputHandler>();
-        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
-        _moveHandler.SetMoveSpeed(Stats.MoveSpeed);
+        _moveHandler.SetMoveSpeed(Stats.MoveSpeed.GetValue());
     }
 
     private void Update()
@@ -44,6 +41,6 @@ public class Player : Character
     {
         Vector3 direction = _moveInputHandler.GetDirection();
         _moveHandler.Move(direction.normalized);
-        _animator.SetFloat("Horizontal", direction.x);
+        Animator.SetFloat("Horizontal", direction.x);
     }
 }

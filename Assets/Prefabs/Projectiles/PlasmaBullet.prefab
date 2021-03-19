@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 3243350495334014992}
   - component: {fileID: -8200376427781712054}
   - component: {fileID: -2926688228558227327}
-  - component: {fileID: -6553995366587189325}
-  - component: {fileID: 7726685314869290108}
-  - component: {fileID: -2436067113785059017}
-  - component: {fileID: 8600234179686345537}
-  m_Layer: 8
+  - component: {fileID: 1863368780138190275}
+  - component: {fileID: 7774919459089934435}
+  - component: {fileID: 5421709597841898821}
+  - component: {fileID: 3383563570758125019}
+  m_Layer: 9
   m_Name: PlasmaBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 8805315235221760054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 1
---- !u!114 &-6553995366587189325
+--- !u!114 &1863368780138190275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,10 +192,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8805315235221760054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35325852c074eba4995c72ad94a5ca3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f322ebbf1243bf419df91ace2c77f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7726685314869290108
+--- !u!114 &7774919459089934435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,10 +204,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8805315235221760054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d4f6e6fa703e240a7012b42e65a42e, type: 3}
+  m_Script: {fileID: 11500000, guid: 54d32806fea337640b91e7fa07a74f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2436067113785059017
+  _effects:
+  - {fileID: 5421709597841898821}
+  - {fileID: 3383563570758125019}
+--- !u!114 &5421709597841898821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
---- !u!114 &8600234179686345537
+--- !u!114 &3383563570758125019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

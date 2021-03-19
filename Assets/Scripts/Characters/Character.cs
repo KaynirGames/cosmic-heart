@@ -2,12 +2,15 @@
 
 public class Character : MonoBehaviour
 {
-    public CharacterStats Stats { get; private set; }
+    [SerializeField] protected CharacterStats _stats = null;
+    [SerializeField] protected Animator _animator = null;
+
+    public CharacterStats Stats => _stats;
+    public Animator Animator => _animator;
 
     protected virtual void Awake()
     {
-        Stats = GetComponent<CharacterStats>();
-        Stats.OnCharacterDeath += Die;
+        _stats.OnCharacterDeath += Die;
     }
 
     protected virtual void Die()

@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SpecialEffectMaster))]
 public class Weapon : MonoBehaviour, IIdentifiable
 {
-    [SerializeField] private float _attackCooldown = 0f;
+    [SerializeField] private float _attackDelay = .5f;
     [SerializeField] private string _weaponID = string.Empty;
+    [SerializeField] private EffectSystem _weaponEffects = null;
 
     private IAttackHandler _attackHandler;
     private IReloadHandler _reloadHandler;
 
-    private SpecialEffectMaster _effectMaster;
     private Timer _attackTimer;
 
     public string ID => _weaponID;
@@ -18,7 +17,6 @@ public class Weapon : MonoBehaviour, IIdentifiable
     {
         _attackHandler = GetComponent<IAttackHandler>();
         _reloadHandler = GetComponent<IReloadHandler>();
-        _effectMaster = GetComponent<SpecialEffectMaster>();
 
         if (_reloadHandler == null)
         {
@@ -28,7 +26,7 @@ public class Weapon : MonoBehaviour, IIdentifiable
 
     private void Start()
     {
-        _attackTimer = new Timer(_attackCooldown);
+        _attackTimer = new Timer(_attackDelay);
     }
 
     private void Update()
@@ -41,7 +39,7 @@ public class Weapon : MonoBehaviour, IIdentifiable
         if (_attackTimer.Elapsed && _reloadHandler.CheckAmmo())
         {
             _attackHandler.Attack();
-            _effectMaster.CreateEffects(gameObject);
+            _weaponEffects.ActivateEffects(gameObject);
             _attackTimer.Reset();
         }
     }

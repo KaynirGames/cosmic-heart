@@ -4,24 +4,19 @@ public class CharacterStats : MonoBehaviour, IDamageable
 {
     public event System.Action OnCharacterDeath = delegate { };
 
-    [SerializeField] private float _moveSpeed = 1f;
-    [SerializeField] private int _health = 1;
+    [SerializeField] private IntData _health = null;
+    [SerializeField] private FloatData _moveSpeed = null;
 
-    public float MoveSpeed => _moveSpeed;
+    public IntData Health => _health;
+    public FloatData MoveSpeed => _moveSpeed;
 
     public void TakeDamage(float damage)
     {
-        _health -= (int)damage;
+        _health.ChangeValue(-(int)damage);
 
-        if (_health <= 0)
+        if (_health.GetValue() <= 0)
         {
-            Die();
+            OnCharacterDeath.Invoke();
         }
-    }
-
-    private void Die()
-    {
-        // bla bla
-        OnCharacterDeath.Invoke();
     }
 }

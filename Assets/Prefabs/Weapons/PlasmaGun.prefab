@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1385841258146079960}
   - component: {fileID: -7781953834194503571}
   - component: {fileID: 1114657734}
-  - component: {fileID: 3203520508602294765}
+  - component: {fileID: -6510837623182978601}
   - component: {fileID: 4953820818047901322}
   m_Layer: 0
   m_Name: PlasmaGun
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4666a52b064e809409a4c03c58a6dac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackCooldown: 0.35
+  _attackDelay: 0.5
   _weaponID: PlasmaGun
-  _effectMaster: {fileID: 3203520508602294765}
+  _weaponEffects: {fileID: -6510837623182978601}
 --- !u!114 &1114657734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   _fireAngle: 0
   _projectileAmount: 1
   _projectileSpeed: 15
---- !u!114 &3203520508602294765
+--- !u!114 &-6510837623182978601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,9 +173,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5114607718829249345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d4f6e6fa703e240a7012b42e65a42e, type: 3}
+  m_Script: {fileID: 11500000, guid: 54d32806fea337640b91e7fa07a74f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _effects:
+  - {fileID: 4953820818047901322}
 --- !u!114 &4953820818047901322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,4 +194,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9b4a9b6f77c7d7e4e95b998effe23bf5, type: 3}
   - {fileID: 8300000, guid: 269358e456801004aa9fec84d1245941, type: 3}
   - {fileID: 8300000, guid: 498f453260fc77d49b0717c55f0fc00c, type: 3}
-  _audioSource: {fileID: 1385841258146079960}
