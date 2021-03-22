@@ -104,13 +104,14 @@ GameObject:
   - component: {fileID: 4168460833131983386}
   - component: {fileID: 3482496244569501853}
   - component: {fileID: 6018882844237410884}
+  - component: {fileID: 4534107096869138271}
+  - component: {fileID: 8450837037023145584}
   - component: {fileID: 4168460833131983390}
   - component: {fileID: 4168460833131983384}
   - component: {fileID: 4168460833131983387}
   - component: {fileID: 2107816811}
   - component: {fileID: 2107816808}
   - component: {fileID: 1147516493670234768}
-  - component: {fileID: 8450837037023145584}
   - component: {fileID: 5738220371743656473}
   m_Layer: 8
   m_Name: PlayerWanderer
@@ -206,6 +207,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &4534107096869138271
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168460833131983396}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &8450837037023145584
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168460833131983396}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.05341792}
+  m_Size: {x: 0.35355082, y: 0.46004438}
+  m_Direction: 0
 --- !u!114 &4168460833131983390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 5738220371743656473}
   _animator: {fileID: 6018882844237410884}
+  _movement: {fileID: 2107816811}
 --- !u!114 &4168460833131983384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727da7d468890eb4eb146b84389e93a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 10
 --- !u!114 &2107816808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,22 +324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapons:
   - {fileID: 7327145405096113268}
---- !u!70 &8450837037023145584
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4168460833131983396}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05341792}
-  m_Size: {x: 0.35355082, y: 0.46004438}
-  m_Direction: 0
 --- !u!114 &5738220371743656473
 MonoBehaviour:
   m_ObjectHideFlags: 0

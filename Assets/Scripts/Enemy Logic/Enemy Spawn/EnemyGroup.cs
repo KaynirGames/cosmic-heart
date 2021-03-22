@@ -96,8 +96,10 @@ public class EnemyGroup : MonoBehaviour
         enemy.OnEnemyDeath += DisposeEnemy;
     }
 
-    private void DisposeEnemy(Enemy enemy)
+    private void DisposeEnemy(Character enemyCharacter)
     {
+        Enemy enemy = enemyCharacter as Enemy;
+
         _spawnedEnemies.Remove(enemy);
 
         enemy.OnEnemyDeath -= DisposeEnemy;

@@ -2,7 +2,8 @@
 
 public class Player : Character
 {
-    private IMoveHandler _moveHandler;
+    [SerializeField] private BaseMovement _movement = null;
+
     private IMoveInputHandler _moveInputHandler;
     private IActionInputHandler _attackInputHandler;
 
@@ -12,15 +13,9 @@ public class Player : Character
     {
         base.Awake();
 
-        _moveHandler = GetComponent<IMoveHandler>();
         _moveInputHandler = GetComponent<IMoveInputHandler>();
         _weaponSelector = GetComponent<WeaponSystem>();
         _attackInputHandler = GetComponent<IActionInputHandler>();
-    }
-
-    private void Start()
-    {
-        _moveHandler.SetMoveSpeed(Stats.MoveSpeed.GetValue());
     }
 
     private void Update()
@@ -40,7 +35,11 @@ public class Player : Character
     private void HandleMove()
     {
         Vector3 direction = _moveInputHandler.GetDirection();
-        _moveHandler.Move(direction.normalized);
+
+        _movement.Move(direction.normalized
+                       * _stats.MoveSpeed.GetValue()
+                       * Time.deltaTime);
+        
         Animator.SetFloat("Horizontal", direction.x);
     }
 }

@@ -76,10 +76,10 @@ GameObject:
   - component: {fileID: 4311509719254249003}
   - component: {fileID: 4647396047386039351}
   - component: {fileID: 3543578475040479170}
-  - component: {fileID: 1219220624}
   - component: {fileID: 1219220625}
   - component: {fileID: 907606942254316393}
   - component: {fileID: -4559979170632415937}
+  - component: {fileID: -8123335164481607054}
   m_Layer: 10
   m_Name: Boombot
   m_TagString: Untagged
@@ -219,22 +219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 4159269299595972812}
   _moveSpeed: {fileID: 8045470082428983610}
---- !u!114 &1219220624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3795014320238176891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e5677da81cda545b09634979468b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minMoveBound: {x: -10, y: 0, z: 0}
-  _maxMoveBound: {x: 10, y: 5, z: 0}
-  _minMoveTime: 2
-  _maxMoveTime: 3
 --- !u!114 &1219220625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727da7d468890eb4eb146b84389e93a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
 --- !u!114 &907606942254316393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +257,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d32806fea337640b91e7fa07a74f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effects: []
+  _effects:
+  - {fileID: -8123335164481607054}
+--- !u!114 &-8123335164481607054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795014320238176891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d147f2f18731cfe4499c8eb870e11641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2208631399626685938, guid: b162c08c81f0888419dfd4d42c420986, type: 3}
 --- !u!1 &6644894976567621679
 GameObject:
   m_ObjectHideFlags: 0

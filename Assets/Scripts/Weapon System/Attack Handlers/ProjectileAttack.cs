@@ -28,12 +28,14 @@ public class ProjectileAttack : MonoBehaviour, IAttackHandler
                                                 point.position,
                                                 Quaternion.AngleAxis(angle, Vector3.forward));
 
-            Vector3 projectileDirection = GetProjectileDirection(point.position, angle);
+            Vector3 projectileDirection = GetProjectileDirection(point.position,
+                                                                 angle);
 
-            IMoveHandler projectileMoveHandler = projectile.GetComponent<IMoveHandler>();
+            BaseMovement projectileMovement = projectile.GetComponent<BaseMovement>();
 
-            projectileMoveHandler.SetMoveSpeed(_projectileSpeed);
-            projectileMoveHandler.Move(projectileDirection);
+            projectileMovement.Move(projectileDirection
+                                    * _projectileSpeed
+                                    * Time.deltaTime);
 
             angle -= angleStep;
         }

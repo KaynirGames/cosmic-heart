@@ -2,7 +2,7 @@
 
 public class Enemy : Character
 {
-    public event System.Action<Enemy> OnEnemyDeath = delegate { };
+    public event OnCharacterDeath OnEnemyDeath = delegate { };
 
     [SerializeField] private EffectSystem _deathRattleEffects = null;
 

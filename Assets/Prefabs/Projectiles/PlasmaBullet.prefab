@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 1863368780138190275}
   - component: {fileID: 7774919459089934435}
   - component: {fileID: 5421709597841898821}
+  - component: {fileID: -4277364922064790605}
+  - component: {fileID: -5760422231690345559}
   - component: {fileID: 3383563570758125019}
   m_Layer: 9
   m_Name: PlasmaBullet
@@ -182,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83b69f62c3328243bea0d517e08cb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 1
 --- !u!114 &1863368780138190275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _effects:
   - {fileID: 5421709597841898821}
-  - {fileID: 3383563570758125019}
+  - {fileID: -4277364922064790605}
 --- !u!114 &5421709597841898821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +224,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+--- !u!114 &-4277364922064790605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipVariations:
+  - {fileID: 8300000, guid: 59fafd68ce9ce5342ac9c2385272328f, type: 3}
+  - {fileID: 8300000, guid: dac9dd86924d73e4c9a8405ab53a9dbb, type: 3}
+  - {fileID: 8300000, guid: cccc667dcdf19fb43b7ee469fc3a7a21, type: 3}
+--- !u!114 &-5760422231690345559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da926f4928ac5ba4cb1bb34093e2fc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeParameter: SFXVolume
+  _audioMixer: {fileID: 24100000, guid: b4588a24cf6f38148bb58bdd0927f033, type: 2}
 --- !u!114 &3383563570758125019
 MonoBehaviour:
   m_ObjectHideFlags: 0

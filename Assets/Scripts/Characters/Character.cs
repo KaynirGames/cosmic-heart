@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, IDamageable
 {
+    public delegate void OnCharacterDeath(Character character);
+
     [SerializeField] protected CharacterStats _stats = null;
     [SerializeField] protected Animator _animator = null;
 
@@ -16,5 +18,15 @@ public class Character : MonoBehaviour
     protected virtual void Die()
     {
         gameObject.Dispose();
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Stats.Health.ChangeValue(-(int)damage);
+
+        if (Stats.Health.GetValue() <= 0)
+        {
+            Die();
+        }
     }
 }

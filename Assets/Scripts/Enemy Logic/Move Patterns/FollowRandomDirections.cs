@@ -9,14 +9,14 @@ public class FollowRandomDirections : MonoBehaviour
     [SerializeField] private float _minMoveTime = 1f;
     [SerializeField] private float _maxMoveTime = 2f;
 
-    private IMoveHandler _moveHandler;
+    private BaseMovement _movement;
 
     private Timer _moveTimer;
     private Vector3 _randomDirection;
 
     private void Awake()
     {
-        _moveHandler = GetComponent<IMoveHandler>();
+        _movement = GetComponent<BaseMovement>();
     }
 
     private void Start()
@@ -28,7 +28,7 @@ public class FollowRandomDirections : MonoBehaviour
     {
         if (_moveTimer.Elapsed)
         {
-            _moveHandler.Move(GetRandomDirection());
+            _movement.Move(GetRandomDirection());
             _moveTimer.ChangeDuration(GetRandomDuration());
             _moveTimer.Reset();
             return;
@@ -66,6 +66,6 @@ public class FollowRandomDirections : MonoBehaviour
             _randomDirection.y *= -1;
         }
 
-        _moveHandler.Move(_randomDirection);
+        _movement.Move(_randomDirection);
     }
 }

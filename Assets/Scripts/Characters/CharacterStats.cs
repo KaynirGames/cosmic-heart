@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterStats : MonoBehaviour, IDamageable
+public class CharacterStats : MonoBehaviour
 {
     public event System.Action OnCharacterDeath = delegate { };
 
@@ -9,14 +9,4 @@ public class CharacterStats : MonoBehaviour, IDamageable
 
     public IntData Health => _health;
     public FloatData MoveSpeed => _moveSpeed;
-
-    public void TakeDamage(float damage)
-    {
-        _health.ChangeValue(-(int)damage);
-
-        if (_health.GetValue() <= 0)
-        {
-            OnCharacterDeath.Invoke();
-        }
-    }
 }
