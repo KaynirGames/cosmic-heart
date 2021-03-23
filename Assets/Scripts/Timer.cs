@@ -21,7 +21,7 @@ public class Timer
 
     public void Reset()
     {
-        _elapsedTime = _duration;
+        _elapsedTime += _duration;
         Elapsed = false;
     }
 

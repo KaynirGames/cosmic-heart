@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5472130370717805063}
   - component: {fileID: 3243350495334014992}
   - component: {fileID: -8200376427781712054}
-  - component: {fileID: -2926688228558227327}
+  - component: {fileID: 710730952722907326}
   - component: {fileID: 1863368780138190275}
   - component: {fileID: 7774919459089934435}
   - component: {fileID: 5421709597841898821}
@@ -155,7 +155,7 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 2
---- !u!114 &-2926688228558227327
+--- !u!114 &710730952722907326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,6 +211,7 @@ MonoBehaviour:
   _effects:
   - {fileID: 5421709597841898821}
   - {fileID: -4277364922064790605}
+  - {fileID: 3383563570758125019}
 --- !u!114 &5421709597841898821
 MonoBehaviour:
   m_ObjectHideFlags: 0

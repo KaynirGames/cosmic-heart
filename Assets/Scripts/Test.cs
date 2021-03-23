@@ -5,6 +5,7 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     public EnemyWaveManager waveManager;
+    public WeaponBase playerWeapon;
 
     void Start()
     {
@@ -16,6 +17,11 @@ public class Test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             waveManager.TrySpawnNext();
+        }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            playerWeapon.UseWeapon();
         }
     }
 }

@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-public class ProjectileAttack : MonoBehaviour, IAttackHandler
+public class ProjectileAttackHandler : BaseAttackHandler
 {
     [SerializeField] private GameObject _projectilePrefab = null;
     [SerializeField] private Transform[] _firePoints = null;
     [Header("Настройка снарядов:")]
-    [SerializeField, Range(0f, 360f)] private float _fireAngle = 0f;
+    [SerializeField, Range(0f, 360f)] private float _spreadAngle = 0f;
     [SerializeField] private int _projectileAmount = 1;
     [SerializeField] private float _projectileSpeed = 1f;
 
-    public void Attack()
+    public override void Attack()
     {
         foreach (Transform point in _firePoints)
         {
@@ -19,25 +19,28 @@ public class ProjectileAttack : MonoBehaviour, IAttackHandler
 
     private void SpawnProjectiles(int amount, Transform point)
     {
-        float angleStep = _fireAngle / Mathf.Max(1, amount - 1);
-        float angle = point.rotation.eulerAngles.z + _fireAngle * .5f;
+        float angleStep = _spreadAngle / amount;
+        float aimAngle = point.rotation.eulerAngles.z;
+        float spreadOffset = (_spreadAngle - angleStep) * .5f;
 
         for (int i = 0; i < amount; i++)
         {
+            float currentAngle = aimAngle + angleStep * i - spreadOffset;
+
+            Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle));
+
             GameObject projectile = Instantiate(_projectilePrefab,
                                                 point.position,
-                                                Quaternion.AngleAxis(angle, Vector3.forward));
+                                                rotation);
 
             Vector3 projectileDirection = GetProjectileDirection(point.position,
-                                                                 angle);
+                                                                 currentAngle);
 
             BaseMovement projectileMovement = projectile.GetComponent<BaseMovement>();
 
             projectileMovement.Move(projectileDirection
                                     * _projectileSpeed
-                                    * Time.deltaTime);
-
-            angle -= angleStep;
+                                    * Time.fixedDeltaTime);
         }
     }
 

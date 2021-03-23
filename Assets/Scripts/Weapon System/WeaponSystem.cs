@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
-    [SerializeField] private Weapon[] _weapons = null;
+    [SerializeField] private WeaponBase[] _weapons = null;
 
-    public Weapon CurrentWeapon { get; private set; }
+    public WeaponBase CurrentWeapon { get; private set; }
 
-    private Dictionary<string, Weapon> _weaponDict;
+    private Dictionary<string, WeaponBase> _weaponDict;
 
     private void Awake()
     {
-        _weaponDict = new Dictionary<string, Weapon>();
+        _weaponDict = new Dictionary<string, WeaponBase>();
 
-        foreach (Weapon weapon in _weapons)
+        foreach (WeaponBase weapon in _weapons)
         {
             _weaponDict.Add(weapon.ID, weapon);
         }
@@ -36,17 +36,17 @@ public class WeaponSystem : MonoBehaviour
 
     public void UseWeapon(int weaponIndex)
     {
-        _weapons[weaponIndex].Attack();
+        _weapons[weaponIndex].UseWeapon();
     }
 
     public void UseWeapon(string weaponID)
     {
-        _weaponDict[weaponID].Attack();
+        _weaponDict[weaponID].UseWeapon();
     }
 
     public void UseCurrentWeapon()
     {
-        CurrentWeapon.Attack();
+        CurrentWeapon.UseWeapon();
     }
 
     public void UseRandomWeapon()

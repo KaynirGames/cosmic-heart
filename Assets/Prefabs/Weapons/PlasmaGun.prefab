@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5114607718829249344}
-  - component: {fileID: -7781953834194503571}
-  - component: {fileID: 1114657734}
+  - component: {fileID: -7579626101739791628}
+  - component: {fileID: 376777847547670711}
+  - component: {fileID: 7231226425568785380}
+  - component: {fileID: 3858206938228413952}
   - component: {fileID: -6510837623182978601}
   - component: {fileID: 4953820818047901322}
   - component: {fileID: -7202788909054136662}
@@ -35,7 +37,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7781953834194503571
+--- !u!114 &-7579626101739791628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,13 +46,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5114607718829249345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4666a52b064e809409a4c03c58a6dac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 82c3b149ad7aec34b960307b5ebfba47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDelay: 0.5
+  _attackDelay: 0.25
   _weaponID: PlasmaGun
+  _triggerHandler: {fileID: 376777847547670711}
+  _attackHandler: {fileID: 7231226425568785380}
+  _ammoHandler: {fileID: 3858206938228413952}
   _weaponEffects: {fileID: -6510837623182978601}
---- !u!114 &1114657734
+--- !u!114 &376777847547670711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,15 +64,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 5114607718829249345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0739fc25f424699458fc7796a90bd63c, type: 3}
+  m_Script: {fileID: 11500000, guid: e1d16e8f9c789ff4a962db070f825e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7231226425568785380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114607718829249345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac62c6d2d75c844e8123a0ff76fb63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 8805315235221760054, guid: e99afe5368dfd0d45903b287b4b3be0f,
     type: 3}
   _firePoints: []
-  _fireAngle: 0
+  _spreadAngle: 0
   _projectileAmount: 1
   _projectileSpeed: 15
+--- !u!114 &3858206938228413952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114607718829249345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f940911f4f0274481c0122d8bba0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-6510837623182978601
 MonoBehaviour:
   m_ObjectHideFlags: 0

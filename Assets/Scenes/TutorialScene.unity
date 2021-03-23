@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveManager: {fileID: 1922487634}
+  playerWeapon: {fileID: 631051652}
 --- !u!4 &466424169
 Transform:
   m_ObjectHideFlags: 0
@@ -404,6 +405,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &631051652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6292436755559462149, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 4168460832329885242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c3b149ad7aec34b960307b5ebfba47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &727165071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1095,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerWanderer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316870171488753505, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
+        type: 3}
+      propertyPath: _burstFireDelay
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316870171488753505, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
+        type: 3}
+      propertyPath: _delayBetweenShots
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8191992589642833887, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
         type: 3}
