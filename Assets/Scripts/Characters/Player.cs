@@ -2,8 +2,7 @@
 
 public class Player : Character
 {
-    [SerializeField] private BaseMovement _movement = null;
-    [SerializeField] private BaseMovementInput _movementInput = null;
+    [SerializeField] private BaseMoveInput _moveInput = null;
     [SerializeField] private BaseActionInput _attackInput = null;
 
     private WeaponSystem _weaponSelector;
@@ -31,11 +30,11 @@ public class Player : Character
 
     private void HandleMove()
     {
-        Vector3 direction = _movementInput.GetDirection();
+        Vector3 direction = _moveInput.GetDirection();
 
-        _movement.Move(direction.normalized
-                       * _stats.MoveSpeed.GetValue()
-                       * Time.deltaTime);
+        _baseMove.SetVelocity(direction.normalized
+                              * _stats.MoveSpeed.GetValue()
+                              * Time.deltaTime);
         
         Animator.SetFloat("Horizontal", direction.x);
     }

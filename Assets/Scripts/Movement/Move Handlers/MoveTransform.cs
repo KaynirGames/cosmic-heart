@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TransformMovement : BaseMovement
+public class MoveTransform : BaseMove
 {
     private void Update()
     {

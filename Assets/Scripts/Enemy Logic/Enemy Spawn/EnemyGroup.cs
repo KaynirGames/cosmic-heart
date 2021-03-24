@@ -5,14 +5,15 @@ public class EnemyGroup : MonoBehaviour
 {
     public event System.Action<EnemyGroup> OnGroupDefeat = delegate { };
 
-    [Header("Настройки спавна:")]
+    [Header("Настройки спавна врагов:")]
     [SerializeField] private Enemy _enemyPrefab = null;
     [SerializeField] private Transform _spawnPoint = null;
     [SerializeField] private int _enemyAmount = 1;
     [SerializeField] private float _enemySpawnDelay = .5f;
-    [Header("Настройки атаки:")]
-    [SerializeField] private float _enemyAttackDelay = .5f;
+    [Header("Настройки группы:")]
+    [SerializeField] private float _attackDelay = .5f;
     [SerializeField] private BaseGroupAttack _attackPattern = null;
+    [SerializeField] private BaseMoveInput _groupMoveInput = null;
 
     private Timer _spawnTimer;
     private List<Enemy> _spawnedEnemies;
@@ -28,7 +29,7 @@ public class EnemyGroup : MonoBehaviour
     private void Start()
     {
         _spawnTimer = new Timer(_enemySpawnDelay);
-        _attackTimer = new Timer(_enemyAttackDelay);
+        _attackTimer = new Timer(_attackDelay);
     }
 
     private void Update()
@@ -38,6 +39,7 @@ public class EnemyGroup : MonoBehaviour
             return;
         }
 
+        HandleGroupMove();
         HandleGroupAttack();
     }
 
@@ -68,6 +70,14 @@ public class EnemyGroup : MonoBehaviour
         }
 
         _attackTimer.Tick();
+    }
+
+    private void HandleGroupMove()
+    {
+        foreach (Enemy enemy in _spawnedEnemies)
+        {
+            enemy.SetMoveDirection(_groupMoveInput.GetDirection());
+        }
     }
 
     private void SpawnEnemy()

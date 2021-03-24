@@ -21,7 +21,13 @@ public class Timer
 
     public void Reset()
     {
+        if (_elapsedTime >= 0)
+        {
+            _elapsedTime = 0f;
+        }
+
         _elapsedTime += _duration;
+
         Elapsed = false;
     }
 

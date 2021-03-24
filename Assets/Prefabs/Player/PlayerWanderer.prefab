@@ -107,11 +107,11 @@ GameObject:
   - component: {fileID: 4534107096869138271}
   - component: {fileID: 8450837037023145584}
   - component: {fileID: 4168460833131983390}
+  - component: {fileID: 5738220371743656473}
   - component: {fileID: 2107816811}
   - component: {fileID: 2107816808}
-  - component: {fileID: -258587600983793072}
   - component: {fileID: 1147516493670234768}
-  - component: {fileID: 5738220371743656473}
+  - component: {fileID: -258587600983793072}
   - component: {fileID: -1802291760493084490}
   m_Layer: 8
   m_Name: PlayerWanderer
@@ -258,9 +258,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 5738220371743656473}
   _animator: {fileID: 6018882844237410884}
-  _movement: {fileID: 2107816811}
-  _movementInput: {fileID: -258587600983793072}
+  _baseMove: {fileID: 2107816811}
+  _moveInput: {fileID: -258587600983793072}
   _attackInput: {fileID: -1802291760493084490}
+--- !u!114 &5738220371743656473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168460833131983396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b7664bbd9ca0d44aa0f666d8f65dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 6149543241722370159}
+  _moveSpeed: {fileID: 7738330605206845299}
 --- !u!114 &2107816811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +301,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minMoveBound: {x: -9, y: -5, z: 0}
   _maxMoveBound: {x: 9, y: -5, z: 0}
+--- !u!114 &1147516493670234768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168460833131983396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e2c3a3516bca14688c4e77f63256b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapons:
+  - {fileID: 6292436755559462149}
 --- !u!114 &-258587600983793072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,34 +331,6 @@ MonoBehaviour:
   _verticalAxis: Vertical
   _horizontalSnap: 1
   _verticalSnap: 1
---- !u!114 &1147516493670234768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4168460833131983396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e2c3a3516bca14688c4e77f63256b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 6292436755559462149}
---- !u!114 &5738220371743656473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4168460833131983396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b7664bbd9ca0d44aa0f666d8f65dd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 6149543241722370159}
-  _moveSpeed: {fileID: 7738330605206845299}
 --- !u!114 &-1802291760493084490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +436,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900674036529760516, guid: a43f4402ea4ccfd4ebfc16d0d810e1f8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900674036529760516, guid: a43f4402ea4ccfd4ebfc16d0d810e1f8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a43f4402ea4ccfd4ebfc16d0d810e1f8, type: 3}

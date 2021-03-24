@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class RigidbodyMovement2D : BaseMovement
+public class MoveRigidbody2D : BaseMove
 {
     private Rigidbody2D _rigidbody2D;
 

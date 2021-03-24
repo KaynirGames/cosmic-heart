@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AxisMovementInput : BaseMovementInput
+public class AxisMoveInput : BaseMoveInput
 {
     [SerializeField] private string _horizontalAxis = "Horizontal";
     [SerializeField] private string _verticalAxis = "Vertical";

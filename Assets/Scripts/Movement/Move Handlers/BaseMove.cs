@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public abstract class BaseMovement : MonoBehaviour
+public abstract class BaseMove : MonoBehaviour, IVelocityHandler
 {
     protected Vector3 _currentVelocity = Vector3.zero;
 
-    public void Move(Vector3 velocity)
+    public virtual void SetVelocity(Vector3 velocity)
     {
         _currentVelocity = velocity;
     }

@@ -1021,21 +1021,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3646019783668500217, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3646019783668500217, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3646019783668500217, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
     - target: {fileID: 4168460833131983386, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1044,7 +1029,7 @@ PrefabInstance:
     - target: {fileID: 4168460833131983386, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4168460833131983386, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
         type: 3}
@@ -1095,21 +1080,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerWanderer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7316870171488753505, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
-        type: 3}
-      propertyPath: _burstFireDelay
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7316870171488753505, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
-        type: 3}
-      propertyPath: _delayBetweenShots
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191992589642833887, guid: 4d87dd54a4f07cc4b83cfa295edd47ff,
-        type: 3}
-      propertyPath: _projectileAmount
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d87dd54a4f07cc4b83cfa295edd47ff, type: 3}

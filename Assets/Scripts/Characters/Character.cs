@@ -6,6 +6,7 @@ public class Character : MonoBehaviour, IDamageable
 
     [SerializeField] protected CharacterStats _stats = null;
     [SerializeField] protected Animator _animator = null;
+    [SerializeField] protected BaseMove _baseMove = null;
 
     public CharacterStats Stats => _stats;
     public Animator Animator => _animator;
