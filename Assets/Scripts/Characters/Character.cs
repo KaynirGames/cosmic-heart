@@ -6,7 +6,8 @@ public class Character : MonoBehaviour, IDamageable
 
     [SerializeField] protected CharacterStats _stats = null;
     [SerializeField] protected Animator _animator = null;
-    [SerializeField] protected BaseMove _baseMove = null;
+    [SerializeField] protected BaseMoveHandler _moveHandler = null;
+    [SerializeField] protected BaseMoveInput _moveInput = null;
 
     public CharacterStats Stats => _stats;
     public Animator Animator => _animator;
@@ -14,11 +15,6 @@ public class Character : MonoBehaviour, IDamageable
     protected virtual void Awake()
     {
         _stats.OnCharacterDeath += Die;
-    }
-
-    protected virtual void Die()
-    {
-        gameObject.Dispose();
     }
 
     public void TakeDamage(float damage)
@@ -29,5 +25,19 @@ public class Character : MonoBehaviour, IDamageable
         {
             Die();
         }
+    }
+
+    protected virtual void Die()
+    {
+        gameObject.Dispose();
+    }
+
+    protected virtual void HandleMove(Vector3 direction)
+    {
+        Vector3 velocity = direction
+                           * _stats.MoveSpeed.GetValue()
+                           * Time.deltaTime;
+
+        _moveHandler.SetVelocity(velocity);
     }
 }

@@ -13,7 +13,7 @@ public class EnemyGroup : MonoBehaviour
     [Header("Настройки группы:")]
     [SerializeField] private float _attackDelay = .5f;
     [SerializeField] private BaseGroupAttack _attackPattern = null;
-    [SerializeField] private BaseMoveInput _groupMoveInput = null;
+    [SerializeField] private BaseMoveInput _moveInputOnEnter = null;
 
     private Timer _spawnTimer;
     private List<Enemy> _spawnedEnemies;
@@ -39,7 +39,6 @@ public class EnemyGroup : MonoBehaviour
             return;
         }
 
-        HandleGroupMove();
         HandleGroupAttack();
     }
 
@@ -72,14 +71,6 @@ public class EnemyGroup : MonoBehaviour
         _attackTimer.Tick();
     }
 
-    private void HandleGroupMove()
-    {
-        foreach (Enemy enemy in _spawnedEnemies)
-        {
-            enemy.SetMoveDirection(_groupMoveInput.GetDirection());
-        }
-    }
-
     private void SpawnEnemy()
     {
         if (_spawnTimer.Elapsed)
@@ -104,6 +95,7 @@ public class EnemyGroup : MonoBehaviour
         _spawnedEnemies.Add(enemy);
 
         enemy.OnEnemyDeath += DisposeEnemy;
+        enemy.Initialize(_moveInputOnEnter);
     }
 
     private void DisposeEnemy(Character enemyCharacter)

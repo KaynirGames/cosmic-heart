@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class BaseMove : MonoBehaviour, IVelocityHandler
+public abstract class BaseMoveHandler : MonoBehaviour, IVelocityHandler
 {
     protected Vector3 _currentVelocity = Vector3.zero;
 

@@ -9,8 +9,7 @@ public class IntData : BaseData<int>
 
     public override void ChangeValue(int amount)
     {
-        _value += amount;
-        _value = ClampValue(_value);
+        _value = ClampValue(_value + amount);
         OnValueChanged.Invoke(_value);
     }
 

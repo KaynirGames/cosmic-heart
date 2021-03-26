@@ -2,7 +2,6 @@
 
 public class Player : Character
 {
-    [SerializeField] private BaseMoveInput _moveInput = null;
     [SerializeField] private BaseActionInput _attackInput = null;
 
     private WeaponSystem _weaponSelector;
@@ -17,7 +16,15 @@ public class Player : Character
     private void Update()
     {
         HandleAttack();
-        HandleMove();
+
+        HandleMove(_moveInput.GetDirection());
+    }
+
+    protected override void HandleMove(Vector3 direction)
+    {
+        base.HandleMove(direction);
+
+        Animator.SetFloat("Horizontal", direction.x);
     }
 
     private void HandleAttack()
@@ -26,16 +33,5 @@ public class Player : Character
         {
             _weaponSelector.UseCurrentWeapon();
         }
-    }
-
-    private void HandleMove()
-    {
-        Vector3 direction = _moveInput.GetDirection();
-
-        _baseMove.SetVelocity(direction.normalized
-                              * _stats.MoveSpeed.GetValue()
-                              * Time.deltaTime);
-        
-        Animator.SetFloat("Horizontal", direction.x);
     }
 }

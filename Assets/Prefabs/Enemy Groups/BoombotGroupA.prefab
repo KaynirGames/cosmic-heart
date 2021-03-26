@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3880264355522693217}
   - component: {fileID: 3880264355522693219}
   - component: {fileID: 1598361998177239609}
+  - component: {fileID: 2392638800729250480}
   m_Layer: 0
   m_Name: BoombotGroupA
   m_TagString: Untagged
@@ -50,9 +51,9 @@ MonoBehaviour:
   _spawnPoint: {fileID: 0}
   _enemyAmount: 1
   _enemySpawnDelay: 0.5
-  _enemyAttackDelay: 2
+  _attackDelay: 0.5
   _attackPattern: {fileID: 3880264355522693219}
-  _groupMoveInput: {fileID: 1598361998177239609}
+  _moveInputOnEnter: {fileID: 2392638800729250480}
 --- !u!114 &3880264355522693219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,3 +83,16 @@ MonoBehaviour:
   _maxX: 1
   _minY: -1
   _maxY: 1
+--- !u!114 &2392638800729250480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3880264355522693216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664fcce4d88058748823fa5ca8436c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _direction: {x: 0, y: 0, z: 0}

@@ -6,26 +6,30 @@ public class Enemy : Character
 
     [SerializeField] private EffectSystem _deathRattleEffects = null;
 
-    private Vector3 _moveDirection;
+    private BaseMoveInput _moveInputOnLoop;
 
     protected override void Awake()
     {
         base.Awake();
+
+        enabled = false;
     }
 
     private void Update()
     {
-        _baseMove.SetVelocity(_moveDirection * Stats.MoveSpeed.GetValue() * Time.deltaTime);
+        HandleMove(_moveInput.GetDirection());
+    }
+
+    public void Initialize(BaseMoveInput moveInputOnEnter)
+    {
+        _moveInput = moveInputOnEnter;
+
+        enabled = true;
     }
 
     public void Attack()
     {
         Animator.SetTrigger("Attack");
-    }
-
-    public void SetMoveDirection(Vector3 direction)
-    {
-        _moveDirection = direction;
     }
 
     protected override void Die()
