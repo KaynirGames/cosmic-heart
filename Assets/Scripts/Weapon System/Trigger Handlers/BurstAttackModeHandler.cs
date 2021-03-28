@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BurstFireTriggerHandler : BaseTriggerHandler
+public class BurstAttackModeHandler : BaseAttackModeHandler
 {
-    public override event OnTriggerAttack OnTrigger = delegate { };
+    public override event OnAttackModeExecution OnExecution = delegate { };
 
     [SerializeField] private int _burstSize = 1;
     [SerializeField] private float _burstInterval = .5f;
@@ -16,25 +16,23 @@ public class BurstFireTriggerHandler : BaseTriggerHandler
         _waitForBurstInterval = new WaitForSeconds(_burstInterval);
     }
 
-    public override bool TriggerAttack()
+    public override void Execute()
     {
         if (_isBursting)
         {
-            return false;
+            return;
         }
 
-        StartCoroutine(BurstFireRoutine());
-
-        return true;
+        StartCoroutine(BurstAttackRoutine());
     }
 
-    private IEnumerator BurstFireRoutine()
+    private IEnumerator BurstAttackRoutine()
     {
         _isBursting = true;
 
         for (int i = 0; i < _burstSize; i++)
         {
-            OnTrigger.Invoke();
+            OnExecution.Invoke();
             yield return _waitForBurstInterval;
         }
 

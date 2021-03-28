@@ -18,10 +18,5 @@ public class Test : MonoBehaviour
         {
             waveManager.TrySpawnNext();
         }
-
-        if (Input.GetKey(KeyCode.Q))
-        {
-            playerWeapon.UseWeapon();
-        }
     }
 }

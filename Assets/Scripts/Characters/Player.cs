@@ -4,13 +4,13 @@ public class Player : Character
 {
     [SerializeField] private BaseActionInput _attackInput = null;
 
-    private WeaponSystem _weaponSelector;
+    private WeaponSystem _weaponSystem;
 
     protected override void Awake()
     {
         base.Awake();
 
-        _weaponSelector = GetComponent<WeaponSystem>();
+        _weaponSystem = GetComponent<WeaponSystem>();
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class Player : Character
     {
         if (_attackInput.GetInputHold())
         {
-            _weaponSelector.UseCurrentWeapon();
+            _weaponSystem.UseCurrentWeapon();
         }
     }
 }

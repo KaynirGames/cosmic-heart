@@ -15,14 +15,10 @@ public class Enemy : Character
         enabled = false;
     }
 
-    private void Update()
-    {
-        HandleMove(_moveInput.GetDirection());
-    }
-
-    public void Initialize(BaseMoveInput moveInputOnEnter)
+    public void Initialize(BaseMoveInput moveInputOnEnter, BaseMoveInput moveInputOnLoop)
     {
         _moveInput = moveInputOnEnter;
+        _moveInputOnLoop = moveInputOnLoop;
 
         enabled = true;
     }
@@ -30,6 +26,16 @@ public class Enemy : Character
     public void Attack()
     {
         Animator.SetTrigger("Attack");
+    }
+
+    public void Move()
+    {
+        HandleMove(_moveInput.GetDirection());
+    }
+
+    public void SetLoopMoveInput()
+    {
+        _moveInput = _moveInputOnLoop;
     }
 
     protected override void Die()

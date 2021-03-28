@@ -11,6 +11,8 @@ public class Character : MonoBehaviour, IDamageable
 
     public CharacterStats Stats => _stats;
     public Animator Animator => _animator;
+    public BaseMoveHandler MoveHandler => _moveHandler;
+    public BaseMoveInput MoveInput => _moveInput;
 
     protected virtual void Awake()
     {

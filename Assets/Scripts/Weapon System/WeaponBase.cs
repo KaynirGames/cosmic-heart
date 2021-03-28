@@ -4,7 +4,7 @@ public class WeaponBase : MonoBehaviour, IIdentifiable
 {
     [SerializeField] private float _attackDelay = .25f;
     [SerializeField] private string _weaponID = "DefaultWeapon";
-    [SerializeField] private BaseTriggerHandler _triggerHandler = null;
+    [SerializeField] private BaseAttackModeHandler _attackModeHandler = null;
     [SerializeField] private BaseAttackHandler _attackHandler = null;
     [SerializeField] private BaseAmmoHandler _ammoHandler = null;
     [SerializeField] private EffectSystem _weaponEffects = null;
@@ -15,9 +15,9 @@ public class WeaponBase : MonoBehaviour, IIdentifiable
 
     private void Awake()
     {
-        _triggerHandler.OnTrigger += _attackHandler.Attack;
-        _triggerHandler.OnTrigger += _ammoHandler.ConsumeAmmo;
-        _triggerHandler.OnTrigger += PlayWeaponEffects;
+        _attackModeHandler.OnExecution += _attackHandler.Attack;
+        _attackModeHandler.OnExecution += _ammoHandler.ConsumeAmmo;
+        _attackModeHandler.OnExecution += PlayWeaponEffects;
     }
 
     private void Start()
@@ -30,13 +30,13 @@ public class WeaponBase : MonoBehaviour, IIdentifiable
         _nextAttackTimer.Tick();
     }
 
-    public void UseWeapon()
+    public void ActivateWeapon()
     {
         if (_ammoHandler.CheckAmmo())
         {
             if (_nextAttackTimer.Elapsed)
             {
-                _triggerHandler.TriggerAttack();
+                _attackModeHandler.Execute();
                 _nextAttackTimer.Reset();
             }
         }

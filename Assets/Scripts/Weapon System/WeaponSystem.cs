@@ -36,17 +36,17 @@ public class WeaponSystem : MonoBehaviour
 
     public void UseWeapon(int weaponIndex)
     {
-        _weapons[weaponIndex].UseWeapon();
+        _weapons[weaponIndex].ActivateWeapon();
     }
 
     public void UseWeapon(string weaponID)
     {
-        _weaponDict[weaponID].UseWeapon();
+        _weaponDict[weaponID].ActivateWeapon();
     }
 
     public void UseCurrentWeapon()
     {
-        CurrentWeapon.UseWeapon();
+        CurrentWeapon.ActivateWeapon();
     }
 
     public void UseRandomWeapon()

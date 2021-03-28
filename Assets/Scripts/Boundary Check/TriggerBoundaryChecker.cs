@@ -28,7 +28,10 @@ public class TriggerBoundaryChecker : MonoBehaviour, IBoundaryChecker
             if (boundary.CheckOverlap(_boundaryID))
             {
                 _isWithinBounds = result;
+                return;
             }
         }
+
+        _isWithinBounds = false;
     }
 }

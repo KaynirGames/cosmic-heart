@@ -21,4 +21,9 @@ public class EnterLevelBehaviour : StateMachineBehaviour
             animator.SetTrigger(_enterCompleteTrigger);
         }
     }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        animator.GetComponent<Enemy>().SetLoopMoveInput();
+    }
 }

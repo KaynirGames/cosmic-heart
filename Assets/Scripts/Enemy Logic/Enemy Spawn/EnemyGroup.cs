@@ -11,15 +11,12 @@ public class EnemyGroup : MonoBehaviour
     [SerializeField] private int _enemyAmount = 1;
     [SerializeField] private float _enemySpawnDelay = .5f;
     [Header("Настройки группы:")]
-    [SerializeField] private float _attackDelay = .5f;
-    [SerializeField] private BaseGroupAttack _attackPattern = null;
     [SerializeField] private BaseMoveInput _moveInputOnEnter = null;
+    [SerializeField] private BaseMoveInput _moveInpuOnLoop = null;
 
     private Timer _spawnTimer;
     private List<Enemy> _spawnedEnemies;
     private bool _canSpawn;
-
-    private Timer _attackTimer;
 
     private void Awake()
     {
@@ -29,7 +26,6 @@ public class EnemyGroup : MonoBehaviour
     private void Start()
     {
         _spawnTimer = new Timer(_enemySpawnDelay);
-        _attackTimer = new Timer(_attackDelay);
     }
 
     private void Update()
@@ -38,14 +34,11 @@ public class EnemyGroup : MonoBehaviour
         {
             return;
         }
-
-        HandleGroupAttack();
     }
 
     public void ActivateEnemyGroup()
     {
         _canSpawn = true;
-        _attackTimer.Reset();
     }
 
     private bool HandleGroupSpawn()
@@ -58,17 +51,6 @@ public class EnemyGroup : MonoBehaviour
         }
 
         return false;
-    }
-
-    private void HandleGroupAttack()
-    {
-        if (_attackTimer.Elapsed)
-        {
-            _attackPattern.Execute(_spawnedEnemies);
-            _attackTimer.Reset();
-        }
-
-        _attackTimer.Tick();
     }
 
     private void SpawnEnemy()
@@ -95,7 +77,8 @@ public class EnemyGroup : MonoBehaviour
         _spawnedEnemies.Add(enemy);
 
         enemy.OnEnemyDeath += DisposeEnemy;
-        enemy.Initialize(_moveInputOnEnter);
+        enemy.Initialize(_moveInputOnEnter,
+                         _moveInpuOnLoop);
     }
 
     private void DisposeEnemy(Character enemyCharacter)

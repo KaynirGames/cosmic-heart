@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(VolumeControl))]
+[RequireComponent(typeof(AudioVolumeControl))]
 public class SoundEffect : BaseEffect
 {
     [SerializeField] private AudioClip[] _clipVariations = null;
 
-    private VolumeControl _volumeControl;
+    private AudioVolumeControl _volumeControl;
 
     private void Awake()
     {
-        _volumeControl = GetComponent<VolumeControl>();
+        _volumeControl = GetComponent<AudioVolumeControl>();
     }
 
-    public override void Activate(GameObject target)
+    public override void Activate(GameObject go)
     {
         AudioSource.PlayClipAtPoint(GetRandomClip(),
-                                    target.transform.position,
+                                    GetProperTarget(go).transform.position,
                                     _volumeControl.GetVolumePercentage());
     }
 

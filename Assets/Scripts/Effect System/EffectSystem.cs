@@ -11,4 +11,11 @@ public class EffectSystem : MonoBehaviour
             effect.Activate(target);
         }
     }
+
+#if UNITY_EDITOR
+    private void Reset()
+    {
+        _effects = GetComponentsInChildren<BaseEffect>();
+    }
+#endif
 }

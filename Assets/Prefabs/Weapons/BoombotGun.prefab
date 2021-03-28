@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackDelay: 0.5
   _weaponID: BoombotGun
-  _triggerHandler: {fileID: 376777847547670711}
+  _attackModeHandler: {fileID: 376777847547670711}
   _attackHandler: {fileID: 7231226425568785380}
   _ammoHandler: {fileID: 3858206938228413952}
   _weaponEffects: {fileID: -6510837623182978601}
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _effectMode: 0
   _clipVariations:
   - {fileID: 8300000, guid: 9b4a9b6f77c7d7e4e95b998effe23bf5, type: 3}
   - {fileID: 8300000, guid: 269358e456801004aa9fec84d1245941, type: 3}

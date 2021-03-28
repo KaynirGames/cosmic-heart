@@ -2,8 +2,8 @@
 
 public class DisposeObjectEffect : BaseEffect
 {
-    public override void Activate(GameObject target)
+    public override void Activate(GameObject go)
     {
-        target.Dispose();
+        GetProperTarget(go).Dispose();
     }
 }

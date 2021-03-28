@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 
-public class VolumeControl : MonoBehaviour
+public class AudioVolumeControl : MonoBehaviour
 {
     [SerializeField] private string _volumeParameter = "MasterVolume";
     [SerializeField] private AudioMixer _audioMixer = null;
