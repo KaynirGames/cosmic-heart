@@ -493,7 +493,7 @@ PrefabInstance:
     - target: {fileID: 4445887599367354523, guid: 56138c52d2772df4ea8cfb6e17d5517b,
         type: 3}
       propertyPath: m_Name
-      value: TargetSoundEffect
+      value: SoundEffect
       objectReference: {fileID: 0}
     - target: {fileID: 6098030703065753690, guid: 56138c52d2772df4ea8cfb6e17d5517b,
         type: 3}
@@ -575,6 +575,12 @@ PrefabInstance:
       propertyPath: _clipVariations.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: cccc667dcdf19fb43b7ee469fc3a7a21, type: 3}
+    - target: {fileID: 8024115794594737476, guid: 56138c52d2772df4ea8cfb6e17d5517b,
+        type: 3}
+      propertyPath: _soundSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e85fb183fb5e6c4e81a53c22cef88d0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56138c52d2772df4ea8cfb6e17d5517b, type: 3}
 --- !u!114 &650692751346799563 stripped

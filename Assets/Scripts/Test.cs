@@ -6,6 +6,7 @@ public class Test : MonoBehaviour
 {
     public EnemyWaveManager waveManager;
     public WeaponBase playerWeapon;
+    public AudioClip musicClip;
 
     void Start()
     {
@@ -17,6 +18,11 @@ public class Test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             waveManager.TrySpawnNext();
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SoundManager.Instance.PlayMusic(musicClip, true);
         }
     }
 }

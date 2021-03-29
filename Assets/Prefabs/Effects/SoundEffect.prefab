@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6098030703065753690}
   - component: {fileID: 8024115794594737476}
-  - component: {fileID: 3965911605356513229}
   m_Layer: 0
-  m_Name: TargetSoundEffect
+  m_Name: SoundEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,18 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _owner: {fileID: 0}
   _effectMode: 0
-  _clipVariations: []
---- !u!114 &3965911605356513229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4445887599367354523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da926f4928ac5ba4cb1bb34093e2fc12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _volumeParameter: SFXVolume
-  _audioMixer: {fileID: 24100000, guid: b4588a24cf6f38148bb58bdd0927f033, type: 2}
+  _soundSO: {fileID: 0}

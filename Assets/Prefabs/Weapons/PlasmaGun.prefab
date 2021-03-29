@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 4445887599367354523, guid: 56138c52d2772df4ea8cfb6e17d5517b,
         type: 3}
       propertyPath: m_Name
-      value: TargetSoundEffect
+      value: SoundEffect
       objectReference: {fileID: 0}
     - target: {fileID: 6098030703065753690, guid: 56138c52d2772df4ea8cfb6e17d5517b,
         type: 3}
@@ -284,6 +284,12 @@ PrefabInstance:
       propertyPath: _owner
       value: 
       objectReference: {fileID: 5114607718829249345}
+    - target: {fileID: 8024115794594737476, guid: 56138c52d2772df4ea8cfb6e17d5517b,
+        type: 3}
+      propertyPath: _soundSO
+      value: 
+      objectReference: {fileID: 11400000, guid: cb42d41d9d2c8ea4fbc3783cfa66b203,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56138c52d2772df4ea8cfb6e17d5517b, type: 3}
 --- !u!114 &2131013064215005053 stripped

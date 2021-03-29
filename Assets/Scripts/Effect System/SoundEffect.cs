@@ -1,27 +1,18 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(AudioVolumeControl))]
 public class SoundEffect : BaseEffect
 {
-    [SerializeField] private AudioClip[] _clipVariations = null;
+    [SerializeField] private SoundSO _soundSO = null;
 
-    private AudioVolumeControl _volumeControl;
+    private SoundManager _soundManager;
 
-    private void Awake()
+    private void Start()
     {
-        _volumeControl = GetComponent<AudioVolumeControl>();
+        _soundManager = SoundManager.Instance;
     }
 
     public override void Activate(GameObject go)
     {
-        AudioSource.PlayClipAtPoint(GetRandomClip(),
-                                    GetProperTarget(go).transform.position,
-                                    _volumeControl.GetVolumePercentage());
-    }
-
-    private AudioClip GetRandomClip()
-    {
-        return _clipVariations?[Random.Range(0,
-                                             _clipVariations.Length)];
+        _soundManager.PlaySound(_soundSO);
     }
 }

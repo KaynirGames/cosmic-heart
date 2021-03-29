@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3abc0a6062d74469db88b22235932b, type: 3}
+  m_Name: BoombotBombExplosionSound
+  m_EditorClassIdentifier: 
+  _clipVariations:
+  - {fileID: 8300000, guid: 9ae9e17944f45f34695941b13e57fc8b, type: 3}
+  - {fileID: 8300000, guid: e8ece8f3ce4ae54459179eb853c09489, type: 3}
+  _volumeScale: 1
+  _soundChannel: 0
