@@ -3,11 +3,11 @@
 public class WeaponBase : MonoBehaviour, IIdentifiable
 {
     [SerializeField] private float _attackDelay = .25f;
-    [SerializeField] private string _weaponID = "DefaultWeapon";
+    [SerializeField] private string _weaponID = string.Empty;
     [SerializeField] private BaseAttackModeHandler _attackModeHandler = null;
     [SerializeField] private BaseAttackHandler _attackHandler = null;
     [SerializeField] private BaseAmmoHandler _ammoHandler = null;
-    [SerializeField] private EffectSystem _weaponEffects = null;
+    [SerializeField] private BaseEventHandler _weaponEvents = null;
 
     private Timer _nextAttackTimer;
 
@@ -17,7 +17,7 @@ public class WeaponBase : MonoBehaviour, IIdentifiable
     {
         _attackModeHandler.OnExecution += _attackHandler.Attack;
         _attackModeHandler.OnExecution += _ammoHandler.ConsumeAmmo;
-        _attackModeHandler.OnExecution += PlayWeaponEffects;
+        _attackModeHandler.OnExecution += InvokeWeaponEvents;
     }
 
     private void Start()
@@ -30,7 +30,7 @@ public class WeaponBase : MonoBehaviour, IIdentifiable
         _nextAttackTimer.Tick();
     }
 
-    public void ActivateWeapon()
+    public void UseWeapon()
     {
         if (_ammoHandler.CheckAmmo())
         {
@@ -47,8 +47,8 @@ public class WeaponBase : MonoBehaviour, IIdentifiable
         _ammoHandler.Reload();
     }
 
-    private void PlayWeaponEffects()
+    private void InvokeWeaponEvents()
     {
-        _weaponEffects.ActivateEffects(gameObject);
+        _weaponEvents.InvokeEvents(gameObject);
     }
 }

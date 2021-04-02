@@ -48,7 +48,7 @@ MonoBehaviour:
   _enemyPrefab: {fileID: 4647396047386039351, guid: 9261d6e3136f48d4691f97e7bb7edf43,
     type: 3}
   _spawnPoint: {fileID: 0}
-  _enemyAmount: 1
+  _enemyAmount: 2
   _enemySpawnDelay: 0.5
   _moveInputOnEnter: {fileID: 2392638800729250480}
   _moveInpuOnLoop: {fileID: 1598361998177239609}

@@ -3,6 +3,9 @@ using UnityEngine.Audio;
 
 public class AudioVolumeControl : MonoBehaviour
 {
+    private const int LOG_BASE = 10;
+    private const int DECIBEL_FACTOR = 20;
+
     [SerializeField] private string _volumeParameter = "MasterVolume";
     [SerializeField] private AudioMixer _audioMixer = null;
 
@@ -18,12 +21,12 @@ public class AudioVolumeControl : MonoBehaviour
 
     public float GetVolumePercentage()
     {
-        return Mathf.Pow(10, GetVolume() / 20);
+        return Mathf.Pow(LOG_BASE, GetVolume() / DECIBEL_FACTOR);
     }
 
     public void SetVolume(float value)
     {
         _audioMixer.SetFloat(_volumeParameter,
-                             20 * Mathf.Log10(value));
+                             DECIBEL_FACTOR * Mathf.Log10(value));
     }
 }

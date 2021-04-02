@@ -17,7 +17,7 @@ public class Player : Character
     {
         HandleAttack();
 
-        HandleMove(_moveInput.GetDirection());
+        HandleMove(_moveInput.GetMoveInput());
     }
 
     protected override void HandleMove(Vector3 direction)

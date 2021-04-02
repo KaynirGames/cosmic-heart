@@ -10,9 +10,6 @@ public class EnemyGroup : MonoBehaviour
     [SerializeField] private Transform _spawnPoint = null;
     [SerializeField] private int _enemyAmount = 1;
     [SerializeField] private float _enemySpawnDelay = .5f;
-    [Header("Настройки группы:")]
-    [SerializeField] private BaseMoveInput _moveInputOnEnter = null;
-    [SerializeField] private BaseMoveInput _moveInpuOnLoop = null;
 
     private Timer _spawnTimer;
     private List<Enemy> _spawnedEnemies;
@@ -75,10 +72,7 @@ public class EnemyGroup : MonoBehaviour
     private void RegisterEnemy(Enemy enemy)
     {
         _spawnedEnemies.Add(enemy);
-
         enemy.OnEnemyDeath += DisposeEnemy;
-        enemy.Initialize(_moveInputOnEnter,
-                         _moveInpuOnLoop);
     }
 
     private void DisposeEnemy(Character enemyCharacter)

@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da3abc0a6062d74469db88b22235932b, type: 3}
-  m_Name: BoombotDeath
+  m_Name: BoombotDeathSound
   m_EditorClassIdentifier: 
-  _clipVariations: []
+  _clipVariations:
+  - {fileID: 8300000, guid: 374f2a4a6bd634f448ae0e07926c930e, type: 3}
+  - {fileID: 8300000, guid: 2f23ce944dc4fae449ad2d396cec81d2, type: 3}
+  - {fileID: 8300000, guid: 2108f7f2ae8e72d4883c515d0ce8c3c4, type: 3}
   _volumeScale: 1
-  _soundChannel: 0
+  _soundChannel: 1

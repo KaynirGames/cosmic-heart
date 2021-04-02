@@ -5,8 +5,10 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     public EnemyWaveManager waveManager;
-    public WeaponBase playerWeapon;
-    public AudioClip musicClip;
+    public WeaponBase weapon;
+    public SoundSO music;
+    public SoundSO sfx;
+    public ParticleSystem particle;
 
     void Start()
     {
@@ -15,6 +17,11 @@ public class Test : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            weapon.UseWeapon();
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             waveManager.TrySpawnNext();
@@ -22,7 +29,17 @@ public class Test : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            SoundManager.Instance.PlayMusic(musicClip, true);
+            SoundManager.Instance.PlayMusic(music.GetAudioClip(), true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SoundManager.Instance.PlaySound(sfx);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Instantiate(particle, Vector3.zero, Quaternion.identity);
         }
     }
 }

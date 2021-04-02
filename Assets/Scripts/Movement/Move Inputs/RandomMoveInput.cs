@@ -31,7 +31,7 @@ public class RandomMoveInput : BaseMoveInput
         _nextDirectionTimer.Tick();
     }
 
-    public override Vector3 GetDirection()
+    public override Vector3 GetMoveInput()
     {
         return _randomDirection;
     }

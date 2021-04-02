@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 5529439642479944703
     second: Boombot_Bomb
+  - first:
+      213: 8559366232101124472
+    second: Boombot_Bomb
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -139,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -160,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -177,11 +180,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boombot_Projectile
+      name: Boombot_Bomb
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 48
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -193,27 +196,6 @@ TextureImporter:
       bones: []
       spriteID: 8797cd61d3af8c670800000000000000
       internalID: 8559366232101124472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boombot_Bomb
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff3eaf00f048cbc40800000000000000
-      internalID: 5529439642479944703
       vertices: []
       indices: 
       edges: []

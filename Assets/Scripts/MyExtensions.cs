@@ -14,11 +14,11 @@ public static class MyExtensions
 
     public static void Dispose(this GameObject gameObject)
     {
-        IDisposer disposer = new DefaultDisposer();
+        IDisposer disposer = gameObject.GetComponent<IDisposer>();
 
-        if (gameObject.TryGetComponent(out IDisposer goDisposer))
+        if (disposer == null)
         {
-            disposer = goDisposer;
+            disposer = new DefaultDisposer();
         }
 
         disposer.Dispose(gameObject);

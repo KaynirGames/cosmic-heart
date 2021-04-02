@@ -7,7 +7,7 @@ public class AxisMoveInput : BaseMoveInput
     [SerializeField] private bool _horizontalSnap = false;
     [SerializeField] private bool _verticalSnap = false;
 
-    public override Vector3 GetDirection()
+    public override Vector3 GetMoveInput()
     {
         float horizontal = GetAxisValue(_horizontalAxis, _horizontalSnap);
         float vertical = GetAxisValue(_verticalAxis, _verticalSnap);
