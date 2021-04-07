@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public interface IDisposer
+public interface IDisposable
 {
     void Dispose(GameObject gameObject);
 }

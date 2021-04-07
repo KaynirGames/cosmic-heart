@@ -3,17 +3,21 @@
 public class PathMoveInput : BaseMoveInput
 {
     [SerializeField] private PathCreator _pathCreator = null;
-    [SerializeField] private bool _loopPath = false;
+    [SerializeField] private FollowPathMode _followMode = FollowPathMode.Direct;
 
-    private WaypointData _waypoint;
-    private int _lastWaypointIndex;
+    private int _endPointIndex;
+    private int _targetPointIndex;
+    private Vector3 _targetPointPosition;
+
     private bool _isFollowing;
     private bool _isReverse;
 
     private void Start()
     {
-        _waypoint = GetWaypoint(0);
-        _lastWaypointIndex = _pathCreator.EndPointIndex;
+        _endPointIndex = _pathCreator.EndPointIndex;
+        _targetPointIndex = 0;
+        _targetPointPosition = GetPointData(0).Position;
+
         _isFollowing = true;
         _isReverse = false;
     }
@@ -29,47 +33,77 @@ public class PathMoveInput : BaseMoveInput
     public override Vector3 GetMoveInput()
     {
         return _isFollowing
-            ? (_waypoint.Position - transform.position).normalized
+            ? (_targetPointPosition - transform.position).normalized
             : Vector3.zero;
-    }
-
-    private WaypointData GetWaypoint(int index)
-    {
-        return _pathCreator.GetNextWaypoint(transform.position,
-                                            index,
-                                            _isReverse);
     }
 
     private void FollowPath()
     {
         if (CheckPathEnd())
         {
-            if (!_loopPath)
-            {
-                _isFollowing = false;
-                return;
-            }
-
-            HandlePathLoop();
+            HandlePathEnd(_followMode);
         }
 
-        _waypoint = GetWaypoint(_waypoint.Index);
+        WaypointData waypointData = GetPointData(GetCurrentPointIndex());
+
+        _targetPointIndex = Mathf.Abs(waypointData.Index);
+        _targetPointPosition = waypointData.Position;
     }
 
-    private void HandlePathLoop()
+    private int GetCurrentPointIndex()
     {
-        _lastWaypointIndex = _lastWaypointIndex == 0
+        return _isReverse
+            ? -_targetPointIndex
+            : _targetPointIndex;
+    }
+
+    private void HandlePathEnd(FollowPathMode followMode)
+    {
+        switch (followMode)
+        {
+            case FollowPathMode.Direct:
+                HandleDirectPathEnd();
+                break;
+            case FollowPathMode.PingPong:
+                HandlePingPongPathEnd();
+                break;
+            case FollowPathMode.Loop:
+                HandleLoopPathEnd();
+                break;
+        }
+    }
+
+    private WaypointData GetPointData(int index)
+    {
+        return _pathCreator.GetNextPointData(transform.position,
+                                            index,
+                                            _followMode);
+    }
+
+    private void HandleDirectPathEnd()
+    {
+        _isFollowing = false;
+    }
+
+    private void HandlePingPongPathEnd()
+    {
+        _endPointIndex = _endPointIndex == 0
             ? _pathCreator.EndPointIndex
             : 0;
 
         _isReverse = !_isReverse;
     }
 
+    private void HandleLoopPathEnd()
+    {
+        _isFollowing = true;
+    }
+
     private bool CheckPathEnd()
     {
-        return _waypoint.Index == _lastWaypointIndex
+        return _targetPointIndex == _endPointIndex
             ? _pathCreator.InPosition(transform.position,
-                                      _lastWaypointIndex)
+                                      _targetPointIndex)
             : false;
     }
 }

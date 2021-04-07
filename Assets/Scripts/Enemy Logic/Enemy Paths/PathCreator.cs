@@ -11,19 +11,17 @@ public class PathCreator : MonoBehaviour
 
     public int EndPointIndex => _waypoints.Count - 1;
 
-    public WaypointData GetNextWaypoint(Vector3 worldPos, int currentWaypoint, bool reversePath = false)
+    public WaypointData GetNextPointData(Vector3 worldPos, int currentPoint, FollowPathMode followMode)
     {
-        Vector3 waypointPos = GetPosition(currentWaypoint);
+        Vector3 waypointPos = GetPosition(Mathf.Abs(currentPoint));
 
         if (InPosition(worldPos, waypointPos))
         {
-            currentWaypoint += reversePath ? -1 : 1;
-            currentWaypoint = Mathf.Clamp(currentWaypoint, 0, EndPointIndex);
-
-            waypointPos = GetPosition(currentWaypoint);
+            currentPoint = GetNextPointIndex(currentPoint, followMode);
+            waypointPos = GetPosition(currentPoint);
         }
 
-        return new WaypointData(waypointPos, currentWaypoint);
+        return new WaypointData(waypointPos, currentPoint);
     }
 
     public bool InPosition(Vector3 worldPos, int waypointIndex)
@@ -33,12 +31,44 @@ public class PathCreator : MonoBehaviour
 
     private bool InPosition(Vector3 worldPos, Vector3 waypointPos)
     {
-        return Vector3.Distance(worldPos, waypointPos) <= _waypointRadius;
+        return (worldPos - waypointPos).sqrMagnitude <= _waypointRadius;
     }
 
     private Vector3 GetPosition(int waypointIndex)
     {
         return _waypoints[waypointIndex].position;
+    }
+
+    private int GetNextPointIndex(int currentIndex, FollowPathMode followMode)
+    {
+        switch (followMode)
+        {
+            case FollowPathMode.PingPong:
+                return GetPingPongPointIndex(currentIndex);
+            case FollowPathMode.Loop:
+                return GetLoopPointIndex(currentIndex);
+            case FollowPathMode.Direct:
+                return GetDirectPointIndex(currentIndex);
+            default:
+                return GetDirectPointIndex(currentIndex);
+        }
+    }
+
+    private int GetDirectPointIndex(int currentIndex)
+    {
+        return Mathf.Clamp(++currentIndex, 0, EndPointIndex);
+    }
+
+    private int GetPingPongPointIndex(int currentIndex)
+    {
+        return Mathf.Abs(++currentIndex);
+    }
+
+    private int GetLoopPointIndex(int currentIndex)
+    {
+        return currentIndex == EndPointIndex
+            ? currentIndex - EndPointIndex
+            : ++currentIndex;
     }
 
     private void OnDrawGizmos()

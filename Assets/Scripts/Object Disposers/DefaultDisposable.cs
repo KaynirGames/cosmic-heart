@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DefaultDisposer : IDisposer
+public class DefaultDisposable : IDisposable
 {
     public void Dispose(GameObject gameObject)
     {

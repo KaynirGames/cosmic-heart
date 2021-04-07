@@ -78,7 +78,6 @@ GameObject:
   - component: {fileID: 4647396047386039351}
   - component: {fileID: 1219220625}
   - component: {fileID: 1125168531767093904}
-  - component: {fileID: 7521903417463744351}
   - component: {fileID: 907606942254316393}
   m_Layer: 10
   m_Name: Boombot
@@ -228,7 +227,7 @@ MonoBehaviour:
   _animator: {fileID: 5089652797650825421}
   _moveHandler: {fileID: 1219220625}
   _moveInput: {fileID: 0}
-  _deathRattleEffects: {fileID: 4106405035190369053}
+  _onDeathEvents: {fileID: 0}
 --- !u!114 &1219220625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,19 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minMoveBound: {x: -10, y: 0, z: 0}
   _maxMoveBound: {x: 10, y: 6, z: 0}
---- !u!114 &7521903417463744351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3795014320238176891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df1b6df60688fd479540ba97fd4209c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _boundaryID: LevelBounds
 --- !u!114 &907606942254316393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,18 +719,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6503582743400270660}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4106405035190369053 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7115053625501446233, guid: feaa8ac286ee85b469f3c3032d217a7d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6503582743400270660}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d32806fea337640b91e7fa07a74f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8984182834293878264
 PrefabInstance:
   m_ObjectHideFlags: 0
