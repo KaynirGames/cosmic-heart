@@ -14,6 +14,8 @@ public class SoundSO : ScriptableObject
     {
         int random = Random.Range(0, _clipVariations.Length);
 
-        return _clipVariations?[random];
+        return _clipVariations.Length > 0
+            ? _clipVariations[random]
+            : null;
     }
 }

@@ -6,13 +6,15 @@ public class Timer
 
     private float _duration;
     private float _elapsedTime;
+    private bool _unscaled;
 
-    public Timer(float duration)
+    public Timer(float duration, bool unscaled = false)
     {
-        ChangeDuration(duration);
+        SetDuration(duration);
+        _unscaled = unscaled;
     }
 
-    public void ChangeDuration(float duration)
+    public void SetDuration(float duration)
     {
         _duration = duration;
         _elapsedTime = 0f;
@@ -43,9 +45,9 @@ public class Timer
         }
     }
 
-    public void Tick(bool unscaledTime = false)
+    public void Tick()
     {
-        float delta = unscaledTime
+        float delta = _unscaled
             ? Time.unscaledDeltaTime
             : Time.deltaTime;
 

@@ -9,14 +9,13 @@ public class TriggerOnRollBehaviour : StateMachineBehaviour
     [SerializeField] private string _triggerParameter = "Trigger";
 
     private Timer _nextRollTimer;
-    private bool _isUnscaled;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
         if (_nextRollTimer == null)
         {
-            _nextRollTimer = new Timer(_nextRollDelay);
-            _isUnscaled = animator.updateMode == AnimatorUpdateMode.UnscaledTime;
+            bool unscaled = animator.updateMode == AnimatorUpdateMode.UnscaledTime;
+            _nextRollTimer = new Timer(_nextRollDelay, unscaled);
         }
     }
 
@@ -26,7 +25,7 @@ public class TriggerOnRollBehaviour : StateMachineBehaviour
         {
             float roll = Random.Range(_minRollValue, _maxRollValue);
 
-            if (InRange(roll, _requiredRollRange.x, _requiredRollRange.y))
+            if (roll.InRange(_requiredRollRange.x, _requiredRollRange.y))
             {
                 animator.SetTrigger(_triggerParameter);
             }
@@ -34,11 +33,6 @@ public class TriggerOnRollBehaviour : StateMachineBehaviour
             _nextRollTimer.Reset();
         }
 
-        _nextRollTimer.Tick(_isUnscaled);
-    }
-
-    private bool InRange(float value, float min, float max)
-    {
-        return value >= min && value <= max; 
+        _nextRollTimer.Tick();
     }
 }

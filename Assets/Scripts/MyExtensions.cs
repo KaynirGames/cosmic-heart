@@ -23,4 +23,14 @@ public static class MyExtensions
 
         disposable.Dispose(gameObject);
     }
+
+    public static bool InLayers(this GameObject gameObject, int layers)
+    {
+        return layers == (layers | 1 << gameObject.layer);
+    }
+
+    public static bool InRange(this float value, float min, float max)
+    {
+        return value >= min && value <= max;
+    }
 }

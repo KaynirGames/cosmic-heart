@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 376777847547670711}
   - component: {fileID: 7231226425568785380}
   - component: {fileID: 3858206938228413952}
-  - component: {fileID: 3129951111287438959}
-  - component: {fileID: 8499787914159034676}
+  - component: {fileID: 4514033021799283175}
+  - component: {fileID: 6148563340524350430}
   m_Layer: 0
-  m_Name: PlasmaPistol_Player
+  m_Name: RocketLauncher_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,12 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c3b149ad7aec34b960307b5ebfba47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDelay: 0.5
-  _weaponID: PlasmaPistol
+  _attackDelay: 1.25
+  _weaponID: RocketLauncher
   _attackModeHandler: {fileID: 376777847547670711}
   _attackHandler: {fileID: 7231226425568785380}
   _ammoHandler: {fileID: 3858206938228413952}
-  _weaponEvents: {fileID: 3129951111287438959}
+  _weaponEvents: {fileID: 4514033021799283175}
 --- !u!114 &376777847547670711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,12 +78,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac62c6d2d75c844e8123a0ff76fb63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 8805315235221760054, guid: e99afe5368dfd0d45903b287b4b3be0f,
+  _projectilePrefab: {fileID: 4191232711146618573, guid: d963946ff58dafa4fb4d695d24a025d5,
     type: 3}
   _firePoints: []
   _spreadAngle: 0
   _projectileAmount: 1
-  _projectileSpeed: 15
+  _projectileSpeed: 10
 --- !u!114 &3858206938228413952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f940911f4f0274481c0122d8bba0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3129951111287438959
+--- !u!114 &4514033021799283175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _events:
-  - {fileID: 8499787914159034676}
---- !u!114 &8499787914159034676
+  - {fileID: 6148563340524350430}
+--- !u!114 &6148563340524350430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _owner: {fileID: 5114607718829249345}
   _eventMode: 0
-  _soundSO: {fileID: 11400000, guid: dde37e6520c74b1459cf14fea3a19133, type: 2}
+  _soundSO: {fileID: 11400000, guid: 79c02bdec558dfe45ac64d69bc910c1f, type: 2}

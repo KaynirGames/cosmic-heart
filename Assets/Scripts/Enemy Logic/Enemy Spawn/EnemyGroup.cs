@@ -7,7 +7,7 @@ public class EnemyGroup : MonoBehaviour
 
     [Header("Настройки спавна врагов:")]
     [SerializeField] private Enemy _enemyPrefab = null;
-    [SerializeField] private Transform _spawnPoint = null;
+    [SerializeField] private BaseSpawnArea _spawnArea = null;
     [SerializeField] private int _enemyAmount = 1;
     [SerializeField] private float _enemySpawnDelay = .5f;
 
@@ -55,7 +55,7 @@ public class EnemyGroup : MonoBehaviour
         if (_spawnTimer.Elapsed)
         {
             Enemy enemy = Instantiate(_enemyPrefab,
-                                      _spawnPoint.transform.position,
+                                      _spawnArea.GetSpawnPosition(),
                                       Quaternion.identity,
                                       transform);
 
@@ -73,6 +73,7 @@ public class EnemyGroup : MonoBehaviour
     {
         _spawnedEnemies.Add(enemy);
         enemy.OnEnemyDeath += DisposeEnemy;
+        enemy.gameObject.SetActive(true);
     }
 
     private void DisposeEnemy(Character enemyCharacter)

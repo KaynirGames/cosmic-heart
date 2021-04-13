@@ -80,13 +80,14 @@ GameObject:
   - component: {fileID: 1219220625}
   - component: {fileID: 907606942254316393}
   - component: {fileID: 9134868698779534728}
+  - component: {fileID: 6425295872091200859}
   m_Layer: 10
   m_Name: Intercepter
-  m_TagString: Untagged
+  m_TagString: Intercepter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3795014320238176885
 Transform:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ MonoBehaviour:
   _stats: {fileID: 1685874911685647516}
   _animator: {fileID: 5089652797650825421}
   _moveHandler: {fileID: 1219220625}
-  _moveInput: {fileID: 0}
+  _moveInput: {fileID: 6425295872091200859}
   _onDeathEvents: {fileID: 3831472834946012079}
 --- !u!114 &1219220625
 MonoBehaviour:
@@ -268,6 +269,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _overlapTag: LevelBounds
+--- !u!114 &6425295872091200859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795014320238176891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c529551920ca8409600024eace8c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pathCreator: {fileID: 0}
+  _followMode: 2
 --- !u!1001 &777314677044692239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -388,6 +403,11 @@ PrefabInstance:
       value: CharacterStats
       objectReference: {fileID: 0}
     - target: {fileID: 4052642460809699906, guid: b0b4050c2a5fc704da7e07c84b460684,
+        type: 3}
+      propertyPath: _value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066489573361725317, guid: b0b4050c2a5fc704da7e07c84b460684,
         type: 3}
       propertyPath: _value
       value: 1

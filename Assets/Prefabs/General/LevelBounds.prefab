@@ -89,6 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _events:
   - {fileID: 8719121605485693113}
+  - {fileID: 5149285682570616857}
 --- !u!1 &2415007127811665337
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1922647653616890756}
   - component: {fileID: 8719121605485693113}
+  - component: {fileID: 5149285682570616857}
   m_Layer: 0
   m_Name: TriggerExitEvents
   m_TagString: Untagged
@@ -183,3 +185,20 @@ MonoBehaviour:
   _eventMode: 0
   _boundsTag: LevelBounds
   _withinBounds: 0
+--- !u!114 &5149285682570616857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3787362717664709858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01be96c43de45347a3bd97e58a50cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _owner: {fileID: 1302833893868483658}
+  _eventMode: 0
+  _layer:
+    serializedVersion: 2
+    m_Bits: 512
