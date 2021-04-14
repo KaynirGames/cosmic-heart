@@ -19,9 +19,9 @@ GameObject:
   - component: {fileID: 6497603082793402686}
   - component: {fileID: 4952472031394011727}
   - component: {fileID: 1659344548}
-  - component: {fileID: 3767360970675884}
-  m_Layer: 11
-  m_Name: HomingRocketLauncherBullet_Enemy
+  - component: {fileID: 8263313978022223649}
+  m_Layer: 9
+  m_Name: HomingRocketLauncherBullet_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4191232711146618573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 155c4911ad838bc41b111c8b2ba02bf8, type: 3}
   m_Name: 
@@ -226,10 +226,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927b687482a927e4b92fb20df7dea73f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetLocator: {fileID: 3767360970675884}
+  _targetLocator: {fileID: 8263313978022223649}
   _moveHandler: {fileID: 4952472031394011727}
   _rotationControl: 180
---- !u!114 &3767360970675884
+  _searchForTargetOnce: 0
+  _nextTargetSearchTime: 1
+--- !u!114 &8263313978022223649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,7 +240,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4191232711146618573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443168061c1e5f04e8689144cd098e61, type: 3}
+  m_Script: {fileID: 11500000, guid: d20125ad7d3d1674884365f30a04949b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetTag: Player
+  _gameObjectList: {fileID: 11400000, guid: 26cba2a91df94584ea6c5daf469d51d4, type: 2}

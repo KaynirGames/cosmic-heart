@@ -10,26 +10,45 @@ public class HomingRigidbody2D : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private GameObject _target;
 
+    private bool _isFollowing;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    private void Update()
     {
-        _target = _targetLocator.LocateTarget();
+        if (!_isFollowing)
+        {
+            SearchForTarget();
+        }
     }
 
     private void FixedUpdate()
     {
-        if (_target == null) { return; }
+        FollowTarget();
+    }
+
+    private void SearchForTarget()
+    {
+        _target = _targetLocator.LocateTarget();
+    }
+
+    private void FollowTarget()
+    {
+        if (_target == null)
+        {
+            _rigidbody.angularVelocity = 0f;
+            _isFollowing = false;
+            return;
+        }
 
         Vector2 direction = transform.position - _target.transform.position;
-
         float cross = Vector3.Cross(direction.normalized, transform.right).z;
 
         _rigidbody.angularVelocity = cross * _rotationControl;
-
         _moveHandler.SetDirection(transform.right);
+        _isFollowing = true;
     }
 }

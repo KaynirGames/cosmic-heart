@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 216136332277829221}
   - component: {fileID: 1125168531767093904}
   - component: {fileID: 907606942254316393}
+  - component: {fileID: -6347666570222585749}
   m_Layer: 10
   m_Name: Boombot
   m_TagString: Untagged
@@ -241,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727da7d468890eb4eb146b84389e93a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveSpeed: 5
 --- !u!114 &216136332277829221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +288,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapons:
   - {fileID: 4199452623752191786}
+--- !u!114 &-6347666570222585749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795014320238176891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b29de00d7a21db4a92bb26565f3d5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runtimeListSO: {fileID: 11400000, guid: 26cba2a91df94584ea6c5daf469d51d4, type: 2}
 --- !u!1 &5476168814450423898
 GameObject:
   m_ObjectHideFlags: 0

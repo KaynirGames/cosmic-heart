@@ -33,4 +33,29 @@ public static class MyExtensions
     {
         return value >= min && value <= max;
     }
+
+    public static bool InRange(this int value, int min, int max)
+    {
+        return value >= min && value <= max;
+    }
+
+    public static GameObject FindClosestObject(this GameObject gameObject, GameObject[] searchObjects)
+    {
+        float distance = Mathf.Infinity;
+        GameObject closestObject = null;
+
+        foreach (GameObject go in searchObjects)
+        {
+            float currentDistance = (go.transform.position
+                                     - gameObject.transform.position).sqrMagnitude;
+
+            if (currentDistance < distance)
+            {
+                distance = currentDistance;
+                closestObject = go;
+            }
+        }
+
+        return closestObject;
+    }
 }
