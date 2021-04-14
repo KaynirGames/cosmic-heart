@@ -13,6 +13,6 @@ public class MoveRigidbody2D : BaseMoveHandler
     private void FixedUpdate()
     {
         _rigidbody2D.MovePosition(transform.position
-                                  + _currentVelocity);
+                                  + GetVelocity(Time.fixedDeltaTime));
     }
 }

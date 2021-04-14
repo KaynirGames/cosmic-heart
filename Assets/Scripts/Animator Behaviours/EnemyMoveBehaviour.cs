@@ -19,6 +19,6 @@ public class EnemyMoveBehaviour : StateMachineBehaviour
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _enemy.MoveHandler.SetVelocity(Vector3.zero);
+        _enemy.MoveHandler.SetDirection(Vector3.zero);
     }
 }

@@ -17,6 +17,7 @@ public class Character : MonoBehaviour, IDamageable
     protected virtual void Awake()
     {
         _stats.OnCharacterDeath += Die;
+        _moveHandler.SetSpeed(_stats.MoveSpeed.GetValue());
     }
 
     public void TakeDamage(float damage)
@@ -36,10 +37,6 @@ public class Character : MonoBehaviour, IDamageable
 
     protected virtual void HandleMove(Vector3 direction)
     {
-        Vector3 velocity = direction
-                           * _stats.MoveSpeed.GetValue()
-                           * Time.deltaTime;
-
-        _moveHandler.SetVelocity(velocity);
+        _moveHandler.SetDirection(direction);
     }
 }

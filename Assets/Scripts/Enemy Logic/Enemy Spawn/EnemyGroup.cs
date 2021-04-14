@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyGroup : MonoBehaviour
 {
-    public event System.Action<EnemyGroup> OnGroupDefeat = delegate { };
+    public event System.Action<Enemy> OnEnemySpawn = delegate { };
 
     [Header("Настройки спавна врагов:")]
     [SerializeField] private Enemy _enemyPrefab = null;
@@ -12,13 +11,8 @@ public class EnemyGroup : MonoBehaviour
     [SerializeField] private float _enemySpawnDelay = .5f;
 
     private Timer _spawnTimer;
-    private List<Enemy> _spawnedEnemies;
+    private int _spawnCount;
     private bool _canSpawn;
-
-    private void Awake()
-    {
-        _spawnedEnemies = new List<Enemy>();
-    }
 
     private void Start()
     {
@@ -27,27 +21,17 @@ public class EnemyGroup : MonoBehaviour
 
     private void Update()
     {
-        if (HandleGroupSpawn())
-        {
-            return;
-        }
-    }
-
-    public void ActivateEnemyGroup()
-    {
-        _canSpawn = true;
-    }
-
-    private bool HandleGroupSpawn()
-    {
         if (_canSpawn)
         {
             SpawnEnemy();
             _spawnTimer.Tick();
-            return true;
         }
+    }
 
-        return false;
+    public void Spawn()
+    {
+        _canSpawn = true;
+        _spawnCount = 0;
     }
 
     private void SpawnEnemy()
@@ -56,38 +40,18 @@ public class EnemyGroup : MonoBehaviour
         {
             Enemy enemy = Instantiate(_enemyPrefab,
                                       _spawnArea.GetSpawnPosition(),
-                                      Quaternion.identity,
-                                      transform);
+                                      Quaternion.identity);
 
-            RegisterEnemy(enemy);
+            enemy.gameObject.SetActive(true);
+            OnEnemySpawn.Invoke(enemy);
+
             _spawnTimer.Reset();
+            _spawnCount++;
         }
 
-        if (_spawnedEnemies.Count == _enemyAmount)
+        if (_spawnCount == _enemyAmount)
         {
             _canSpawn = false;
-        }
-    }
-
-    private void RegisterEnemy(Enemy enemy)
-    {
-        _spawnedEnemies.Add(enemy);
-        enemy.OnEnemyDeath += DisposeEnemy;
-        enemy.gameObject.SetActive(true);
-    }
-
-    private void DisposeEnemy(Character enemyCharacter)
-    {
-        Enemy enemy = enemyCharacter as Enemy;
-
-        _spawnedEnemies.Remove(enemy);
-
-        enemy.OnEnemyDeath -= DisposeEnemy;
-        enemy.gameObject.Dispose();
-
-        if (_spawnedEnemies.Count == 0)
-        {
-            OnGroupDefeat.Invoke(this);
         }
     }
 }

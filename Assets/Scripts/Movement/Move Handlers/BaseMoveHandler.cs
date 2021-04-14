@@ -1,11 +1,33 @@
 ﻿using UnityEngine;
 
-public abstract class BaseMoveHandler : MonoBehaviour, IVelocityHandler
+public abstract class BaseMoveHandler : MonoBehaviour, IDirectionHandler, ISpeedHandler
 {
-    protected Vector3 _currentVelocity = Vector3.zero;
+    [SerializeField] protected float _moveSpeed = 5f;
 
-    public virtual void SetVelocity(Vector3 velocity)
+    protected Vector3 _direction;
+
+    public Vector3 GetDirection()
     {
-        _currentVelocity = velocity;
+        return _direction;
+    }
+
+    public float GetSpeed()
+    {
+        return _moveSpeed;
+    }
+
+    public void SetDirection(Vector3 direction)
+    {
+        _direction = direction;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        _moveSpeed = speed;
+    }
+
+    protected Vector3 GetVelocity(float deltaTime = 1f)
+    {
+        return _direction * _moveSpeed * deltaTime;
     }
 }

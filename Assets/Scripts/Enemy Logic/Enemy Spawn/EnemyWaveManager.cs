@@ -5,6 +5,8 @@ public class EnemyWaveManager : MonoBehaviour
 {
     [SerializeField] private EnemyWave[] _enemyWaves = null;
 
+    public EnemyWave CurrentWave { get; private set; }
+
     private Queue<EnemyWave> _wavesQueue;
 
     private void Awake()
@@ -21,7 +23,7 @@ public class EnemyWaveManager : MonoBehaviour
             return;
         }
 
-        EnemyWave wave = _wavesQueue.Dequeue();
-        wave.SpawnWave();
+        CurrentWave = _wavesQueue.Dequeue();
+        CurrentWave.Spawn();
     }
 }

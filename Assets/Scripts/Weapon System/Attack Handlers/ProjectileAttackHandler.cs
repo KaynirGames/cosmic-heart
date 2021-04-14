@@ -33,14 +33,15 @@ public class ProjectileAttackHandler : BaseAttackHandler
                                                 point.position,
                                                 rotation);
 
+            projectile.SetActive(true);
+
             Vector3 projectileDirection = GetProjectileDirection(point.position,
                                                                  currentAngle);
 
-            IVelocityHandler projectileVelocity = projectile.GetComponent<IVelocityHandler>();
+            BaseMoveHandler projectileMove = projectile.GetComponent<BaseMoveHandler>();
 
-            projectileVelocity.SetVelocity(projectileDirection
-                                           * _projectileSpeed
-                                           * Time.fixedDeltaTime);
+            projectileMove.SetSpeed(_projectileSpeed);
+            projectileMove.SetDirection(projectileDirection);
         }
     }
 

@@ -4,6 +4,6 @@ public class MoveTransform : BaseMoveHandler
 {
     private void Update()
     {
-        transform.Translate(_currentVelocity);
+        transform.Translate(GetVelocity(Time.deltaTime));
     }
 }
