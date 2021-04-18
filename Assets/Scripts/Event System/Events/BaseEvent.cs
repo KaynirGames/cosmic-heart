@@ -3,17 +3,20 @@
 public abstract class BaseEvent : MonoBehaviour
 {
     [SerializeField] protected GameObject _owner = null;
-    [SerializeField] protected EventMode _eventMode = EventMode.OnTarget;
+    [SerializeField] protected EventMode _eventMode = EventMode.Target;
 
     public void TryInvoke(GameObject target)
     {
         switch (_eventMode)
         {
-            case EventMode.OnTarget:
+            case EventMode.Target:
                 Invoke(target);
                 break;
-            case EventMode.OnOwner:
+            case EventMode.Owner:
                 Invoke(_owner);
+                break;
+            case EventMode.None:
+                Invoke(null);
                 break;
         }
     }
@@ -22,7 +25,8 @@ public abstract class BaseEvent : MonoBehaviour
 
     protected enum EventMode
     {
-        OnTarget,
-        OnOwner
+        Target,
+        Owner,
+        None
     }
 }

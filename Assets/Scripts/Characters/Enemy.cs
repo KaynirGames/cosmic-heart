@@ -9,7 +9,6 @@ public class Enemy : Character
     protected override void Awake()
     {
         base.Awake();
-
         enabled = false;
     }
 
@@ -26,6 +25,7 @@ public class Enemy : Character
     protected override void Die()
     {
         _onDeathEvents.InvokeEvents(gameObject);
-        OnEnemyDeath.Invoke(this);
+
+        base.Die();
     }
 }

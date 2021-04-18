@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlasmaPistolShotSound
   m_EditorClassIdentifier: 
   _clipVariations:
-  - {fileID: 8300000, guid: 9b4a9b6f77c7d7e4e95b998effe23bf5, type: 3}
-  - {fileID: 8300000, guid: 498f453260fc77d49b0717c55f0fc00c, type: 3}
-  - {fileID: 8300000, guid: 2e80e0d3ee6c8774aaa84460a266f56f, type: 3}
-  _volumeScale: 1
+  - {fileID: 8300000, guid: e64fa007945f2e7438b9f7f5d328fe1f, type: 3}
+  - {fileID: 8300000, guid: e90a40cc5025cf043b32fb90961d8daf, type: 3}
+  - {fileID: 8300000, guid: 1b959268deb39a844aa8b68482e5c1b8, type: 3}
+  _volumeScale: 0.75
   _soundChannel: 0

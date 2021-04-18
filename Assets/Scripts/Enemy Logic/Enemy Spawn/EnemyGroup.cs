@@ -2,8 +2,6 @@
 
 public class EnemyGroup : MonoBehaviour
 {
-    public event System.Action<Enemy> OnEnemySpawn = delegate { };
-
     [Header("Настройки спавна врагов:")]
     [SerializeField] private Enemy _enemyPrefab = null;
     [SerializeField] private BaseSpawnArea _spawnArea = null;
@@ -43,7 +41,6 @@ public class EnemyGroup : MonoBehaviour
                                       Quaternion.identity);
 
             enemy.gameObject.SetActive(true);
-            OnEnemySpawn.Invoke(enemy);
 
             _spawnTimer.Reset();
             _spawnCount++;

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BaseRuntimeListSO<T> : ScriptableObject
 {
+    public event System.Action OnLastObjectRemoved = delegate { };
+
     private readonly List<T> _list = new List<T>();
 
     public int Count => _list.Count;
@@ -14,9 +16,12 @@ public class BaseRuntimeListSO<T> : ScriptableObject
 
     public void Remove(T listObject)
     {
-        if (_list.Contains(listObject))
+        if (_list.Remove(listObject))
         {
-            _list.Remove(listObject);
+            if (_list.Count == 0)
+            {
+                OnLastObjectRemoved.Invoke();
+            }
         }
     }
 
@@ -24,7 +29,7 @@ public class BaseRuntimeListSO<T> : ScriptableObject
     {
         if (index.InRange(0, _list.Count - 1))
         {
-            _list.RemoveAt(index);
+            Remove(_list[index]);
         }
     }
 

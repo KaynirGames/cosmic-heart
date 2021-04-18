@@ -1,44 +1,26 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class EnemyWave : MonoBehaviour
 {
     [SerializeField] private EnemyGroup[] _enemyGroups = null;
     [SerializeField] private UnityEvent _onWaveDefeat = null;
-
-    private List<Enemy> _spawnedEnemies;
+    [SerializeField] private GameObjectRuntimeListSO _enemyRuntimeList = null;
 
     public void Spawn()
     {
-        _spawnedEnemies = new List<Enemy>();
+        _enemyRuntimeList.OnLastObjectRemoved += StopWave;
 
         foreach (EnemyGroup group in _enemyGroups)
         {
-            group.OnEnemySpawn += RegisterEnemy;
             group.Spawn();
         }
     }
 
-    private void RegisterEnemy(Enemy enemy)
+    private void StopWave()
     {
-        _spawnedEnemies.Add(enemy);
-        enemy.OnEnemyDeath += DisposeEnemy;
-    }
-
-    private void DisposeEnemy(Character enemyCharacter)
-    {
-        Enemy enemy = enemyCharacter as Enemy;
-
-        _spawnedEnemies.Remove(enemy);
-
-        enemy.OnEnemyDeath -= DisposeEnemy;
-        enemy.gameObject.Dispose();
-
-        if (_spawnedEnemies.Count == 0)
-        {
-            Debug.Log("Wave was defeated!");
-            _onWaveDefeat?.Invoke();
-        }
+        _enemyRuntimeList.OnLastObjectRemoved -= StopWave;
+        _onWaveDefeat?.Invoke();
+        Debug.Log("Wave was defeated!");
     }
 }

@@ -16,15 +16,18 @@ public class Character : MonoBehaviour, IDamageable
 
     protected virtual void Awake()
     {
-        _stats.OnCharacterDeath += Die;
-        _moveHandler.SetSpeed(_stats.MoveSpeed.GetValue());
+        _moveHandler.SetSpeed(_stats.MoveSpeed.Value);
+        _stats.Health.OnValueChanged += CheckHealth;
     }
 
     public void TakeDamage(float damage)
     {
-        Stats.Health.ChangeValue(-(int)damage);
+        Stats.Health.ApplyChange(-(int)damage);
+    }
 
-        if (Stats.Health.GetValue() <= 0)
+    protected void CheckHealth(int health)
+    {
+        if (health <= 0)
         {
             Die();
         }
@@ -32,6 +35,7 @@ public class Character : MonoBehaviour, IDamageable
 
     protected virtual void Die()
     {
+        _stats.Health.OnValueChanged -= CheckHealth;
         gameObject.Dispose();
     }
 

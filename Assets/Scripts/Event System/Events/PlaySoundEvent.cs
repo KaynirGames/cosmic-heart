@@ -15,4 +15,11 @@ public class PlaySoundEvent : BaseEvent
     {
         _soundManager.PlaySound(_soundSO);
     }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        _eventMode = EventMode.None;
+    }
+#endif
 }
