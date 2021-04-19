@@ -34,4 +34,10 @@ public class Player : Character
             _weaponSystem.UseCurrentWeapon();
         }
     }
+
+    protected override void Die()
+    {
+        Debug.Log("Player is dead!");
+        base.Die();
+    }
 }

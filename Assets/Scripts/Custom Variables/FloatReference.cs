@@ -25,11 +25,13 @@ public class FloatReference : IVariable<float>
         if (_useConstant)
         {
             _constantValue += amount;
-            OnValueChanged.Invoke(Value);
-            return;
+        }
+        else
+        {
+            _variable.ApplyChange(amount);
         }
 
-        _variable.ApplyChange(amount);
+        OnValueChanged.Invoke(Value);
     }
 
     public void SetValue(float value)
@@ -37,11 +39,13 @@ public class FloatReference : IVariable<float>
         if (_useConstant)
         {
             _constantValue = value;
-            OnValueChanged.Invoke(Value);
-            return;
+        }
+        else
+        {
+            _variable.SetValue(value);
         }
 
-        _variable.SetValue(value);
+        OnValueChanged.Invoke(Value);
     }
 
     public static implicit operator float(FloatReference floatReference)
