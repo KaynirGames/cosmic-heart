@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 6080229037055998509}
   - component: {fileID: 7738981595298753750}
   - component: {fileID: 5885673360899631414}
-  - component: {fileID: 3483220767612925443}
   - component: {fileID: -3099798383724733486}
+  - component: {fileID: 3483220767612925443}
   m_Layer: 13
   m_Name: BoombotBomb
   m_TagString: Untagged
@@ -219,19 +219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _owner: {fileID: 5686347707849252169}
   _eventMode: 1
---- !u!114 &3483220767612925443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5686347707849252169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b29de00d7a21db4a92bb26565f3d5d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _runtimeListSO: {fileID: 11400000, guid: 26cba2a91df94584ea6c5daf469d51d4, type: 2}
 --- !u!114 &-3099798383724733486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,3 +238,17 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: 4fad8471cdb02b048b7e1c0bb278c518, type: 2}
     _useConstant: 0
   _pointStorage: {fileID: 11400000, guid: 840a02ec8c214c54796e54623eda3515, type: 2}
+--- !u!114 &3483220767612925443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5686347707849252169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b29de00d7a21db4a92bb26565f3d5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectRuntimeList: {fileID: 11400000, guid: 26cba2a91df94584ea6c5daf469d51d4,
+    type: 2}

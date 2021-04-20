@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3858206938228413952}
   - component: {fileID: 698492528892215503}
   - component: {fileID: 4150605591594911478}
+  - component: {fileID: 2156817428756909893}
+  - component: {fileID: 6276610602040178625}
   m_Layer: 0
   m_Name: PlasmaSMG_Player
   m_TagString: Untagged
@@ -49,7 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDelay: 1
-  _weaponID: PlasmaSMG
   _attackModeHandler: {fileID: 1257163292283732394}
   _attackHandler: {fileID: 7231226425568785380}
   _ammoHandler: {fileID: 3858206938228413952}
@@ -125,5 +126,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _owner: {fileID: 5114607718829249345}
-  _eventMode: 0
+  _eventMode: 2
   _soundSO: {fileID: 11400000, guid: 9022f8022e767ec458a5c1fda66919d2, type: 2}
+--- !u!114 &2156817428756909893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114607718829249345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3611a42523f360243be28a138fb10d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponID: PlasmaSMG
+  _weaponIcon: {fileID: 0}
+--- !u!114 &6276610602040178625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114607718829249345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b29de00d7a21db4a92bb26565f3d5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectRuntimeList: {fileID: 11400000, guid: 66660bcd5c7da9f49a10cd6ae6dbcf2b,
+    type: 2}

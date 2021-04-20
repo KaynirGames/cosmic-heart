@@ -82,7 +82,7 @@ MonoBehaviour:
   - {fileID: 2503549178203840963}
   - {fileID: 3816751603678221542}
   - {fileID: 5515636839049938088}
-  _waypointRadius: 0.05
+  _waypointRadius: 0.15
   _drawPath: 1
   _lineColor: {r: 0, g: 1, b: 0, a: 1}
   _radiusColor: {r: 1, g: 0, b: 0, a: 1}
@@ -324,12 +324,12 @@ PrefabInstance:
     - target: {fileID: 9042379346919449318, guid: 3397366c78339a7498f631211ab54816,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042379346919449318, guid: 3397366c78339a7498f631211ab54816,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042379346919449318, guid: 3397366c78339a7498f631211ab54816,
         type: 3}
@@ -339,17 +339,17 @@ PrefabInstance:
     - target: {fileID: 9042379346919449318, guid: 3397366c78339a7498f631211ab54816,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042379346919449318, guid: 3397366c78339a7498f631211ab54816,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042379346919449318, guid: 3397366c78339a7498f631211ab54816,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042379346919449318, guid: 3397366c78339a7498f631211ab54816,
         type: 3}

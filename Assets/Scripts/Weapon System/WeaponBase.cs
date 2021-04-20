@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 
-public class WeaponBase : MonoBehaviour, IIdentifiable
+public class WeaponBase : MonoBehaviour
 {
     [SerializeField] private float _attackDelay = .25f;
-    [SerializeField] private string _weaponID = string.Empty;
     [SerializeField] private BaseAttackModeHandler _attackModeHandler = null;
     [SerializeField] private BaseAttackHandler _attackHandler = null;
     [SerializeField] private BaseAmmoHandler _ammoHandler = null;
     [SerializeField] private BaseEventHandler _weaponEvents = null;
 
     private Timer _nextAttackTimer;
-
-    public string ID => _weaponID;
 
     private void Awake()
     {

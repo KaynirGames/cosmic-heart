@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: -258587600983793072}
   - component: {fileID: -1802291760493084490}
   - component: {fileID: 323291473}
+  - component: {fileID: 6436437181903976882}
   m_Layer: 8
   m_Name: PlayerWanderer
   m_TagString: Player
@@ -307,6 +308,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b09c92656f7984e86311556c33d4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6436437181903976882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168460833131983396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b29de00d7a21db4a92bb26565f3d5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectRuntimeList: {fileID: 11400000, guid: 895681c1275814646a84f7712948eab2,
+    type: 2}
 --- !u!1 &4168460833387034976
 GameObject:
   m_ObjectHideFlags: 0

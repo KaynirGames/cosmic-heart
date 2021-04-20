@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3858206938228413952}
   - component: {fileID: 4514033021799283175}
   - component: {fileID: 6148563340524350430}
+  - component: {fileID: 696042614017250786}
   m_Layer: 0
   m_Name: RocketLauncher_Enemy
   m_TagString: Untagged
@@ -49,7 +50,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDelay: 1.25
-  _weaponID: RocketLauncher
   _attackModeHandler: {fileID: 376777847547670711}
   _attackHandler: {fileID: 7231226425568785380}
   _ammoHandler: {fileID: 3858206938228413952}
@@ -123,5 +123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _owner: {fileID: 5114607718829249345}
-  _eventMode: 0
+  _eventMode: 2
   _soundSO: {fileID: 11400000, guid: 79c02bdec558dfe45ac64d69bc910c1f, type: 2}
+--- !u!114 &696042614017250786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114607718829249345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3611a42523f360243be28a138fb10d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponID: RocketLauncher
+  _weaponIcon: {fileID: 0}

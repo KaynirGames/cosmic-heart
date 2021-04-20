@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PathCreator : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _waypoints = null;
+    [SerializeField] private List<Transform> _waypoints = new List<Transform>();
     [SerializeField] private float _waypointRadius = .15f;
     [SerializeField] private bool _drawPath = true;
     [SerializeField] private Color _lineColor = Color.green;
