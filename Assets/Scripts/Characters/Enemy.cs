@@ -2,8 +2,6 @@
 
 public class Enemy : Character
 {
-    public event OnCharacterDeath OnEnemyDeath = delegate { };
-
     [SerializeField] private BaseEventHandler _onDeathEvents = null;
 
     protected override void Awake()

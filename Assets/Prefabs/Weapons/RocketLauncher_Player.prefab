@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponID: RocketLauncher
-  _weaponIcon: {fileID: 0}
+  _weaponIcon: {fileID: 21300000, guid: eb9783880e833644ca945141131b0a71, type: 3}
 --- !u!114 &-3939540333589926881
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
+public class CharacterStats : MonoBehaviour, IDamageable
 {
     [SerializeField] private IntReference _health = null;
     [SerializeField] private IntReference _maxHealth = null;
@@ -12,5 +12,12 @@ public class CharacterStats : MonoBehaviour
     private void Start()
     {
         _health.SetValue(_maxHealth.Value);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        int damagedHealth = _health.Value - (int)damage;
+
+        _health.SetValue(Mathf.Clamp(damagedHealth, 0, _maxHealth.Value));
     }
 }
