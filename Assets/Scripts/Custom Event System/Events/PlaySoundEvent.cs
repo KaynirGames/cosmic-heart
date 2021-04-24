@@ -13,7 +13,10 @@ public class PlaySoundEvent : BaseEvent
 
     protected override void Invoke(GameObject target)
     {
-        _soundManager.PlaySound(_soundSO);
+        if (_soundSO != null)
+        {
+            _soundManager.PlaySound(_soundSO);
+        }
     }
 
 #if UNITY_EDITOR

@@ -422,6 +422,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketLauncher_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5114607718829249345, guid: 87095df250365ad4295cfa353ba5dbe0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7231226425568785380, guid: 87095df250365ad4295cfa353ba5dbe0,
         type: 3}
       propertyPath: _firePoints.Array.size
@@ -605,6 +610,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasmaSMG_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5114607718829249345, guid: 8a75bf1b2c238b649ba62a5945c91cce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7231226425568785380, guid: 8a75bf1b2c238b649ba62a5945c91cce,
         type: 3}
       propertyPath: _firePoints.Array.size
@@ -701,6 +711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlasmaPistol_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114607718829249345, guid: 487ac54bb3df88e4fb42d673807e17b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7231226425568785380, guid: 487ac54bb3df88e4fb42d673807e17b4,
         type: 3}

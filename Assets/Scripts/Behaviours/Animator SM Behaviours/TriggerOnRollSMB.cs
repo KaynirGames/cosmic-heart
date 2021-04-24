@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TriggerOnRollBehaviour : StateMachineBehaviour
+public class TriggerOnRollSMB : StateMachineBehaviour
 {
     [SerializeField] private float _minRollValue = 0f;
     [SerializeField] private float _maxRollValue = 1f;

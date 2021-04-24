@@ -15,8 +15,6 @@ public class WeaponDisplay : MonoBehaviour
         _weaponInfos = System.Array.ConvertAll(_weaponList.GetAll(),
                                                x => x.GetComponent<WeaponInfo>());
 
-        System.Array.Reverse(_weaponInfos);
-
         _weaponSystem = _playerList.Get(0).GetComponent<WeaponSystem>();
         _weaponSystem.OnCurrentWeaponChanged += DisplayCurrentWeapon;
         DisplayCurrentWeapon(0);

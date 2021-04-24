@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyMoveBehaviour : StateMachineBehaviour
+public class EnemyMoveSMB : StateMachineBehaviour
 {
     private Enemy _enemy;
 

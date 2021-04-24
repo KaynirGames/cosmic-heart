@@ -21,6 +21,8 @@ public class WeaponSystem : MonoBehaviour
         {
             _weaponDict.Add(weapon.GetComponent<WeaponInfo>().ID,
                             weapon);
+
+            weapon.gameObject.SetActive(true);
         }
     }
 
