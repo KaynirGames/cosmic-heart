@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: RocketLauncherShotSound
   m_EditorClassIdentifier: 
   _clipVariations:
-  - {fileID: 8300000, guid: 11f769e50d763b74c81ff88f8a35d025, type: 3}
-  - {fileID: 8300000, guid: b77048a83e96b4a4198fa6be48b51496, type: 3}
-  _volumeScale: 0.15
+  - {fileID: 8300000, guid: 85fdf59c3ed7b9143bcc2e8d88dae35d, type: 3}
+  - {fileID: 8300000, guid: 24d4ad7bc2defc44bbe76103e2b1c09e, type: 3}
+  - {fileID: 8300000, guid: 8e13ded0d20ac8c409b09c972ad196ee, type: 3}
+  _volumeScale: 0.35
   _soundChannel: 0

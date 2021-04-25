@@ -227,8 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 3357455923334612325}
   _animator: {fileID: 5089652797650825421}
-  _moveHandler: {fileID: 1219220625}
-  _moveInput: {fileID: 216136332277829221}
   _onDeathEvents: {fileID: 3831472834946012079}
 --- !u!114 &3357455923334612325
 MonoBehaviour:
@@ -279,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e5677da81cda545b09634979468b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveHandler: {fileID: 1219220625}
   _nextDirectionTime: 2
   _minX: -1
   _maxX: 1

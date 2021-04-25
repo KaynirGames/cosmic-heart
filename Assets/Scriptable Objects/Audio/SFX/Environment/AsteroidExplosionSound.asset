@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da3abc0a6062d74469db88b22235932b, type: 3}
-  m_Name: PlasmaPistolShotSound
+  m_Name: AsteroidExplosionSound
   m_EditorClassIdentifier: 
   _clipVariations:
-  - {fileID: 8300000, guid: e64fa007945f2e7438b9f7f5d328fe1f, type: 3}
-  - {fileID: 8300000, guid: e90a40cc5025cf043b32fb90961d8daf, type: 3}
-  - {fileID: 8300000, guid: 1b959268deb39a844aa8b68482e5c1b8, type: 3}
+  - {fileID: 8300000, guid: 1b3a46912c152514abb1915f92c7287a, type: 3}
+  - {fileID: 8300000, guid: e8143e19b5761124f9d276e25704deef, type: 3}
+  - {fileID: 8300000, guid: 22893a8e8e05b3c4fa5e195fe5e01b02, type: 3}
   _volumeScale: 0.5
-  _soundChannel: 0
+  _soundChannel: 1

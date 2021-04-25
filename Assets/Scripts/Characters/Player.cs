@@ -5,26 +5,26 @@ public class Player : Character
     [SerializeField] private BaseActionInput _attackInput = null;
 
     private WeaponSystem _weaponSystem;
+    private IDirectionHandler _directionHandler;
 
     protected override void Awake()
     {
         base.Awake();
 
+        _directionHandler = GetComponent<IDirectionHandler>();
         _weaponSystem = GetComponent<WeaponSystem>();
     }
 
     private void Update()
     {
         HandleAttack();
-
-        HandleMove(_moveInput.GetMoveInput());
+        HandleMoveAnimation();
     }
 
-    protected override void HandleMove(Vector3 direction)
+    protected void HandleMoveAnimation()
     {
-        base.HandleMove(direction);
-
-        Animator.SetFloat("Horizontal", direction.x);
+        Animator.SetFloat("Horizontal",
+                          _directionHandler.GetDirection().x);
     }
 
     private void HandleAttack()

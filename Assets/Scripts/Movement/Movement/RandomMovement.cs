@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class RandomMoveInput : BaseMoveInput
+public class RandomMovement : BaseMovement
 {
     [SerializeField] private float _nextDirectionTime = 1f;
     [Space]
@@ -16,11 +16,9 @@ public class RandomMoveInput : BaseMoveInput
     private void Start()
     {
         _nextDirectionTimer = new Timer(_nextDirectionTime);
-        _randomDirection = CalculateDirection();
-        _nextDirectionTimer.Reset();
     }
 
-    private void Update()
+    protected override void Update()
     {
         if (_nextDirectionTimer.Elapsed)
         {
@@ -29,11 +27,8 @@ public class RandomMoveInput : BaseMoveInput
         }
 
         _nextDirectionTimer.Tick();
-    }
 
-    public override Vector3 GetMoveInput()
-    {
-        return _randomDirection;
+        base.Update();
     }
 
     private Vector3 CalculateDirection()
@@ -42,5 +37,10 @@ public class RandomMoveInput : BaseMoveInput
         float randomY = Random.Range(_minY, _maxY);
 
         return new Vector3(randomX, randomY);
+    }
+
+    protected override void Move()
+    {
+        _moveHandler.SetDirection(_randomDirection);
     }
 }

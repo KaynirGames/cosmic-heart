@@ -161,8 +161,8 @@ GameObject:
   - component: {fileID: 4647396047386039351}
   - component: {fileID: 6584403966984046591}
   - component: {fileID: 1219220625}
-  - component: {fileID: 907606942254316393}
   - component: {fileID: 6425295872091200859}
+  - component: {fileID: 907606942254316393}
   - component: {fileID: -3829045951531408290}
   m_Layer: 10
   m_Name: Intercepter
@@ -349,6 +349,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
+--- !u!114 &6425295872091200859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795014320238176891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c529551920ca8409600024eace8c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveHandler: {fileID: 1219220625}
+  _pathCreator: {fileID: 0}
+  _pathMode: 0
 --- !u!114 &907606942254316393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,20 +378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapons:
   - {fileID: 2019391284253761531}
---- !u!114 &6425295872091200859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3795014320238176891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c529551920ca8409600024eace8c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pathCreator: {fileID: 0}
-  _followMode: 2
 --- !u!114 &-3829045951531408290
 MonoBehaviour:
   m_ObjectHideFlags: 0

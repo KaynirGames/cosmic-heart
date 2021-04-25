@@ -3,7 +3,7 @@
 public class EnemyGroup : MonoBehaviour
 {
     [Header("Настройки спавна врагов:")]
-    [SerializeField] private Enemy _enemyPrefab = null;
+    [SerializeField] private GameObject _enemyPrefab = null;
     [SerializeField] private BaseSpawnArea _spawnArea = null;
     [SerializeField] private int _enemyAmount = 1;
     [SerializeField] private float _enemySpawnDelay = .5f;
@@ -36,11 +36,11 @@ public class EnemyGroup : MonoBehaviour
     {
         if (_spawnTimer.Elapsed)
         {
-            Enemy enemy = Instantiate(_enemyPrefab,
-                                      _spawnArea.GetSpawnPosition(),
-                                      Quaternion.identity);
+            GameObject enemy = Instantiate(_enemyPrefab,
+                                           _spawnArea.GetSpawnPosition(),
+                                           Quaternion.identity);
 
-            enemy.gameObject.SetActive(true);
+            enemy.SetActive(true);
 
             _spawnTimer.Reset();
             _spawnCount++;

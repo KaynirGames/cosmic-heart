@@ -15,11 +15,6 @@ public class Enemy : Character
         Animator.SetTrigger("Attack");
     }
 
-    public void Move()
-    {
-        HandleMove(_moveInput.GetMoveInput());
-    }
-
     protected override void Die()
     {
         _onDeathEvents.InvokeEvents(gameObject);

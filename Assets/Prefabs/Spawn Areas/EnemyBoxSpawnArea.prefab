@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3082b1f43dcf3047b7cbba9c94dfe22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boxSize: {x: 25, y: 5, z: 0}
+  _boxSize: {x: 15, y: 5, z: 0}
   _showSpawnBox: 1
   _spawnBoxColor: {r: 0, g: 0, b: 1, a: 1}
