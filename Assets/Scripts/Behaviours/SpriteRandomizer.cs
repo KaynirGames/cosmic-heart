@@ -10,7 +10,10 @@ public class SpriteRandomizer : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
+    private void Start()
+    {
         if (_spriteVariations.Length > 0)
         {
             int index = Random.Range(0, _spriteVariations.Length);

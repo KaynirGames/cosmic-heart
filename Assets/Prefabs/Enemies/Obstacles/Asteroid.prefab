@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1641837515251577611}
   - component: {fileID: 665818090596878964}
   - component: {fileID: 3658880031110382594}
+  - component: {fileID: 2007841126255281979}
   - component: {fileID: 1641837515251577610}
   - component: {fileID: 6005749351881413607}
   - component: {fileID: 7026727485786926393}
@@ -177,6 +178,7 @@ MonoBehaviour:
   - {fileID: 665818090596878964}
   - {fileID: 3658880031110382594}
   - {fileID: 1641837515251577610}
+  - {fileID: 2007841126255281979}
 --- !u!114 &1641837515251577611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +224,25 @@ MonoBehaviour:
   _owner: {fileID: 1641837515251577603}
   _eventMode: 2
   _soundSO: {fileID: 11400000, guid: 13c372a335b76d64ca6e00b2b88b7b85, type: 2}
+--- !u!114 &2007841126255281979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641837515251577603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4ef6f4234c5f0449806d9ecfd14f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _owner: {fileID: 1641837515251577603}
+  _eventMode: 2
+  _pointAmount:
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 4fad8471cdb02b048b7e1c0bb278c518, type: 2}
+    _useConstant: 0
+  _pointStorage: {fileID: 11400000, guid: 840a02ec8c214c54796e54623eda3515, type: 2}
 --- !u!114 &1641837515251577610
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba72f35488597834399af236f77323d8, type: 3}
-  m_Name: Intercepter_ScorePoints
+  m_Script: {fileID: 11500000, guid: 58159f61ce3291e458784817647f5620, type: 3}
+  m_Name: SMG Pickup Loot Table
   m_EditorClassIdentifier: 
-  _value: 100
+  _lootObjects:
+  - _loot: {fileID: 4731217643143076868, guid: 52fb1f28280e2b242901dc5c5f547ff1, type: 3}
+    _dropChance: 15

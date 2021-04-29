@@ -3,6 +3,7 @@
 public class Player : Character
 {
     [SerializeField] private BaseActionInput _attackInput = null;
+    [SerializeField] private InvincibilityFrames _invincibilityFrames = null;
 
     private WeaponSystem _weaponSystem;
     private IDirectionHandler _directionHandler;
@@ -13,6 +14,8 @@ public class Player : Character
 
         _directionHandler = GetComponent<IDirectionHandler>();
         _weaponSystem = GetComponent<WeaponSystem>();
+
+        _stats.OnDamageTaken += HandleInvincibilityFrames;
     }
 
     private void Update()
@@ -35,9 +38,15 @@ public class Player : Character
         }
     }
 
+    private void HandleInvincibilityFrames()
+    {
+        _invincibilityFrames.Activate();
+    }
+
     protected override void Die()
     {
         Debug.Log("Player is dead!");
+        _stats.OnDamageTaken -= HandleInvincibilityFrames;
         base.Die();
     }
 }

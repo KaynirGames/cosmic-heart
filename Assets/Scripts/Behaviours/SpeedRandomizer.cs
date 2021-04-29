@@ -2,8 +2,10 @@
 
 public class SpeedRandomizer : MonoBehaviour
 {
-    [SerializeField] private float _minSpeed = 3f;
-    [SerializeField] private float _maxSpeed = 5f;
+    private const int SPEED_PRECISION = 100;
+
+    [SerializeField] private float _minSpeed = 3.0f;
+    [SerializeField] private float _maxSpeed = 5.0f;
 
     private ISpeedHandler _speedHandler;
 
@@ -14,7 +16,7 @@ public class SpeedRandomizer : MonoBehaviour
 
     private void Start()
     {
-        _speedHandler.SetSpeed(Random.Range(_minSpeed,
-                                            _maxSpeed));
+        float speed = Random.Range(_minSpeed, _maxSpeed);
+        _speedHandler.SetSpeed(speed.Precise(SPEED_PRECISION));
     }
 }

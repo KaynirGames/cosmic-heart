@@ -2,18 +2,21 @@
 
 public class ScaleRandomizer2D : MonoBehaviour
 {
+    private const int SCALE_PRECISION = 100;
+
     [SerializeField] private float _minScale = 1f;
     [SerializeField] private float _maxScale = 1f;
     [SerializeField] private ScaleAxis _scaleAxis = ScaleAxis.Both;
 
-    private void Awake()
+    private void Start()
     {
         transform.localScale = GetScaleVector(_scaleAxis);
     }
 
     private Vector2 GetScaleVector(ScaleAxis scaleAxis)
     {
-        float scale = Random.Range(_minScale, _maxScale);
+        float scale = Random.Range(_minScale, _maxScale)
+                            .Precise(SCALE_PRECISION);
 
         switch (scaleAxis)
         {

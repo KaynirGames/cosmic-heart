@@ -10,15 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4731217643143076870}
   - component: {fileID: 4731217643143076871}
-  - component: {fileID: 5275567366836168305}
+  - component: {fileID: 4731217643143076875}
   - component: {fileID: 4731217643143076876}
   - component: {fileID: 4731217643143076877}
   - component: {fileID: 4731217643143076872}
-  - component: {fileID: 3428181097572163518}
+  - component: {fileID: 4731217643143076873}
   - component: {fileID: -943472258456797265}
   - component: {fileID: 4731217643143076874}
   m_Layer: 14
-  m_Name: HealthPickup
+  m_Name: PistolPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d9077b30eb03a0341ac0a25399e25284, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0102275312c54fb45b4b4ad5cf0fbb34, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5275567366836168305
-CircleCollider2D:
+--- !u!61 &4731217643143076875
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,8 +102,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Size: {x: 0.75, y: 0.75}
+  m_EdgeRadius: 0
 --- !u!114 &4731217643143076876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,10 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _events:
-  - {fileID: 3428181097572163518}
+  - {fileID: 4731217643143076873}
   - {fileID: -943472258456797265}
   - {fileID: 4731217643143076874}
---- !u!114 &3428181097572163518
+--- !u!114 &4731217643143076873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,15 +166,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4731217643143076868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc6ba4725c72004f9354663e3681d59, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ebecc9b6af09dd43bf6a3666ce942f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _owner: {fileID: 4731217643143076868}
   _eventMode: 0
-  _health:
-    _constantValue: 1
-    _variable: {fileID: 0}
-    _useConstant: 1
+  _weaponInfo: {fileID: -8552931994719144449, guid: 487ac54bb3df88e4fb42d673807e17b4,
+    type: 3}
 --- !u!114 &-943472258456797265
 MonoBehaviour:
   m_ObjectHideFlags: 0

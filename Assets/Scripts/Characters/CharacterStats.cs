@@ -2,6 +2,8 @@
 
 public class CharacterStats : MonoBehaviour, IDamageable, IRecoverable
 {
+    public System.Action OnDamageTaken = delegate { };
+
     [SerializeField] private IntReference _health = null;
     [SerializeField] private IntReference _maxHealth = null;
     [SerializeField] private FloatReference _moveSpeed = null;
@@ -17,6 +19,7 @@ public class CharacterStats : MonoBehaviour, IDamageable, IRecoverable
     public void TakeDamage(float damage)
     {
         ChangeHealth(-(int)damage);
+        OnDamageTaken.Invoke();
     }
 
     public void Recover(float recovery)
