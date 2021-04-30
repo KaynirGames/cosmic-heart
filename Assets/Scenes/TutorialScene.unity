@@ -536,7 +536,7 @@ MonoBehaviour:
   waveManager: {fileID: 647106704}
   weapon: {fileID: 646162738}
   music: {fileID: 0}
-  sfx: {fileID: 11400000, guid: 13c372a335b76d64ca6e00b2b88b7b85, type: 2}
+  sfx: {fileID: 11400000, guid: 9022f8022e767ec458a5c1fda66919d2, type: 2}
   particle: {fileID: 1674967525001209148, guid: cddca05f786116045a73c20131e9b933,
     type: 3}
 --- !u!4 &466424169
@@ -727,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyWaves:
+  - {fileID: 1114919975}
   - {fileID: 17865625}
 --- !u!1 &662185736
 GameObject:

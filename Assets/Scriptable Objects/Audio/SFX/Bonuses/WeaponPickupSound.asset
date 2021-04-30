@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da3abc0a6062d74469db88b22235932b, type: 3}
-  m_Name: PlasmaSMGShotSound
+  m_Name: WeaponPickupSound
   m_EditorClassIdentifier: 
   _clipVariations:
-  - {fileID: 8300000, guid: 6cc45240826a825428cd51f2a3874114, type: 3}
-  _volumeScale: 0.15
-  _soundChannel: 0
+  - {fileID: 8300000, guid: 4424b844a67594c44a8df9483097dd6e, type: 3}
+  _volumeScale: 0.5
+  _soundChannel: 1

@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _owner: {fileID: 4731217643143076868}
   _eventMode: 2
-  _soundSO: {fileID: 0}
+  _soundSO: {fileID: 11400000, guid: 8384bef1e5adbf04e8b08d6ae550c8fd, type: 2}
 --- !u!114 &4731217643143076874
 MonoBehaviour:
   m_ObjectHideFlags: 0
