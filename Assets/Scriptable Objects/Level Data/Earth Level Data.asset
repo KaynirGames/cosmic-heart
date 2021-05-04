@@ -16,6 +16,7 @@ MonoBehaviour:
   _sceneID: 1
   _planetPrefab: {fileID: 6915285161150214126, guid: 822fa56639204274a91ddaed90fd4543,
     type: 3}
+  _backgroundMaterial: {fileID: 2100000, guid: 5e513e5ead06d4141ab96cd93f559f19, type: 2}
   _maxScore:
     _constantValue: 0
     _variable: {fileID: 0}

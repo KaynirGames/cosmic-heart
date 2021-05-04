@@ -7,6 +7,7 @@ public class LevelSelectionDisplay : MonoBehaviour
 {
     [SerializeField] private List<LevelDataSO> _levels = null;
     [SerializeField] private Vector2 _planetDisplayPosition = Vector2.zero;
+    [SerializeField] private ParallaxHandler _parallaxHandler = null;
     [SerializeField] private TextMeshProUGUI _levelNameField = null;
     [SerializeField] private GameObject _prevLevelButton = null;
     [SerializeField] private GameObject _nextLevelButton = null;
@@ -20,7 +21,7 @@ public class LevelSelectionDisplay : MonoBehaviour
         CreatePlanets();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         SetLevel(_currentLevelIndex);
     }
@@ -54,6 +55,7 @@ public class LevelSelectionDisplay : MonoBehaviour
 
         _levelNameField.SetText(_currentLevel.LevelName);
         TogglePlanet(index, true);
+        _parallaxHandler.SetMaterial(_currentLevel.BackgroundMaterial);
 
         CheckSelectionButtons(index);
     }
