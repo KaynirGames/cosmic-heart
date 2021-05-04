@@ -1,22 +1,18 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-public class MoveRectTween : MonoBehaviour
+public class MoveRectTween : BaseTween
 {
+    [Header("Move Settings:")]
     [SerializeField] private RectTransform _targetRect = null;
     [SerializeField] private RectTransform _rectInitialPoint = null;
     [SerializeField] private float _moveDuration = .5f;
-    [SerializeField] private Ease _ease = Ease.Unset;
 
-    private void OnEnable()
+    public override Tween CreateTween()
     {
-        MoveRect();
-    }
-
-    public void MoveRect()
-    {
-        _targetRect.DOAnchorPos(_rectInitialPoint.anchoredPosition, _moveDuration)
-                   .SetEase(_ease)
-                   .From();
+        return _targetRect.DOAnchorPos(_rectInitialPoint.anchoredPosition, _moveDuration)
+                          .SetEase(_ease)
+                          .SetLoops(_loopAmount, _loopType)
+                          .From();
     }
 }
