@@ -3,12 +3,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class LevelSelectionDisplay : MonoBehaviour
+public class LevelSelectionWindow : MonoBehaviour
 {
     [SerializeField] private List<LevelDataSO> _levels = null;
     [SerializeField] private Vector2 _planetDisplayPosition = Vector2.zero;
     [SerializeField] private ParallaxHandler _parallaxHandler = null;
     [SerializeField] private TextMeshProUGUI _levelNameField = null;
+    [SerializeField] private IntVariableTextDisplay _planetScoreDisplay = null;
     [SerializeField] private GameObject _prevLevelButton = null;
     [SerializeField] private GameObject _nextLevelButton = null;
 
@@ -21,19 +22,14 @@ public class LevelSelectionDisplay : MonoBehaviour
         CreatePlanets();
     }
 
-    private void Start()
+    public void SetCurrentLevel()
     {
         SetLevel(_currentLevelIndex);
     }
 
-    public void SetNextLevel()
+    public void SetNextLevel(int step)
     {
-        SetLevel(_currentLevelIndex + 1);
-    }
-
-    public void SetPreviousLevel()
-    {
-        SetLevel(_currentLevelIndex - 1);
+        SetLevel(_currentLevelIndex + step);
     }
 
     public void PlayLevel()
@@ -41,10 +37,9 @@ public class LevelSelectionDisplay : MonoBehaviour
         SceneManager.LoadScene(_currentLevel.SceneID);
     }
 
-    public void Close()
+    public void ClearDisplay()
     {
         TogglePlanet(_currentLevelIndex, false);
-        gameObject.SetActive(false);
     }
 
     private void SetLevel(int index)
@@ -54,8 +49,9 @@ public class LevelSelectionDisplay : MonoBehaviour
         _currentLevel = _levels[index];
 
         _levelNameField.SetText(_currentLevel.LevelName);
-        TogglePlanet(index, true);
+        _planetScoreDisplay.UpdateVariableValue(_currentLevel.HighScore);
         _parallaxHandler.SetMaterial(_currentLevel.BackgroundMaterial);
+        TogglePlanet(index, true);
 
         CheckSelectionButtons(index);
     }

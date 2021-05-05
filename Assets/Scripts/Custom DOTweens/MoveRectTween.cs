@@ -8,11 +8,9 @@ public class MoveRectTween : BaseTween
     [SerializeField] private RectTransform _rectInitialPoint = null;
     [SerializeField] private float _moveDuration = .5f;
 
-    public override Tween CreateTween()
+    protected override Tween CreateTween()
     {
         return _targetRect.DOAnchorPos(_rectInitialPoint.anchoredPosition, _moveDuration)
-                          .SetEase(_ease)
-                          .SetLoops(_loopAmount, _loopType)
                           .From();
     }
 }

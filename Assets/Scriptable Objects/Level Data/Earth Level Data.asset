@@ -21,4 +21,4 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 0}
     _useConstant: 1
-  _currentScore: {fileID: 0}
+  _highScore: {fileID: 11400000, guid: ea2d62bbe2f697e459c4367b40a82a1b, type: 2}

@@ -9,6 +9,16 @@ public abstract class IntVariableBaseDisplay : MonoBehaviour
         _intVariable.OnValueChanged += UpdateDisplayValue;
     }
 
+    public void UpdateVariableValue(int value)
+    {
+        _intVariable.SetValue(value);
+    }
+
+    public void UpdateVariableValue(IntVariableSO intVariable)
+    {
+        UpdateVariableValue(intVariable.Value);
+    }
+
     protected abstract void UpdateDisplayValue(int value);
 
     protected virtual void OnDisable()

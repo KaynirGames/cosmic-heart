@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 public class Test : MonoBehaviour
 {
@@ -8,6 +7,8 @@ public class Test : MonoBehaviour
     public SoundSO music;
     public SoundSO sfx;
     public ParticleSystem particle;
+
+    public IntVariableSO intVariable;
 
     void Start()
     {
@@ -39,6 +40,11 @@ public class Test : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Instantiate(particle, Vector3.zero, Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            intVariable.ApplyChange(100);
         }
     }
 }

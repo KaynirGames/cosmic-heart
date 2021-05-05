@@ -9,17 +9,10 @@ public class ScaleTween : BaseTween
     [SerializeField] private Vector3 _endScale = Vector3.one;
     [SerializeField] private float _scaleDuration = 1f;
 
-    protected override void OnEnable()
+    protected override Tween CreateTween()
     {
         _targetTransform.localScale = _startScale;
 
-        base.OnEnable();
-    }
-
-    public override Tween CreateTween()
-    {
-        return _targetTransform.DOScale(_endScale, _scaleDuration)
-                               .SetEase(_ease)
-                               .SetLoops(_loopAmount, _loopType);
+        return _targetTransform.DOScale(_endScale, _scaleDuration);
     }
 }

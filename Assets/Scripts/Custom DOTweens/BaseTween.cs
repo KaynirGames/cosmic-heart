@@ -7,18 +7,27 @@ public abstract class BaseTween : MonoBehaviour
     [SerializeField] protected Ease _ease = Ease.Unset;
     [SerializeField] protected int _loopAmount = 0;
     [SerializeField] protected LoopType _loopType = LoopType.Restart;
+    [SerializeField] protected bool _playOnEnable = true;
 
     protected Tween _tween;
 
-    public abstract Tween CreateTween();
-
-    protected virtual void OnEnable()
+    public void PlayTween()
     {
-        _tween = CreateTween();
-        _tween.Play();
+        _tween = CreateTween().SetEase(_ease)
+                              .SetLoops(_loopAmount, _loopType);
     }
 
-    protected virtual void OnDisable()
+    protected abstract Tween CreateTween();
+
+    private void OnEnable()
+    {
+        if (_playOnEnable)
+        {
+            PlayTween();
+        }
+    }
+
+    private void OnDisable()
     {
         _tween?.Kill(true);
     }
