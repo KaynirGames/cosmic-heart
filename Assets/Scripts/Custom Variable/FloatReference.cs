@@ -47,9 +47,4 @@ public class FloatReference : IVariable<float>
 
         OnValueChanged.Invoke(Value);
     }
-
-    public static implicit operator float(FloatReference floatReference)
-    {
-        return floatReference.Value;
-    }
 }

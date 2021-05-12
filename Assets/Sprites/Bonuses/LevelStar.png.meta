@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: d9077b30eb03a0341ac0a25399e25284
+guid: e23a6396049bb0348b65c4c82415cb4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6741907371364557799
-    second: PlayerHealth_Active
+      213: 5340528492494717357
+    second: LevelStar_Active
   - first:
-      213: 5339652579274257687
-    second: PlayerHealth_Empty
+      213: -6160415407261347862
+    second: LevelStar_Empty
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerHealth_Active
+      name: LevelStar_Active
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91c5a3547feef62a0800000000000000
-      internalID: -6741907371364557799
+      spriteID: da1000c5e5e5d1a40800000000000000
+      internalID: 5340528492494717357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerHealth_Empty
+      name: LevelStar_Empty
       rect:
         serializedVersion: 2
         x: 16
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 715f3abeab14a1a40800000000000000
-      internalID: 5339652579274257687
+      spriteID: aef085d83dec18aa0800000000000000
+      internalID: -6160415407261347862
       vertices: []
       indices: 
       edges: []

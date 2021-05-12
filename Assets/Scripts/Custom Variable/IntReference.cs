@@ -47,9 +47,4 @@ public class IntReference : IVariable<int>
 
         OnValueChanged.Invoke(Value);
     }
-
-    public static implicit operator int(IntReference intReference)
-    {
-        return intReference.Value;
-    }
 }

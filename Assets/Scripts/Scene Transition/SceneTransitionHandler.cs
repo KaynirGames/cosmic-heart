@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
 public class SceneTransitionHandler : MonoBehaviour
 {
     private const string MAIN_TEX = "_MainText";
@@ -13,63 +12,55 @@ public class SceneTransitionHandler : MonoBehaviour
     private const float CUTOFF_MAX_VALUE = 1.1f;
     private const float CUTOFF_MIN_VALUE = -0.1f;
 
+    [SerializeField] private Image _transitionScreen = null;
+    [SerializeField] private Sprite _transitionSprite = null;
     [SerializeField] private float _transitionSpeed = 1f;
 
-    private Image _image;
-
-    private bool _isLoading;
-    private bool _isDone;
-    private int _loadingSceneID;
     private float _edgeSmoothing;
-
-    private void Awake()
-    {
-        _image = GetComponent<Image>();
-    }
 
     private void Start()
     {
-        _edgeSmoothing = _image.material.GetFloat(EDGE_SMOOTHING);
-        _isLoading = false;
-        _isDone = false;
-    }
-
-    private void Update()
-    {
-        if (_isDone)
+        if (_transitionSprite != null)
         {
-            return;
+            SetTransitionTexture(_transitionSprite);
         }
 
-        if (_isLoading)
-        {
-            if (FadeMaterial(CUTOFF_MIN_VALUE - _edgeSmoothing))
-            {
-                SceneManager.LoadScene(_loadingSceneID);
-            }
-            return;
-        }
+        _edgeSmoothing = _transitionScreen.material.GetFloat(EDGE_SMOOTHING);
+        _transitionScreen.material.SetFloat(CUTOFF, CUTOFF_MIN_VALUE);
 
-        if (FadeMaterial(CUTOFF_MAX_VALUE))
-        {
-            _isDone = true;
-        }
+        StartCoroutine(FadeMaterialCO(CUTOFF_MAX_VALUE));
     }
 
     public void LoadScene(int sceneID)
     {
-        _isLoading = true;
-        _isDone = false;
-        _loadingSceneID = sceneID;
+        StartCoroutine(LoadSceneCO(sceneID));
     }
 
-    private bool FadeMaterial(float targetValue)
+    public void SetTransitionTexture(Sprite textureSprite)
     {
-        float currentCutoff = _image.material.GetFloat(CUTOFF);
-        float newCutoff = Mathf.MoveTowards(currentCutoff, targetValue, _transitionSpeed * Time.deltaTime);
+        _transitionScreen.material.SetTexture(MAIN_TEX, textureSprite.texture);
+    }
 
-        _image.material.SetFloat(CUTOFF, newCutoff);
+    private IEnumerator FadeMaterialCO(float targetValue)
+    {
+        _transitionScreen.raycastTarget = true;
 
-        return newCutoff == targetValue;
+        float cutoff = _transitionScreen.material.GetFloat(CUTOFF);
+        float delta = _transitionSpeed * Time.deltaTime;
+
+        while (cutoff != targetValue)
+        {
+            cutoff = Mathf.MoveTowards(cutoff, targetValue, delta);
+            _transitionScreen.material.SetFloat(CUTOFF, cutoff);
+            yield return null;
+        }
+
+        _transitionScreen.raycastTarget = false;
+    }
+
+    private IEnumerator LoadSceneCO(int sceneID)
+    {
+        yield return FadeMaterialCO(CUTOFF_MIN_VALUE - _edgeSmoothing);
+        SceneManager.LoadScene(sceneID);
     }
 }
