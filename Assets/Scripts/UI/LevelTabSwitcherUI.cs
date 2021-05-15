@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelTabSelectorUI : BaseTabSelectorUI
+public class LevelTabSwitcherUI : BaseTabSwitcherUI
 {
-    [Header("Level Selector Settings:")]
     [SerializeField] private List<LevelDataSO> _levels = null;
     [SerializeField] private Vector2 _planetDisplayPosition = Vector2.zero;
     [SerializeField] private SceneTransitionHandler _transitionHandler = null;

@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerTabSelectorUI : BaseTabSelectorUI
+public class PlayerTabSwitcherUI : BaseTabSwitcherUI
 {
-    [Header("Player Selector Settings:")]
     [SerializeField] private IntVariableSO _playerShipID = null;
     [SerializeField] private IntVariableSO _shipUpgradeID = null;
     [SerializeField] private ShopUpgradeHandler _shipUpgradeHandler = null;

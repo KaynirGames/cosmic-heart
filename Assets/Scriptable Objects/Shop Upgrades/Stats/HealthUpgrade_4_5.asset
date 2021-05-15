@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02fa7334002b30c4b8d5d76d6cc4f4e0, type: 3}
-  m_Name: HunterShip
+  m_Name: HealthUpgrade_4_5
   m_EditorClassIdentifier: 
-  _cost: 1500
-  _desc: 
+  _cost: 200
+  _desc: 4 >> 5

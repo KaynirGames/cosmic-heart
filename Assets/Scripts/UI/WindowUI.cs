@@ -14,13 +14,13 @@ public class WindowUI : MonoBehaviour
         _canvas = GetComponent<Canvas>();
     }
 
-    public void OpenWindow()
+    public void Open()
     {
         _canvas.enabled = true;
         _onOpenWindow?.Invoke();
     }
 
-    public void CloseWindow()
+    public void Close()
     {
         _canvas.enabled = false;
         _onCloseWindow?.Invoke();

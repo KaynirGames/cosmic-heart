@@ -4,21 +4,23 @@ using UnityEngine.UI;
 
 public class ShopUpgradeHandler : MonoBehaviour
 {
-    private const string COST_FORMAT = "{0} Зол";
-    private const string BOUGHT_TEXT = "Куплено";
-
     [SerializeField] private IntVariableSO _upgradeID = null;
     [SerializeField] private IntVariableSO _moneyStorage = null;
-    [SerializeField] private ShopUpgradeDataSO[] _upgrades = null;
+    [SerializeField] private ShopUpgradeSO[] _upgrades = null;
+    [Space]
     [SerializeField] private TextMeshProUGUI _upgradeDescField = null;
-    [SerializeField] private Button _buyUpgradeButton = null;
+    [SerializeField] private TextMeshProUGUI _upgradeCostField = null;
+    [SerializeField] private Button _upgradeButton = null;
+    [SerializeField] private string _upgradeCostFormat = "{0} $";
+    [SerializeField] private string _upgradeBoughtText = "Куплено";
+    [SerializeField] private string _upgradeMaxText = "Макс.";
 
-    private TextMeshProUGUI _upgradeCostField;
+    private ShopUpgradeSO _upgrade;
 
     private void Awake()
     {
-        _upgradeCostField = _buyUpgradeButton.GetComponentInChildren<TextMeshProUGUI>();
         _upgradeID.OnValueChanged += DisplayUpgrade;
+        _moneyStorage.OnValueChanged += EnableUpgradeButton;
     }
 
     private void Start()
@@ -28,32 +30,30 @@ public class ShopUpgradeHandler : MonoBehaviour
 
     public void BuyUpgrade()
     {
-        _moneyStorage.ApplyChange(-GetUpgradeData(_upgradeID.Value).Cost);
+        _moneyStorage.ApplyChange(-_upgrade.Cost);
         _upgradeID.ApplyChange(1);
+    }
+
+    private void EnableUpgradeButton(int money)
+    {
+        _upgradeButton.interactable = money >= _upgrade.Cost;
     }
 
     private void DisplayUpgrade(int index)
     {
         if (index == _upgrades.Length)
         {
-            _upgradeCostField.SetText(BOUGHT_TEXT);
+            _upgradeDescField.SetText(_upgradeMaxText);
+            _upgradeCostField.SetText(_upgradeBoughtText);
+            _upgradeButton.interactable = false;
             return;
         }
 
-        var upgradeData = GetUpgradeData(index);
+        _upgrade = _upgrades[index];
 
-        if (_upgradeDescField != null)
-        {
-            _upgradeDescField.SetText(upgradeData.Desc);
-        }
-
-        _upgradeCostField.SetText(string.Format(COST_FORMAT,
-                                                upgradeData.Cost));
-        _buyUpgradeButton.interactable = _moneyStorage.Value >= upgradeData.Cost;
-    }
-
-    private ShopUpgradeDataSO GetUpgradeData(int index)
-    {
-        return _upgrades[index];
+        _upgradeDescField.SetText(_upgrade.Desc);
+        _upgradeCostField.SetText(string.Format(_upgradeCostFormat,
+                                                _upgrade.Cost));
+        EnableUpgradeButton(_moneyStorage.Value);
     }
 }
