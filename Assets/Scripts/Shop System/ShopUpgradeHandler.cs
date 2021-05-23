@@ -1,59 +1,74 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ShopUpgradeHandler : MonoBehaviour
 {
     [SerializeField] private IntVariableSO _upgradeID = null;
     [SerializeField] private IntVariableSO _moneyStorage = null;
     [SerializeField] private ShopUpgradeSO[] _upgrades = null;
-    [Space]
+    [SerializeField] private ShopUpgradeSO _maxUpgrade = null;
+    [Header("Отображение улучшения:")]
     [SerializeField] private TextMeshProUGUI _upgradeDescField = null;
-    [SerializeField] private TextMeshProUGUI _upgradeCostField = null;
-    [SerializeField] private Button _upgradeButton = null;
-    [SerializeField] private string _upgradeCostFormat = "{0} $";
+    [SerializeField] private ButtonStateHandler _upgradeButtonHandler = null;
+    [SerializeField] private string _upgradeCostFormat = "{0} Зол";
     [SerializeField] private string _upgradeBoughtText = "Куплено";
-    [SerializeField] private string _upgradeMaxText = "Макс.";
+    [Header("Подтвержение улучшения:")]
+    [SerializeField] private ConfirmDialogPopup _upgradeConfirmPopup = null;
+    [SerializeField] private string _confirmTitleText = "Улучшение";
+    [SerializeField] private string _confirmMessageFormat = "Приобрести за {0} Зол?";
 
     private ShopUpgradeSO _upgrade;
 
     private void Awake()
     {
         _upgradeID.OnValueChanged += DisplayUpgrade;
-        _moneyStorage.OnValueChanged += EnableUpgradeButton;
+        _moneyStorage.OnValueChanged += UpdateUpgradeButton;
     }
 
     private void Start()
     {
+        DisplayUpgrade();
+    }
+
+    public void TryBuyUpgrade()
+    {
+        _upgradeConfirmPopup.Show(_confirmTitleText,
+                                  string.Format(_confirmMessageFormat, _upgrade.Cost),
+                                  BuyUpgrade);
+    }
+
+    public void DisplayUpgrade()
+    {
         DisplayUpgrade(_upgradeID.Value);
-    }
-
-    public void BuyUpgrade()
-    {
-        _moneyStorage.ApplyChange(-_upgrade.Cost);
-        _upgradeID.ApplyChange(1);
-    }
-
-    private void EnableUpgradeButton(int money)
-    {
-        _upgradeButton.interactable = money >= _upgrade.Cost;
     }
 
     private void DisplayUpgrade(int index)
     {
         if (index == _upgrades.Length)
         {
-            _upgradeDescField.SetText(_upgradeMaxText);
-            _upgradeCostField.SetText(_upgradeBoughtText);
-            _upgradeButton.interactable = false;
+            _moneyStorage.OnValueChanged -= UpdateUpgradeButton;
+            _upgradeDescField.SetText(_maxUpgrade.Desc);
+            _upgradeButtonHandler.SetButtonState(_upgradeBoughtText,
+                                                 false,
+                                                 null);
             return;
         }
 
         _upgrade = _upgrades[index];
-
         _upgradeDescField.SetText(_upgrade.Desc);
-        _upgradeCostField.SetText(string.Format(_upgradeCostFormat,
-                                                _upgrade.Cost));
-        EnableUpgradeButton(_moneyStorage.Value);
+        _upgradeButtonHandler.SetButtonState(string.Format(_upgradeCostFormat, _upgrade.Cost),
+                                             _moneyStorage.Value >= _upgrade.Cost,
+                                             TryBuyUpgrade);
+    }
+
+    private void BuyUpgrade()
+    {
+        _moneyStorage.ApplyChange(-_upgrade.Cost);
+        _upgradeID.ApplyChange(1);
+    }
+
+    private void UpdateUpgradeButton(int money)
+    {
+        _upgradeButtonHandler.SetInteraction(money >= _upgrade.Cost);
     }
 }

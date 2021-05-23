@@ -1,42 +1,73 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerTabSwitcherUI : BaseTabSwitcherUI
 {
+    private const string SELECT_TEXT = "Выбрать";
+    private const string SELECTED_TEXT = "Выбрано";
+    private const string LOCKED_TEXT = "Закрыто";
+
     [SerializeField] private IntVariableSO _playerShipID = null;
     [SerializeField] private IntVariableSO _shipUpgradeID = null;
     [SerializeField] private ShopUpgradeHandler _shipUpgradeHandler = null;
-    [SerializeField] private Button _setButton = null;
-    [SerializeField] private Button _selectedButton = null;
-    [SerializeField] private Button _buyButton = null;
-    [SerializeField] private Button _lockedButton = null;
-
-    public void SetShip()
-    {
-        _playerShipID.SetValue(_tabIndex);
-        ShowActionButtons(_tabIndex);
-    }
-
-    public void BuyShip()
-    {
-        _shipUpgradeHandler.BuyUpgrade();
-        ShowActionButtons(_tabIndex);
-    }
+    [SerializeField] private ButtonStateHandler _shipButtonHandler = null;
 
     protected override void ShowContent(int index)
     {
         base.ShowContent(index);
-        ShowActionButtons(index);
+        UpdateShipButton(index);
     }
 
-    private void ShowActionButtons(int index)
+    private void SetShip()
+    {
+        _playerShipID.SetValue(_tabIndex);
+        UpdateShipButton(_tabIndex);
+    }
+
+    private void BuyShip()
+    {
+        _shipUpgradeHandler.TryBuyUpgrade();
+        UpdateShipButton(_tabIndex);
+    }
+
+    private void UpdateShipButton(int index)
     {
         bool isLocked = index > _shipUpgradeID.Value;
 
-        _lockedButton.gameObject.SetActive(isLocked && index != _shipUpgradeID.Value + 1);
-        _buyButton.gameObject.SetActive(isLocked && index == _shipUpgradeID.Value + 1);
+        if (isLocked)
+        {
+            HandleLockedShipButton(index);
+            return;
+        }
 
-        _setButton.gameObject.SetActive(!isLocked && index != _playerShipID.Value);
-        _selectedButton.gameObject.SetActive(!isLocked && index == _playerShipID.Value);
+        HandleUnlockedShipButton(index);
+    }
+
+    private void HandleLockedShipButton(int index)
+    {
+        if (index == _shipUpgradeID.Value + 1)
+        {
+            _shipUpgradeHandler.DisplayUpgrade();
+            _shipButtonHandler.SetOnClickAction(BuyShip);
+            return;
+        }
+
+        _shipButtonHandler.SetButtonState(LOCKED_TEXT,
+                                          false,
+                                          null);
+    }
+
+    private void HandleUnlockedShipButton(int index)
+    {
+        if (index == _playerShipID.Value)
+        {
+            _shipButtonHandler.SetButtonState(SELECTED_TEXT,
+                                              false,
+                                              null);
+            return;
+        }
+
+        _shipButtonHandler.SetButtonState(SELECT_TEXT,
+                                          true,
+                                          SetShip);
     }
 }

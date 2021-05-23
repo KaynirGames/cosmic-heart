@@ -2,9 +2,9 @@
 
 public abstract class BaseTabHandlerUI : MonoBehaviour
 {
-    [SerializeField] protected WindowUI[] _tabs = null;
+    [SerializeField] protected WindowPopup[] _tabs = null;
 
-    public WindowUI GetTabWindow(int tabIndex)
+    public WindowPopup GetTabWindow(int tabIndex)
     {
         return _tabs[tabIndex];
     }

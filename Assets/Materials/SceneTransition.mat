@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CircleSceneTransition
+  m_Name: SceneTransition
   m_Shader: {fileID: -6465566751694194690, guid: 3cc4bd14196a8b04ab5deacbf2bbaea8,
     type: 3}
   m_ShaderKeywords: 

@@ -20,11 +20,7 @@ public class SceneTransitionHandler : MonoBehaviour
 
     private void Start()
     {
-        if (_transitionSprite != null)
-        {
-            SetTransitionTexture(_transitionSprite);
-        }
-
+        SetTransitionTexture(_transitionSprite);
         _edgeSmoothing = _transitionScreen.material.GetFloat(EDGE_SMOOTHING);
         _transitionScreen.material.SetFloat(CUTOFF, CUTOFF_MIN_VALUE);
 
