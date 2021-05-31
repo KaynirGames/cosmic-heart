@@ -22,7 +22,7 @@ public class SceneTransitionHandler : MonoBehaviour
     {
         SetTransitionTexture(_transitionSprite);
         _edgeSmoothing = _transitionScreen.material.GetFloat(EDGE_SMOOTHING);
-        _transitionScreen.material.SetFloat(CUTOFF, CUTOFF_MIN_VALUE);
+        _transitionScreen.material.SetFloat(CUTOFF, CUTOFF_MIN_VALUE - _edgeSmoothing);
 
         StartCoroutine(FadeMaterialCO(CUTOFF_MAX_VALUE));
     }
@@ -30,6 +30,11 @@ public class SceneTransitionHandler : MonoBehaviour
     public void LoadScene(int sceneID)
     {
         StartCoroutine(LoadSceneCO(sceneID));
+    }
+
+    public void ReloadScene()
+    {
+        LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SetTransitionTexture(Sprite textureSprite)
@@ -56,6 +61,7 @@ public class SceneTransitionHandler : MonoBehaviour
 
     private IEnumerator LoadSceneCO(int sceneID)
     {
+        yield return null;
         yield return FadeMaterialCO(CUTOFF_MIN_VALUE - _edgeSmoothing);
         SceneManager.LoadScene(sceneID);
     }

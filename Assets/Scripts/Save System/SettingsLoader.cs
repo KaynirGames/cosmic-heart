@@ -34,7 +34,9 @@ public class SettingsLoader : MonoBehaviour
 
     public void LoadSettings()
     {
-        if (!(SaveSystem.LoadData(SETTINGS_FILE) is SettingsData data))
+        SettingsData data = (SettingsData)SaveSystem.LoadData(SETTINGS_FILE);
+
+        if (data == null)
         {
             data = new SettingsData();
         }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3858206938228413952}
   - component: {fileID: 626715512991892752}
   - component: {fileID: 745670102731091013}
-  - component: {fileID: 4327397785526734400}
+  - component: {fileID: 1749148746415780636}
   m_Layer: 0
   m_Name: PlasmaSMG_Enemy
   m_TagString: Untagged
@@ -127,7 +127,7 @@ MonoBehaviour:
   _owner: {fileID: 5114607718829249345}
   _eventMode: 2
   _soundSO: {fileID: 11400000, guid: 9022f8022e767ec458a5c1fda66919d2, type: 2}
---- !u!114 &4327397785526734400
+--- !u!114 &1749148746415780636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,4 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponID: PlasmaSMG
-  _weaponIcon: {fileID: 0}
+  _weaponIcon: {fileID: 21300000, guid: 89fa3a3410c74fb44870f451b660c6ef, type: 3}

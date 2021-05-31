@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 7440525664335381415}
   - component: {fileID: 7056323710779480242}
   m_Layer: 5
-  m_Name: ShipUpgrade
+  m_Name: ShopUpgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,13 +75,15 @@ MonoBehaviour:
   _upgradeID: {fileID: 0}
   _moneyStorage: {fileID: 11400000, guid: e7c84bc098d887a41bc44a1a186680fa, type: 2}
   _upgrades: []
+  _maxUpgrade: {fileID: 0}
   _upgradeDescField: {fileID: 7440525664442335123}
-  _upgradeCostField: {fileID: 27200977883282739}
   _upgradeButtonHandler: {fileID: 6386055190797339138}
-  _upgradeButton: {fileID: 2012751281613539519}
   _upgradeCostFormat: "{0} \u0417\u043E\u043B"
   _upgradeBoughtText: "\u041A\u0443\u043F\u043B\u0435\u043D\u043E"
-  _upgradeMaxText: "\u041C\u0430\u043A\u0441."
+  _upgradeConfirmPopup: {fileID: 0}
+  _confirmTitleText: "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435"
+  _confirmMessageFormat: "\u041F\u0440\u0438\u043E\u0431\u0440\u0435\u0441\u0442\u0438
+    \u0437\u0430 {0} \u0417\u043E\u043B?"
 --- !u!1 &7440525664442335117
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,14 +160,15 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 0e3b9654edea5604d870f68cf74d398c,
+    type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_overrideHtmlColors: 0
@@ -315,14 +318,15 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: e1c1237c5eec7c54d99010ada927af99,
+    type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_overrideHtmlColors: 0
@@ -637,27 +641,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7440525664632561805}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2012751281613539519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8983753320184178738, guid: 0a761e786a73396448e7e22fa26bb750,
-    type: 3}
-  m_PrefabInstance: {fileID: 7440525664632561805}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27200978658982836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &27200977883282739 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7431693163445575102, guid: 0a761e786a73396448e7e22fa26bb750,
-    type: 3}
-  m_PrefabInstance: {fileID: 7440525664632561805}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

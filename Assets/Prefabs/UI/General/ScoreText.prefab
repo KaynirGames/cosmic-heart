@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1679592196179541252}
   - component: {fileID: 1679592196179541253}
   m_Layer: 5
-  m_Name: ScoreDisplay
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _intVariable: {fileID: 0}
   _textField: {fileID: 1679592196430572382}
-  _numericFormat: 000000000
+  _format: '{0:000000000}'
 --- !u!1 &1679592196430572376
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,14 +150,15 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: e1c1237c5eec7c54d99010ada927af99,
+    type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_overrideHtmlColors: 0
