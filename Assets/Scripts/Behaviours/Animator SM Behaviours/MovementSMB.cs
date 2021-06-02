@@ -2,18 +2,21 @@
 
 public class MovementSMB : StateMachineBehaviour
 {
-    private IDirectionHandler _directionHandler;
+    private BaseMoveHandler _moveHandler;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_directionHandler == null)
+        if (_moveHandler == null)
         {
-            _directionHandler = animator.GetComponent<IDirectionHandler>();
+            _moveHandler = animator.GetComponent<BaseMoveHandler>();
         }
+
+        _moveHandler.enabled = true;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _directionHandler.SetDirection(Vector3.zero);
+        _moveHandler.SetDirection(Vector3.zero);
+        _moveHandler.enabled = false;
     }
 }

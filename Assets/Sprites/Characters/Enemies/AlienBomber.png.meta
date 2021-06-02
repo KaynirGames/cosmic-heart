@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: dbd2089d9039ec94da193e1272edc11d
+guid: 78bc507a11378cc4f8c97b091a4397eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6611263636023567295
-    second: PlasmaBullet_0
+      213: 1815202815083311458
+    second: AlienBomber_0
   - first:
-      213: 3945835902719217530
-    second: PlasmaBullet_1
+      213: 5429160474483357692
+    second: AlienBomber_1
   - first:
-      213: 5208349528721885511
-    second: PlasmaPistolBullet_Player
+      213: -7627389860069389049
+    second: AlienBomber_2
   - first:
-      213: -968192186096701788
-    second: PlasmaPistolBullet_Player
+      213: 8784245029742959531
+    second: AlienBomber_3
   - first:
-      213: -7014637786607707098
-    second: PlasmaPistolBullet_Player_0
+      213: 6340072454628974391
+    second: AlienBomber_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -76,7 +76,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -88,7 +88,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -100,7 +100,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -114,22 +114,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlasmaPistolBullet_Player_0
+      name: AlienBomber_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.525}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62c1735291007ae90800000000000000
-      internalID: -7014637786607707098
+      spriteID: 261745cc755e03910800000000000000
+      internalID: 1815202815083311458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlienBomber_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7fb26cfa0485b40800000000000000
+      internalID: 5429160474483357692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlienBomber_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70dc52b7551162690800000000000000
+      internalID: -7627389860069389049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlienBomber_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babd1d94058e7e970800000000000000
+      internalID: 8784245029742959531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlienBomber_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f166c6e467cf750800000000000000
+      internalID: 6340072454628974391
       vertices: []
       indices: 
       edges: []

@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2351976327324648508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2351976327324648511}
+  - component: {fileID: 2351976327324648510}
+  - component: {fileID: -2989129810553161332}
+  m_Layer: 0
+  m_Name: AlienBomberGroupA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2351976327324648511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2351976327324648508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4757910874387509396}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2351976327324648510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2351976327324648508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452b4728be2f83c4eb63f4c47e0c91a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 4757910874387509402}
+  _spawnArea: {fileID: -2989129810553161332}
+  _enemyAmount: 2
+  _enemySpawnDelay: 0.5
+--- !u!114 &-2989129810553161332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2351976327324648508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0818c1a4aebca4ebe2f689e190833b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnRadius: 2
+  _showSpawnRadius: 1
+  _spawnCircleColor: {r: 0, g: 0, b: 1, a: 1}
+--- !u!1001 &8551746154688469729
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2351976327324648511}
+    m_Modifications:
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176891, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_Name
+      value: AlienBomber
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795014320238176891, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9261d6e3136f48d4691f97e7bb7edf43, type: 3}
+--- !u!1 &4757910874387509402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3795014320238176891, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+    type: 3}
+  m_PrefabInstance: {fileID: 8551746154688469729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4757910874387509396 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3795014320238176885, guid: 9261d6e3136f48d4691f97e7bb7edf43,
+    type: 3}
+  m_PrefabInstance: {fileID: 8551746154688469729}
+  m_PrefabAsset: {fileID: 0}

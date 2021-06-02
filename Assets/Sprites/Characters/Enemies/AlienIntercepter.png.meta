@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: dbd2089d9039ec94da193e1272edc11d
+guid: a63ca7834a6d5524b948ce0fa8c67e83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6611263636023567295
-    second: PlasmaBullet_0
+      213: 4535438644325914041
+    second: AlienIntercepter_0
   - first:
-      213: 3945835902719217530
-    second: PlasmaBullet_1
+      213: -7043098019848396489
+    second: AlienIntercepter_1
   - first:
-      213: 5208349528721885511
-    second: PlasmaPistolBullet_Player
+      213: 8080215199930195149
+    second: Intercepter_Bullet
   - first:
-      213: -968192186096701788
-    second: PlasmaPistolBullet_Player
+      213: -3276693793203983153
+    second: AlienIntercepter_3
   - first:
-      213: -7014637786607707098
-    second: PlasmaPistolBullet_Player_0
+      213: 6414523135551795698
+    second: Intercepter_Bullet
+  - first:
+      213: -5153303346042224131
+    second: AlienIntercepter_0
+  - first:
+      213: 4166652358719858226
+    second: AlienIntercepter_1
+  - first:
+      213: -8418288526406473544
+    second: AlienIntercepter_2
+  - first:
+      213: 6414523135551795698
+    second: Intercepter_Bullet
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -76,7 +88,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -88,7 +100,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -100,7 +112,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -114,22 +126,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlasmaPistolBullet_Player_0
+      name: AlienIntercepter_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8abceef2b3c2b80800000000000000
+      internalID: -8418288526406473544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlienIntercepter_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc69521b58d682d0800000000000000
+      internalID: -3276693793203983153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlienIntercepter_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62c1735291007ae90800000000000000
-      internalID: -7014637786607707098
+      spriteID: 9b510afca6d11fe30800000000000000
+      internalID: 4535438644325914041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlienIntercepter_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731eda8baa3e14e90800000000000000
+      internalID: -7043098019848396489
       vertices: []
       indices: 
       edges: []
