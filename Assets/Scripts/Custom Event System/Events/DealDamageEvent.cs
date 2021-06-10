@@ -4,7 +4,7 @@ public class DealDamageEvent : BaseEvent
 {
     [SerializeField] private float _damage = 1f;
 
-    protected override void Invoke(GameObject target)
+    public override void TryInvoke(GameObject target)
     {
         if (target.TryGetComponent(out IDamageable damageable))
         {

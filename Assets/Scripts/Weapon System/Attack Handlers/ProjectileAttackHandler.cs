@@ -2,7 +2,7 @@
 
 public class ProjectileAttackHandler : BaseAttackHandler
 {
-    [SerializeField] private GameObject _projectilePrefab = null;
+    [SerializeField] private PoolHandler _prefabPoolHandler = null;
     [SerializeField] private Transform[] _firePoints = null;
     [Header("Настройка снарядов:")]
     [SerializeField, Range(0f, 360f)] private float _spreadAngle = 0f;
@@ -28,12 +28,10 @@ public class ProjectileAttackHandler : BaseAttackHandler
             float currentAngle = aimAngle + angleStep * i - spreadOffset;
 
             Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, currentAngle));
+            GameObject projectile = _prefabPoolHandler.Take();
 
-            GameObject projectile = Instantiate(_projectilePrefab,
-                                                point.position,
-                                                rotation);
-
-            projectile.SetActive(true);
+            projectile.transform.position = point.position;
+            projectile.transform.rotation = rotation;
 
             Vector3 projectileDirection = GetProjectileDirection(point.position,
                                                                  currentAngle);

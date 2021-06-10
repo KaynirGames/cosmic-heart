@@ -19,8 +19,10 @@ public class WeaponSystem : MonoBehaviour
 
         foreach (WeaponBase weapon in _weapons)
         {
-            _weaponDict.Add(weapon.GetComponent<WeaponInfo>().ID,
-                            weapon);
+            if (weapon.TryGetComponent(out WeaponInfo info))
+            {
+                _weaponDict.Add(info.ID, weapon);
+            }
 
             weapon.gameObject.SetActive(true);
         }
@@ -56,11 +58,5 @@ public class WeaponSystem : MonoBehaviour
     public void UseCurrentWeapon()
     {
         CurrentWeapon.UseWeapon();
-    }
-
-    public void UseRandomWeapon()
-    {
-        int index = Random.Range(0, _weapons.Count);
-        UseWeapon(index);
     }
 }

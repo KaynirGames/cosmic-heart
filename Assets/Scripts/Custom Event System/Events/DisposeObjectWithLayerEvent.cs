@@ -4,7 +4,7 @@ public class DisposeObjectWithLayerEvent : BaseEvent
 {
     [SerializeField] private LayerMask _layers = 0;
 
-    protected override void Invoke(GameObject target)
+    public override void TryInvoke(GameObject target)
     {
         if (target.InLayers(_layers))
         {

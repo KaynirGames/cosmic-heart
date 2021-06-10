@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: -7579626101739791628}
   - component: {fileID: 376777847547670711}
   - component: {fileID: 7231226425568785380}
-  - component: {fileID: 3858206938228413952}
+  - component: {fileID: -2348025933974844805}
   - component: {fileID: 4514033021799283175}
   - component: {fileID: 6148563340524350430}
-  - component: {fileID: -8722064550725930675}
   m_Layer: 0
   m_Name: RocketLauncher_Enemy
   m_TagString: Untagged
@@ -52,7 +51,6 @@ MonoBehaviour:
   _attackDelay: 1.25
   _attackModeHandler: {fileID: 376777847547670711}
   _attackHandler: {fileID: 7231226425568785380}
-  _ammoHandler: {fileID: 3858206938228413952}
   _weaponEvents: {fileID: 4514033021799283175}
 --- !u!114 &376777847547670711
 MonoBehaviour:
@@ -78,13 +76,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac62c6d2d75c844e8123a0ff76fb63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 4191232711146618573, guid: d963946ff58dafa4fb4d695d24a025d5,
-    type: 3}
+  _prefabPoolHandler: {fileID: -2348025933974844805}
   _firePoints: []
   _spreadAngle: 0
   _projectileAmount: 1
   _projectileSpeed: 10
---- !u!114 &3858206938228413952
+--- !u!114 &-2348025933974844805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,9 +90,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5114607718829249345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f940911f4f0274481c0122d8bba0f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eeeca5aadb306d45a969654f373d643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefab: {fileID: 4191232711146618573, guid: d963946ff58dafa4fb4d695d24a025d5, type: 3}
+  _pool: {fileID: 11400000, guid: 5dfde2e3fe04b5b4798457539939a439, type: 2}
 --- !u!114 &4514033021799283175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,20 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 5114607718829249345}
-  _eventMode: 2
+  _eventOwner: {fileID: 5114607718829249345}
   _soundSO: {fileID: 11400000, guid: 79c02bdec558dfe45ac64d69bc910c1f, type: 2}
---- !u!114 &-8722064550725930675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5114607718829249345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3611a42523f360243be28a138fb10d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponID: RocketLauncher
-  _weaponIcon: {fileID: 21300000, guid: eb9783880e833644ca945141131b0a71, type: 3}

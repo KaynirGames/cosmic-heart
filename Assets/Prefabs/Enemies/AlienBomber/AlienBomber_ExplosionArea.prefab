@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4063598009175192584}
   - component: {fileID: 6388972103878112533}
   m_Layer: 13
-  m_Name: BoombotExplosionArea
+  m_Name: AlienBomber_ExplosionArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,8 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cea3102e022144bafcd419e6d12349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 2116755446225630951}
-  _eventMode: 0
+  _eventOwner: {fileID: 2116755446225630951}
   _damage: 1
 --- !u!114 &6388972103878112533
 MonoBehaviour:
@@ -106,5 +105,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9476352b9dd5e241b5c4092f54cdd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 2116755446225630951}
-  _eventMode: 1
+  _eventOwner: {fileID: 2116755446225630951}

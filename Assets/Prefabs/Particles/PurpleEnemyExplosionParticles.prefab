@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 59753410335973753}
   - component: {fileID: 5874058821640496743}
   - component: {fileID: 8042366473925457745}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PurpleEnemyExplosionParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4809,7 +4809,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
+  m_Pivot: {x: 0, y: 0, z: 10}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1

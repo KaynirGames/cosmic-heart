@@ -160,8 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc6ba4725c72004f9354663e3681d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 4731217643143076868}
-  _eventMode: 0
+  _eventOwner: {fileID: 4731217643143076868}
   _health:
     _constantValue: 1
     _variable: {fileID: 0}
@@ -178,8 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 4731217643143076868}
-  _eventMode: 2
+  _eventOwner: {fileID: 4731217643143076868}
   _soundSO: {fileID: 11400000, guid: 8384bef1e5adbf04e8b08d6ae550c8fd, type: 2}
 --- !u!114 &4731217643143076874
 MonoBehaviour:
@@ -193,5 +191,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9476352b9dd5e241b5c4092f54cdd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 4731217643143076868}
-  _eventMode: 1
+  _eventOwner: {fileID: 4731217643143076868}

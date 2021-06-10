@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 4214568783729070939}
   - component: {fileID: 3243350495334014992}
   - component: {fileID: 4015961537973284837}
-  - component: {fileID: -8200376427781712054}
   - component: {fileID: 710730952722907326}
   - component: {fileID: 1863368780138190275}
   - component: {fileID: 8902735893817328043}
   - component: {fileID: 8332876499339121739}
   - component: {fileID: 5271362472531522539}
+  - component: {fileID: 7947845318743604716}
+  - component: {fileID: -6012608676049669416}
   m_Layer: 9
   m_Name: PlasmaSMGBullet_Player
   m_TagString: Untagged
@@ -126,19 +127,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.3, y: 0.15}
   m_Direction: 1
---- !u!114 &-8200376427781712054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805315235221760054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 155c4911ad838bc41b111c8b2ba02bf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lifeTime: 3
 --- !u!114 &710730952722907326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83b69f62c3328243bea0d517e08cb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveSpeed: 5
 --- !u!114 &1863368780138190275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cea3102e022144bafcd419e6d12349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 8805315235221760054}
-  _eventMode: 0
+  _eventOwner: {fileID: 8805315235221760054}
   _damage: 1
 --- !u!114 &8332876499339121739
 MonoBehaviour:
@@ -194,8 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d147f2f18731cfe4499c8eb870e11641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 8805315235221760054}
-  _eventMode: 0
+  _eventOwner: {fileID: 8805315235221760054}
   _prefab: {fileID: 1674967525001209150, guid: 1e19ebdddf27b494faffb6472a89ca52, type: 3}
 --- !u!114 &5271362472531522539
 MonoBehaviour:
@@ -209,5 +196,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9476352b9dd5e241b5c4092f54cdd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 8805315235221760054}
-  _eventMode: 1
+  _eventOwner: {fileID: 8805315235221760054}
+--- !u!114 &7947845318743604716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8914e235e8245fb46a41cf4345392c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: {fileID: 11400000, guid: e34e48f6424adfb478e3789faaa627a3, type: 2}
+--- !u!114 &-6012608676049669416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805315235221760054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155c4911ad838bc41b111c8b2ba02bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeTime: 3

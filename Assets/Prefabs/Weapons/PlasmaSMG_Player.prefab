@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -7579626101739791628}
   - component: {fileID: 1257163292283732394}
   - component: {fileID: 7231226425568785380}
-  - component: {fileID: 3858206938228413952}
+  - component: {fileID: 3575050562003495673}
   - component: {fileID: 698492528892215503}
   - component: {fileID: 4150605591594911478}
   - component: {fileID: 2156817428756909893}
@@ -53,7 +53,6 @@ MonoBehaviour:
   _attackDelay: 1
   _attackModeHandler: {fileID: 1257163292283732394}
   _attackHandler: {fileID: 7231226425568785380}
-  _ammoHandler: {fileID: 3858206938228413952}
   _weaponEvents: {fileID: 698492528892215503}
 --- !u!114 &1257163292283732394
 MonoBehaviour:
@@ -81,13 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac62c6d2d75c844e8123a0ff76fb63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 8805315235221760054, guid: fb69cb018c931fe46a6bc97378c3a1a3,
-    type: 3}
+  _prefabPoolHandler: {fileID: 3575050562003495673}
   _firePoints: []
   _spreadAngle: 0
   _projectileAmount: 1
   _projectileSpeed: 20
---- !u!114 &3858206938228413952
+--- !u!114 &3575050562003495673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,9 +94,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5114607718829249345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f940911f4f0274481c0122d8bba0f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eeeca5aadb306d45a969654f373d643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefab: {fileID: 8805315235221760054, guid: fb69cb018c931fe46a6bc97378c3a1a3, type: 3}
+  _pool: {fileID: 11400000, guid: e34e48f6424adfb478e3789faaa627a3, type: 2}
 --- !u!114 &698492528892215503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,8 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 5114607718829249345}
-  _eventMode: 2
+  _eventOwner: {fileID: 5114607718829249345}
   _soundSO: {fileID: 11400000, guid: 9022f8022e767ec458a5c1fda66919d2, type: 2}
 --- !u!114 &2156817428756909893
 MonoBehaviour:
@@ -140,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3611a42523f360243be28a138fb10d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponID: PlasmaSMG
+  _weaponID: SMG
   _weaponIcon: {fileID: 21300000, guid: 89fa3a3410c74fb44870f451b660c6ef, type: 3}
 --- !u!114 &6276610602040178625
 MonoBehaviour:

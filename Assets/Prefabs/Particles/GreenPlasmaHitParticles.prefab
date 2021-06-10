@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1674967525001209149}
   - component: {fileID: 1674967525001209148}
   - component: {fileID: 1674967525001209151}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: GreenPlasmaHitParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4800,7 +4800,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
+  m_Pivot: {x: 0, y: 0, z: 10}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1

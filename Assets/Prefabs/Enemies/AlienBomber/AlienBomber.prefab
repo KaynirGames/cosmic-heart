@@ -436,8 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 3795014320238176891}
-  _eventMode: 2
+  _eventOwner: {fileID: 0}
   _soundSO: {fileID: 11400000, guid: 9a8bf9b98bc4a104b873061c6f8867f2, type: 2}
 --- !u!114 &6857698314904716523
 MonoBehaviour:
@@ -451,8 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d147f2f18731cfe4499c8eb870e11641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 3795014320238176891}
-  _eventMode: 1
+  _eventOwner: {fileID: 3795014320238176891}
   _prefab: {fileID: 5686347707849252169, guid: 2dfd910db95d65742b0beb1e1907bfed, type: 3}
 --- !u!114 &4166160012669157826
 MonoBehaviour:
@@ -466,8 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4ef6f4234c5f0449806d9ecfd14f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 3795014320238176891}
-  _eventMode: 2
+  _eventOwner: {fileID: 3795014320238176891}
   _pointAmount:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: d3d768e0d00e04848803db6fe12fbed6, type: 2}
@@ -485,8 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5718e5fb19f940c499e70576e196905d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 3795014320238176891}
-  _eventMode: 2
+  _eventOwner: {fileID: 3795014320238176891}
   _lootTable: {fileID: 11400000, guid: 363383b5505192d4695b760b5febc48d, type: 2}
   _spawnArea: {fileID: 4874384253090512272}
 --- !u!1001 &3209010247625704926

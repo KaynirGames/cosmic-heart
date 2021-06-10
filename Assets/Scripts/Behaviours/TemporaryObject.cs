@@ -6,10 +6,18 @@ public class TemporaryObject : MonoBehaviour
 
     private Timer _timer;
 
-    private void Start()
+    private void Awake()
     {
         _timer = new Timer(_lifeTime);
         _timer.Reset();
+    }
+
+    private void OnEnable()
+    {
+        if (_timer != null)
+        {
+            _timer.Reset();
+        }
     }
 
     private void Update()

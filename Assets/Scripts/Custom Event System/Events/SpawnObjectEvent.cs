@@ -4,7 +4,7 @@ public class SpawnObjectEvent : BaseEvent
 {
     [SerializeField] private GameObject _prefab = null;
 
-    protected override void Invoke(GameObject target)
+    public override void TryInvoke(GameObject target)
     {
         if (_prefab != null)
         {

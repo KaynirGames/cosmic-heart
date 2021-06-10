@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: -7579626101739791628}
   - component: {fileID: 1257163292283732394}
   - component: {fileID: 7231226425568785380}
-  - component: {fileID: 3858206938228413952}
+  - component: {fileID: -3565787665266121799}
   - component: {fileID: 626715512991892752}
   - component: {fileID: 745670102731091013}
-  - component: {fileID: 1749148746415780636}
   m_Layer: 0
   m_Name: PlasmaSMG_Enemy
   m_TagString: Untagged
@@ -52,7 +51,6 @@ MonoBehaviour:
   _attackDelay: 1
   _attackModeHandler: {fileID: 1257163292283732394}
   _attackHandler: {fileID: 7231226425568785380}
-  _ammoHandler: {fileID: 3858206938228413952}
   _weaponEvents: {fileID: 626715512991892752}
 --- !u!114 &1257163292283732394
 MonoBehaviour:
@@ -80,13 +78,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac62c6d2d75c844e8123a0ff76fb63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 8805315235221760054, guid: 27f06e840e97fe54bb3c3f8edecf7c48,
-    type: 3}
+  _prefabPoolHandler: {fileID: -3565787665266121799}
   _firePoints: []
   _spreadAngle: 0
   _projectileAmount: 1
   _projectileSpeed: 20
---- !u!114 &3858206938228413952
+--- !u!114 &-3565787665266121799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,9 +92,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5114607718829249345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81f940911f4f0274481c0122d8bba0f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eeeca5aadb306d45a969654f373d643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefab: {fileID: 8805315235221760054, guid: 27f06e840e97fe54bb3c3f8edecf7c48, type: 3}
+  _pool: {fileID: 11400000, guid: f0cd6275d5627ec4e8d7df829e0a1bdb, type: 2}
 --- !u!114 &626715512991892752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,20 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 5114607718829249345}
-  _eventMode: 2
+  _eventOwner: {fileID: 5114607718829249345}
   _soundSO: {fileID: 11400000, guid: 9022f8022e767ec458a5c1fda66919d2, type: 2}
---- !u!114 &1749148746415780636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5114607718829249345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3611a42523f360243be28a138fb10d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponID: PlasmaSMG
-  _weaponIcon: {fileID: 21300000, guid: 89fa3a3410c74fb44870f451b660c6ef, type: 3}

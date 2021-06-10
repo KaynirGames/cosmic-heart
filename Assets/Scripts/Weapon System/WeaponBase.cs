@@ -5,7 +5,6 @@ public class WeaponBase : MonoBehaviour
     [SerializeField] private float _attackDelay = .25f;
     [SerializeField] private BaseAttackModeHandler _attackModeHandler = null;
     [SerializeField] private BaseAttackHandler _attackHandler = null;
-    [SerializeField] private BaseAmmoHandler _ammoHandler = null;
     [SerializeField] private BaseEventHandler _weaponEvents = null;
 
     private Timer _nextAttackTimer;
@@ -13,7 +12,6 @@ public class WeaponBase : MonoBehaviour
     private void Awake()
     {
         _attackModeHandler.OnExecution += _attackHandler.Attack;
-        _attackModeHandler.OnExecution += _ammoHandler.ConsumeAmmo;
         _attackModeHandler.OnExecution += InvokeWeaponEvents;
     }
 
@@ -29,19 +27,11 @@ public class WeaponBase : MonoBehaviour
 
     public void UseWeapon()
     {
-        if (_ammoHandler.CheckAmmo())
+        if (_nextAttackTimer.Elapsed)
         {
-            if (_nextAttackTimer.Elapsed)
-            {
-                _attackModeHandler.Execute();
-                _nextAttackTimer.Reset();
-            }
+            _attackModeHandler.Execute();
+            _nextAttackTimer.Reset();
         }
-    }
-
-    public void ReloadWeapon()
-    {
-        _ammoHandler.Reload();
     }
 
     private void InvokeWeaponEvents()

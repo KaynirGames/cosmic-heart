@@ -94,8 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 3795014320238176891}
-  _eventMode: 2
+  _eventOwner: {fileID: 3795014320238176891}
   _soundSO: {fileID: 11400000, guid: 9a8bf9b98bc4a104b873061c6f8867f2, type: 2}
 --- !u!114 &5806542518153366530
 MonoBehaviour:
@@ -109,8 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4ef6f4234c5f0449806d9ecfd14f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 3795014320238176891}
-  _eventMode: 2
+  _eventOwner: {fileID: 3795014320238176891}
   _pointAmount:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 1d06f94e05d33d64b9f45c64d8fbe215, type: 2}
@@ -128,8 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5718e5fb19f940c499e70576e196905d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 3795014320238176891}
-  _eventMode: 2
+  _eventOwner: {fileID: 3795014320238176891}
   _lootTable: {fileID: 11400000, guid: 16fcdd886ae23034dbdebd44acedaba9, type: 2}
   _spawnArea: {fileID: 8025350801399442330}
 --- !u!1 &2871243680926526744

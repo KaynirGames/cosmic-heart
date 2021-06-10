@@ -6,27 +6,15 @@ public class SpawnLootEvent : BaseEvent
     [SerializeField] private LootTableSO _lootTable = null;
     [SerializeField] private BaseSpawnArea _spawnArea = null;
 
-    protected override void Invoke(GameObject target)
+    public override void TryInvoke(GameObject target)
     {
         List<GameObject> lootList = _lootTable.GetLoot();
 
         foreach (GameObject loot in lootList)
         {
-            SpawnLoot(loot);
+            Instantiate(loot,
+                        _spawnArea.GetSpawnPosition(),
+                        Quaternion.identity);
         }
     }
-
-    private void SpawnLoot(GameObject loot)
-    {
-        Instantiate(loot,
-                    _spawnArea.GetSpawnPosition(),
-                    Quaternion.identity);
-    }
-
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        _eventMode = EventMode.None;
-    }
-#endif
 }

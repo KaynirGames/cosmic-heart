@@ -169,8 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebecc9b6af09dd43bf6a3666ce942f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 4731217643143076868}
-  _eventMode: 0
+  _eventOwner: {fileID: 4731217643143076868}
   _weaponInfo: {fileID: -3092175785039593379, guid: 87095df250365ad4295cfa353ba5dbe0,
     type: 3}
 --- !u!114 &-943472258456797265
@@ -185,8 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261216cf5e0cf094fb1c65a6758a83ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 4731217643143076868}
-  _eventMode: 2
+  _eventOwner: {fileID: 4731217643143076868}
   _soundSO: {fileID: 11400000, guid: 452854696870b6a46bc9da7902adcbf9, type: 2}
 --- !u!114 &4731217643143076874
 MonoBehaviour:
@@ -200,5 +198,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9476352b9dd5e241b5c4092f54cdd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _owner: {fileID: 4731217643143076868}
-  _eventMode: 1
+  _eventOwner: {fileID: 4731217643143076868}
