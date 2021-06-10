@@ -388,7 +388,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColorGradientPreset
       value: 
-      objectReference: {fileID: 11400000, guid: aea435777a7853d47853ccb7e72f2ce7,
+      objectReference: {fileID: 11400000, guid: e1c1237c5eec7c54d99010ada927af99,
         type: 2}
     - target: {fileID: 6592084417991217306, guid: 32e1ee3739d245542ab33bff2619ee3a,
         type: 3}

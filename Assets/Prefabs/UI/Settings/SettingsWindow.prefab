@@ -301,6 +301,12 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4956896621222935165, guid: a4f65cdf547e1254dbeca9aeb39a3ad6,
+        type: 3}
+      propertyPath: m_fontColorGradientPreset
+      value: 
+      objectReference: {fileID: 11400000, guid: e1c1237c5eec7c54d99010ada927af99,
+        type: 2}
     - target: {fileID: 7122379330077849422, guid: a4f65cdf547e1254dbeca9aeb39a3ad6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
