@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 7531442411394435047}
   - component: {fileID: 2107816811}
   - component: {fileID: -258587600983793072}
-  - component: {fileID: 2107816808}
   - component: {fileID: 1147516493670234768}
   - component: {fileID: -1802291760493084490}
   - component: {fileID: 323291473}
@@ -198,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 7531442411394435047}
   _animator: {fileID: 6018882844237410884}
-  _attackInput: {fileID: -1802291760493084490}
+  _attackInput: {fileID: 323291473}
   _invincibilityFrames: {fileID: 8740013201964306995}
 --- !u!114 &7531442411394435047
 MonoBehaviour:
@@ -254,20 +253,6 @@ MonoBehaviour:
   _verticalAxis: Vertical
   _horizontalSnap: 1
   _verticalSnap: 1
---- !u!114 &2107816808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4168460833131983396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c5617d41bb66dd40b6656155f460d31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minMoveBound: {x: -9, y: -5, z: 0}
-  _maxMoveBound: {x: 9, y: -5, z: 0}
 --- !u!114 &1147516493670234768
 MonoBehaviour:
   m_ObjectHideFlags: 0

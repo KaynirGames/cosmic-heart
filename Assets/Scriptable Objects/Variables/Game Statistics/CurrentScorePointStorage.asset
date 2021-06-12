@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba72f35488597834399af236f77323d8, type: 3}
   m_Name: CurrentScorePointStorage
   m_EditorClassIdentifier: 
-  _value: 0
+  _value: 1700

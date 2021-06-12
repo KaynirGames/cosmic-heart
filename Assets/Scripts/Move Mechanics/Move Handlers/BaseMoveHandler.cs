@@ -26,7 +26,12 @@ public abstract class BaseMoveHandler : MonoBehaviour, IDirectionHandler, ISpeed
         _moveSpeed = speed;
     }
 
-    protected Vector3 GetVelocity(float deltaTime = 1f)
+    protected Vector3 GetVelocity()
+    {
+        return GetVelocity(Time.deltaTime);
+    }
+
+    protected Vector3 GetVelocity(float deltaTime)
     {
         return _direction * _moveSpeed * deltaTime;
     }
