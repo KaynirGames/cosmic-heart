@@ -5,14 +5,13 @@ public class MoveRectTween : BaseTween
 {
     [Header("Move Settings:")]
     [SerializeField] private RectTransform _targetRect = null;
-    [SerializeField] private Vector2 _initialPosition = Vector2.zero;
-    [SerializeField] private float _moveDuration = .5f;
+    [SerializeField] private Vector2 _startPosition = Vector2.zero;
 
     protected override Tween CreateTween()
     {
         Vector2 endPos = _targetRect.anchoredPosition;
-        _targetRect.anchoredPosition = _initialPosition;
+        _targetRect.anchoredPosition = _startPosition;
 
-        return _targetRect.DOAnchorPos(endPos, _moveDuration);
+        return _targetRect.DOAnchorPos(endPos, _duration);
     }
 }

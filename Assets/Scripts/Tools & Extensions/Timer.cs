@@ -1,35 +1,39 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
 public class Timer
 {
+    public event System.Action OnTimerElapsed;
+
+    [SerializeField] private float _duration = 0f;
+    [SerializeField] private bool _unscaled = false;
+
     public bool Elapsed { get; private set; }
 
-    private float _duration;
     private float _elapsedTime;
-    private bool _unscaled;
 
-    public Timer(float duration, bool unscaled = false)
+    public Timer(float duration, bool unscaled)
     {
         SetDuration(duration);
-        _unscaled = unscaled;
+        SetTimeScale(unscaled);
     }
+
+    public Timer(float duration) : this(duration, false) { }
 
     public void SetDuration(float duration)
     {
         _duration = duration;
         _elapsedTime = 0f;
-        Elapsed = true;
+    }
+
+    public void SetTimeScale(bool unscaled)
+    {
+        _unscaled = unscaled;
     }
 
     public void Reset()
     {
-        if (_elapsedTime >= 0)
-        {
-            _elapsedTime = 0f;
-        }
-
-        _elapsedTime += _duration;
-
+        _elapsedTime = _duration;
         Elapsed = false;
     }
 
@@ -42,15 +46,14 @@ public class Timer
         if (_elapsedTime <= 0)
         {
             Elapsed = true;
+            OnTimerElapsed?.Invoke();
         }
     }
 
     public void Tick()
     {
-        float delta = _unscaled
+        Tick(_unscaled
             ? Time.unscaledDeltaTime
-            : Time.deltaTime;
-
-        Tick(delta);
+            : Time.deltaTime);
     }
 }

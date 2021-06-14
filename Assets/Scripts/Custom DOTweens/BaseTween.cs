@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class BaseTween : MonoBehaviour
 {
     [Header("Base Settings:")]
+    [SerializeField] protected float _duration = 1f;
     [SerializeField] protected Ease _ease = Ease.Unset;
     [SerializeField] protected int _loopAmount = 0;
     [SerializeField] protected LoopType _loopType = LoopType.Restart;

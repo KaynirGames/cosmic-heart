@@ -6,7 +6,7 @@ public class ParallaxHandler : MonoBehaviour
     [SerializeField] private Vector2 _parallaxDirection = Vector2.one;
     [SerializeField] private float _parallaxSpeed = .15f;
 
-    private Renderer _meshRenderer;
+    private MeshRenderer _meshRenderer;
 
     private float _offsetX;
     private float _offsetY;
