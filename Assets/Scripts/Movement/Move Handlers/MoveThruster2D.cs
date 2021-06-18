@@ -25,7 +25,7 @@ public class MoveThruster2D : BaseMoveHandler
 
     private void Rotate()
     {
-        float cross = Vector3.Cross(_direction, transform.up).z;
+        float cross = Vector3.Cross(Direction, transform.up).z;
         float rotation = cross * _rotationSpeed * Time.deltaTime;
 
         _rigidbody2D.AddTorque(-rotation);

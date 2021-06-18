@@ -1,25 +1,17 @@
 ﻿using UnityEngine;
 
-public abstract class BaseMoveHandler : MonoBehaviour, IDirectionHandler, ISpeedHandler
+public abstract class BaseMoveHandler : MonoBehaviour
 {
     [SerializeField] protected BaseMoveInput _moveInput = null;
     [SerializeField] protected float _moveSpeed = 5f;
 
-    protected Vector3 _direction;
+    public Vector3 Direction { get; private set; }
 
-    public Vector3 GetDirection()
-    {
-        return _direction;
-    }
-
-    public float GetSpeed()
-    {
-        return _moveSpeed;
-    }
+    public float MoveSpeed => _moveSpeed;
 
     public void SetDirection(Vector3 direction)
     {
-        _direction = direction;
+        Direction = direction;
     }
 
     public void SetSpeed(float speed)
@@ -31,8 +23,8 @@ public abstract class BaseMoveHandler : MonoBehaviour, IDirectionHandler, ISpeed
 
     protected virtual Vector3 GetVelocity()
     {
-        _direction = _moveInput.GetInput();
+        Direction = _moveInput.GetInput();
 
-        return _direction * _moveSpeed * Time.deltaTime;
+        return Direction * _moveSpeed * Time.deltaTime;
     }
 }

@@ -15,6 +15,6 @@ public class Cheats : MonoBehaviour
     [MenuItem("Cheats/Add Money")]
     private static void AddGold()
     {
-        Instance.playerMoney.ApplyChange(1000);
+        //Instance.playerMoney.ApplyChange(1000);
     }
 }

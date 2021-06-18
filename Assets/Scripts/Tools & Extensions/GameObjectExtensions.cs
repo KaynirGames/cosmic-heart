@@ -2,17 +2,17 @@
 
 public static class GameObjectExtensions
 {
-    public static void Dispose(this GameObject gameObject)
-    {
-        IDisposable disposable = gameObject.GetComponent<IDisposable>();
+    //public static void Dispose(this GameObject gameObject)
+    //{
+    //    IDisposable disposable = gameObject.GetComponent<IDisposable>();
 
-        if (disposable == null)
-        {
-            disposable = new DefaultDisposable();
-        }
+    //    if (disposable == null)
+    //    {
+    //        disposable = new DefaultDisposable();
+    //    }
 
-        disposable.Dispose(gameObject);
-    }
+    //    disposable.Dispose(gameObject);
+    //}
 
     public static GameObject FindClosestObject(this GameObject gameObject, GameObject[] searchObjects)
     {

@@ -7,7 +7,6 @@ public class LevelDataSO : ScriptableObject
     [SerializeField] private int _sceneID = 0;
     [SerializeField] private GameObject _planetPrefab = null;
     [SerializeField] private Material _backgroundMaterial = null;
-    [SerializeField] private IntReference _maxScore = null;
     [SerializeField] private IntVariableSO _highScore = null;
 
     public string LevelName => _levelName;

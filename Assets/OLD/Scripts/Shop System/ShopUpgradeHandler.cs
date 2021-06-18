@@ -63,8 +63,8 @@ public class ShopUpgradeHandler : MonoBehaviour
 
     private void BuyUpgrade()
     {
-        _moneyStorage.ApplyChange(-_upgrade.Cost);
-        _upgradeID.ApplyChange(1);
+        //_moneyStorage.ApplyChange(-_upgrade.Cost);
+        //_upgradeID.ApplyChange(1);
     }
 
     private void UpdateUpgradeButton(int money)
