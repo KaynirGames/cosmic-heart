@@ -18,7 +18,7 @@ public class Test : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SoundManager.Instance.PlaySound(sfx);
+            SoundManager.Instance.PlayOneShot(sfx);
         }
 
         if (Input.GetKeyDown(KeyCode.P))

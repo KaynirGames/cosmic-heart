@@ -5,7 +5,8 @@ public abstract class BaseMoveHandler : MonoBehaviour
     [SerializeField] protected BaseMoveInput _moveInput = null;
     [SerializeField] protected float _moveSpeed = 5f;
 
-    public Vector3 Direction { get; private set; }
+    public Vector3 Direction { get; protected set; }
+    public Vector3 Velocity { get; protected set; }
 
     public float MoveSpeed => _moveSpeed;
 
@@ -21,10 +22,9 @@ public abstract class BaseMoveHandler : MonoBehaviour
 
     protected abstract void Move();
 
-    protected virtual Vector3 GetVelocity()
+    protected virtual void CalculateVelocity()
     {
         Direction = _moveInput.GetInput();
-
-        return Direction * _moveSpeed * Time.deltaTime;
+        Velocity = Direction * _moveSpeed * Time.deltaTime;
     }
 }

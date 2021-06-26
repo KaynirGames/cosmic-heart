@@ -12,6 +12,11 @@ public class MoveThruster2D : BaseMoveHandler
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        CalculateVelocity();
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -19,7 +24,7 @@ public class MoveThruster2D : BaseMoveHandler
 
     protected override void Move()
     {
-        _rigidbody2D.AddForce(GetVelocity());
+        _rigidbody2D.AddForce(Velocity);
         Rotate();
     }
 

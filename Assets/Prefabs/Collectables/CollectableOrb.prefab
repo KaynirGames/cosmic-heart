@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 657830243732673291}
   - component: {fileID: 1572116845306947363}
   m_Layer: 0
-  m_Name: OuterCircle
+  m_Name: OuterParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4780,7 +4780,7 @@ GameObject:
   - component: {fileID: 657830244477673948}
   - component: {fileID: 1429437127583251840}
   m_Layer: 0
-  m_Name: InnerCrystal
+  m_Name: InnerParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9544,8 +9544,10 @@ GameObject:
   m_Component:
   - component: {fileID: 657830245293208712}
   - component: {fileID: 2423285206802342039}
+  - component: {fileID: 3741587919016342959}
+  - component: {fileID: 3936750488109339295}
   m_Layer: 0
-  m_Name: CollectableCrystal
+  m_Name: CollectableOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9583,22 +9585,35 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _worldBounds: {fileID: 11400000, guid: 8b849e02b3d4c424b90570033fe9c6c3, type: 2}
-  _cosmicHeart: {fileID: 11400000, guid: 8245e2a3e9147f04e87c194d70de436b, type: 2}
+  _player: {fileID: 11400000, guid: c395670414501d24aa62ec53165eceb5, type: 2}
+  _energyGain: 10
+--- !u!114 &3741587919016342959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657830245293208719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5616a491f63b0da4ba1105c07e414510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 0, g: 0.080907345, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.9254902, g: 0.15294118, b: 0.24705882, a: 1}
+    key1: {r: 0.9529412, g: 0.65882355, b: 0.2, a: 1}
+    key2: {r: 0, g: 0.39607844, b: 0.32941177, a: 0}
+    key3: {r: 0.21960784, g: 0.34901962, b: 0.7019608, a: 0}
+    key4: {r: 0.24313726, g: 0.23137255, b: 0.39607844, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
+    ctime1: 16384
+    ctime2: 32768
+    ctime3: 49151
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -9611,5 +9626,25 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 2
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
+  _targetObject:
+    _useConstant: 0
+    _constantValue: {fileID: 0}
+    _variable: {fileID: 11400000, guid: 8245e2a3e9147f04e87c194d70de436b, type: 2}
+--- !u!58 &3936750488109339295
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657830245293208719}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.75

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AudioSourceFader : MonoBehaviour
 {
-    public IEnumerator FadeIn(AudioSource audioSource, AudioClip audioClip, float desiredVolume, bool loop)
+    public IEnumerator FadeInCO(AudioSource audioSource, AudioClip audioClip, float desiredVolume, bool loop)
     {
         audioSource.clip = audioClip;
         audioSource.loop = loop;
@@ -18,7 +18,7 @@ public class AudioSourceFader : MonoBehaviour
         audioSource.volume = desiredVolume;
     }
 
-    public IEnumerator FadeOut(AudioSource audioSource)
+    public IEnumerator FadeOutCO(AudioSource audioSource)
     {
         while (audioSource.volume > 0f)
         {

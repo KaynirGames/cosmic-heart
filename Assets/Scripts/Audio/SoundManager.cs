@@ -39,36 +39,40 @@ public class SoundManager : MonoBehaviour
         _musicVolume = _musicChannel.volume;
     }
 
-    public void PlayMusic(AudioClip music, bool loop = false)
+    public void PlayMusic(AudioClip clip, bool loop = false)
     {
         if (_musicRoutine != null)
         {
             StopCoroutine(_musicRoutine);
         }
 
-        _musicRoutine = StartCoroutine(PlayMusicRoutine(music, loop));
-    }
-    
-    public void PlaySound(AudioClip sound, float volumeScale = 1f, SoundChannel channel = SoundChannel.First)
-    {
-        GetSoundSource(channel).PlayOneShot(sound, volumeScale);
+        _musicRoutine = StartCoroutine(PlayMusicCO(clip, loop));
     }
 
-    public void PlaySound(SoundSO soundSO)
+    public void PlayOneShot(AudioClip clip, float volumeScale, SoundChannel channel)
     {
-        PlaySound(soundSO.GetAudioClip(),
-                  soundSO.VolumeScale,
-                  soundSO.SoundChannel);
+        GetSource(channel).PlayOneShot(clip,
+                                       volumeScale);
     }
 
-    private AudioSource GetSoundSource(SoundChannel channel)
+    public void PlayOneShot(SoundSO soundSO)
+    {
+        PlayOneShot(soundSO.GetAudioClip(),
+                    soundSO.VolumeScale,
+                    soundSO.SoundChannel);
+    }
+
+    private AudioSource GetSource(SoundChannel channel)
     {
         return _soundChannels[(int)channel];
     }
 
-    private IEnumerator PlayMusicRoutine(AudioClip music, bool loop)
+    private IEnumerator PlayMusicCO(AudioClip music, bool loop)
     {
-        yield return _audioSourceFader.FadeOut(_musicChannel);
-        yield return _audioSourceFader.FadeIn(_musicChannel, music, _musicVolume, loop);
+        yield return _audioSourceFader.FadeOutCO(_musicChannel);
+        yield return _audioSourceFader.FadeInCO(_musicChannel,
+                                                music,
+                                                _musicVolume,
+                                                loop);
     }
 }

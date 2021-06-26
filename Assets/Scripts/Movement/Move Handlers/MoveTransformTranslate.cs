@@ -6,12 +6,13 @@ public class MoveTransformTranslate : BaseMoveHandler
 
     private void Update()
     {
+        CalculateVelocity();
         Move();
     }
 
     protected override void Move()
     {
-        transform.Translate(GetVelocity(),
+        transform.Translate(Velocity,
                             _translateSpace);
     }
 }

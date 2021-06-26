@@ -13,6 +13,6 @@ public class SoundPlayer : MonoBehaviour
 
     public void Play()
     {
-        _manager.PlaySound(_sound);
+        _manager.PlayOneShot(_sound);
     }
 }
